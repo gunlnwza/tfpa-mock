@@ -58,20 +58,40 @@ const corporate_members = [
   { name: "Yuanta", logo: yuanta, url: "http://www.yuanta.co.th/" },
 ];
 
+
+/*
+# Header
+About — Overview, Board & Staff, Rules & Regulations, Annual Reports
+CFP Certification — Member Types & Benefits, How to Get Certified, Maintain & Renew, FAQ
+Resources — Documents, News, Announcements, Videos, Alliance Companies
+Find a Financial Advisor — What is Financial Planning, Search for an Advisor, Contact
+Training — For Students, For Practitioners, For Training Schools, For Legal Entities
+Contact — Address, Staff Directory
+*/
 export default function Home() {
   return (
     <div>
       {/* Header */}
-      <header>
-        <Link
-          to="/"
-        >
-          <img src={tfpa}></img>
+      <header className="sticky top-0 bg-white z-50 flex items-center justify-between px-8 py-4 shadow-sm">
+        {/* Logo */}
+        <Link to="/">
+          <img src={tfpa} alt="TFPA Logo" className="h-10" />
         </Link>
+
+        {/* Nav */}
+        <nav className="flex gap-6 text-sm font-medium">
+          <Link to="/about/overview" className="hover:text-blue-600">About</Link>
+          <Link to="/cfp/types" className="hover:text-blue-600">CFP Certification</Link>
+          <Link to="/resources/documents" className="hover:text-blue-600">Resources</Link>
+          <Link to="/advisor/search" className="hover:text-blue-600">Find a Financial Advisor</Link>
+          <Link to="/training/students" className="hover:text-blue-600">Training</Link>
+          <Link to="/contact" className="hover:text-blue-600">Contact</Link>
+          <Link to="/login" className="hover:text-blue-600">Login</Link>
+        </nav>
       </header>
 
       {/* Primary CTAs */}
-      <section className="py-16 text-center">
+      <section className="py-50 text-center">
       <h1 className="text-4xl font-bold mb-4">
         Financial Planning Starts Here
       </h1>
@@ -98,9 +118,9 @@ export default function Home() {
       </section>
 
       {/* Latest News */}
-      <section className="p-5">
+      <section className="py-5">
         <h2 className="p-2 text-center">Latest News</h2>
-        <div className="grid md:grid-cols-3 gap-6 px-8">
+        <div className="h-50 grid md:grid-cols-3 gap-6 px-8">
           <div className="p-6 border rounded-xl hover:shadow">News Card 1</div>
           <div className="p-6 border rounded-xl hover:shadow">News Card 2</div>
           <div className="p-6 border rounded-xl hover:shadow">News Card 3</div>
@@ -108,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Corporate Members */}
-      <section className="p-5">
+      <section className="py-5">
         <h2 className="text-center">Corporate Members</h2>
         <div className="grid grid-cols-13 gap-6">
           {corporate_members.map((c) => (

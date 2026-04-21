@@ -51,6 +51,9 @@ import Entities from "../pages/training/Entities";
 // Contact
 import Contact from "../pages/Contact";
 
+// Login
+import Login from "../pages/login";
+
 export default function AppRouter() {
   return (
     <BrowserRouter>
@@ -89,6 +92,9 @@ export default function AppRouter() {
 
         {/* Contact */}
         <Route path="/contact" element={<Contact />} />
+
+        {/* Login */}
+        <Route path="/login" element={<Login />}/>
       </Routes>
     </BrowserRouter>
   );
