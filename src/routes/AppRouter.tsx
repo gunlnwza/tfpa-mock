@@ -54,6 +54,12 @@ import Contact from "../pages/Contact";
 // Login
 import Login from "../pages/login";
 
+// Privacy
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+
+// Sitemap
+import Sitemap from "../pages/Sitemap";
+
 export default function AppRouter() {
   return (
     <BrowserRouter>
@@ -95,6 +101,10 @@ export default function AppRouter() {
 
         {/* Login */}
         <Route path="/login" element={<Login />}/>
+
+        {/* Footer */}
+        <Route path="/privacy_policy" element={<PrivacyPolicy />}/>
+        <Route path="/sitemap" element={<Sitemap />}/>
       </Routes>
     </BrowserRouter>
   );
