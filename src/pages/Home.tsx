@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-import tfpa from "../assets/logos/tfpa.png";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 import aia from "../assets/logos/aia.png";
 import allianzAyudhya from "../assets/logos/allianz_ayudhya.png";
@@ -71,24 +72,7 @@ Contact — Address, Staff Directory
 export default function Home() {
   return (
     <div>
-      {/* Header */}
-      <header className="sticky top-0 bg-white z-50 flex items-center justify-between px-8 py-4 shadow-sm">
-        {/* Logo */}
-        <Link to="/">
-          <img src={tfpa} alt="TFPA Logo" className="h-10" />
-        </Link>
-
-        {/* Nav */}
-        <nav className="flex gap-6 text-sm font-medium">
-          <Link to="/about/overview" className="hover:text-blue-600">About</Link>
-          <Link to="/cfp/types" className="hover:text-blue-600">CFP Certification</Link>
-          <Link to="/resources/documents" className="hover:text-blue-600">Resources</Link>
-          <Link to="/advisor/search" className="hover:text-blue-600">Find a Financial Advisor</Link>
-          <Link to="/training/students" className="hover:text-blue-600">Training</Link>
-          <Link to="/contact" className="hover:text-blue-600">Contact</Link>
-          <Link to="/login" className="hover:text-blue-600">Login</Link>
-        </nav>
-      </header>
+      <Header />
 
       {/* Primary CTAs */}
       <section className="py-50 text-center">
@@ -139,61 +123,7 @@ export default function Home() {
         </div>
       </section>
  
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white px-8 py-10">
-        <div className="max-w-6xl mx-auto space-y-8">
-
-          {/* Top section */}
-          <div className="grid md:grid-cols-3 gap-8">
-
-            {/* Address */}
-            <div className="space-y-2 text-sm leading-relaxed">
-              <p className="font-semibold">สมาคมนักวางแผนการเงินไทย</p>
-              <p>
-                ชั้น 6 อาคารตลาดหลักทรัพย์แห่งประเทศไทย<br />
-                93 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง<br />
-                กรุงเทพมหานคร 10400
-              </p>
-              <p>โทรศัพท์: 0 2009 9393</p>
-              <p>Website: www.tfpa.or.th</p>
-            </div>
-
-            {/* Legal */}
-            <div className="text-sm leading-relaxed">
-              <p>
-                สงวนลิขสิทธิ์ 2560 สมาคมนักวางแผนการเงินไทย
-              </p>
-              <p className="mt-2 text-gray-300">
-                CFP®, CERTIFIED FINANCIAL PLANNER™ are trademarks owned outside the U.S.
-                by Financial Planning Standards Board Ltd.
-                Thai Financial Planners Association is the licensing authority in Thailand.
-              </p>
-            </div>
-
-            {/* Social + Links */}
-            <div className="flex flex-col justify-between">
-              
-              {/* Social icons */}
-              <div className="flex gap-4">
-                <a href="#" className="hover:opacity-80">FB</a>
-                <a href="#" className="hover:opacity-80">YT</a>
-                <a href="#" className="hover:opacity-80">LINE</a>
-              </div>
-
-              {/* Policy links */}
-              <div className="flex gap-4 text-sm mt-4">
-                <Link to="/privacy_policy" className="hover:underline">
-                  Privacy Policy
-                </Link>
-                <Link to="/sitemap" className="hover:underline">
-                  Sitemap
-                </Link>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
