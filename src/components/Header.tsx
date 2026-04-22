@@ -28,14 +28,17 @@ export default function Header() {
       {/* Nav */}
       <nav className="flex gap-6 text-sm font-medium">
         <Link to="/" className="hover:text-blue-600">Home</Link>
-        <Link to="/about/overview" className="hover:text-blue-600">About</Link>
+        <Link to="/about" className="hover:text-blue-600">About</Link>
         <Link to="/members" className="hover:text-blue-600">Members</Link>
+        <Link to="/learn" className="hover:text-blue-600">Learn</Link>
+        <Link to="/contact" className="hover:text-blue-600">Contact</Link>
+        <a href="https://member.tfpa.or.th/UserLoginNew.aspx" className="hover:text-blue-600">Login</a>
+        {/* <Link to="/login" className="hover:text-blue-600">Login</Link> */}
+
         {/* <Link to="/cfp/types" className="hover:text-blue-600">CFP Certification</Link> */}
         {/* <Link to="/resources/documents" className="hover:text-blue-600">Resources</Link> */}
         {/* <Link to="/advisor/search" className="hover:text-blue-600">Find a Financial Advisor</Link> */}
         {/* <Link to="/training/students" className="hover:text-blue-600">Training</Link> */}
-        <Link to="/contact" className="hover:text-blue-600">Contact</Link>
-        <Link to="/login" className="hover:text-blue-600">Login</Link>
       </nav>
     </header>
   );

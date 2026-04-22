@@ -15,6 +15,7 @@ import Members from "../pages/Members";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import LoginPage from "../pages/LoginPage";
+import Learn from "../pages/Learn";
 
 // CFP
 // import Types from "../pages/cfp/Types";
@@ -56,7 +57,7 @@ export default function AppRouter() {
         <Route path="/members" element={<Members />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<LoginPage />}/>
-
+        <Route path="/learn" element={<Learn />}/>
 
         {/* CFP */}
         {/* <Route path="/cfp/types" element={<Types />} /> */}

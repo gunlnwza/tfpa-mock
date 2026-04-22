@@ -1,7 +1,8 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
 import OrgChart from "../components/OrgChart";
+
+import nsf_logo from "../assets/logos/nsf.png"
 
 
 function Mission() {
@@ -95,6 +96,21 @@ function OrganizationStructure() {
 }
 
 
+function Alliance() {
+  return (
+    <section className="space-y-4">
+      <h2 className="text-xl font-semibold border-b pb-2">หน่วยงานพันธมิตร</h2>
+
+      <div className="flex flex-col items-center space-y-2">
+        <a href="https://www.nsf.or.th">
+          <img src={nsf_logo} alt="NSF Logo" className="h-40 mx-auto border border-gray-300" />
+        </a>
+        <p className="text-center">กองทุนการออมแห่งชาติ</p>
+      </div>
+    </section>
+  );
+}
+
 export default function Overview() {
   return (
     <div>
@@ -105,6 +121,7 @@ export default function Overview() {
         <History />
         <Founders />
         <OrganizationStructure />
+        <Alliance />
       </div>
       <Footer />
     </div>
