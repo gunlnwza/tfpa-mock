@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import map from "../assets/how_to_go_to_tfpa.png"
-import { Link } from "react-router-dom";
 
-// 1. 📍 Location (header block): instant usefulness
-// 2. 🗺️ Google Map (primary visual): interactive + main “where is this place”
-// 3. 🧭 Infographic (supporting): “how to get there” + MRT / landmarks
-// 4. 👥 Staff / departments: contact persons + roles
+/*
+1. 📍 Location (header block): instant usefulness
+2. 🗺️ Google Map (primary visual): interactive + main “where is this place”
+3. 🧭 Infographic (supporting): “how to get there” + MRT / landmarks
+4. 👥 Staff / departments: contact persons + roles
+*/
 
 
 function TFPAInfo() {

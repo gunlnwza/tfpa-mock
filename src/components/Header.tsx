@@ -29,6 +29,7 @@ export default function Header() {
       <nav className="flex gap-6 text-sm font-medium">
         <Link to="/" className="hover:text-blue-600">Home</Link>
         <Link to="/about/overview" className="hover:text-blue-600">About</Link>
+        <Link to="/members" className="hover:text-blue-600">Members</Link>
         {/* <Link to="/cfp/types" className="hover:text-blue-600">CFP Certification</Link> */}
         {/* <Link to="/resources/documents" className="hover:text-blue-600">Resources</Link> */}
         {/* <Link to="/advisor/search" className="hover:text-blue-600">Find a Financial Advisor</Link> */}

@@ -60,6 +60,16 @@ const corporate_members = [
 ];
 
 
+/*
+# Homepage
+One hero (not a carousel of 8)
+CFP Career Journey CTA
+Find a Financial Advisor CTA
+Latest News (3 cards, linking to actual pages — not PDFs)
+No duplicate sections
+*/
+
+
 function Hero() {
   return (
     <div>
