@@ -20,9 +20,6 @@ import Home from "../pages/Home";
 
 // About
 import Overview from "../pages/about/Overview";
-import Board from "../pages/about/Board";
-import Rules from "../pages/about/Rules";
-import Reports from "../pages/about/Reports";
 
 // CFP
 import Types from "../pages/cfp/Types";
@@ -68,9 +65,6 @@ export default function AppRouter() {
 
         {/* About */}
         <Route path="/about/overview" element={<Overview />} />
-        <Route path="/about/board" element={<Board />} />
-        <Route path="/about/rules" element={<Rules />} />
-        <Route path="/about/reports" element={<Reports />} />
 
         {/* CFP */}
         <Route path="/cfp/types" element={<Types />} />

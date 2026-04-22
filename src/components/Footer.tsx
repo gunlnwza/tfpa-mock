@@ -44,12 +44,20 @@ export default function Footer() {
 
             {/* Policy links */}
             <div className="flex gap-4 text-sm mt-4">
-              <Link to="/privacy_policy" className="hover:underline">
+              <Link to="/privacy_policy" className="hover:underline text-blue-100 underline block text-center">
                 Privacy Policy
               </Link>
-              <Link to="/sitemap" className="hover:underline">
+              <Link to="/sitemap" className="hover:underline text-blue-100 underline block text-center">
                 Sitemap
               </Link>
+              <a
+                href="https://www.tfpa.or.th/upload/tfpa-2109221601078698.pdf"
+                className="text-blue-100 underline block text-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ข้อบังคับสมาคม
+              </a>
             </div>
 
           </div>
