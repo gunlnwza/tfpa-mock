@@ -37,21 +37,33 @@ export function makePeople(input: Input): Record<string, Person> {
 
 // usage
 const people = makePeople({
-  wirot_tangjareon: "นายวิโรจน์ ตั้งเจริญ",
-  teeranat_rujimetapas: "นายธีรนาถ รุจิเมธาภาส",
-  umapan_jareonying: "นางสาวอุมาพันธุ์ เจริญยิ่ง",
-  tharisa_chaisunthornyothin: "นางสาวธริศา ชัยสุนทรโยธิน",
-  nuttapong_apinungul: "นายณัฐพงษ์ อภินันท์กูล",
-  wawta_prachmethegul: "นางสาวแววตา ปราชญ์เมธีกุล",
+  chartchai_meesukkho: "ดร. ชาติชาย มีสุขโข",
+  chuchchawan_wayamsuwan: "นายชัชวาลย์ วยัมสุวรรณ",
   chonratee_potrotnanggul: "นายชลธี พรโรจนางกูร",
-  thanawat_sitiwattanagul: "ผศ.ดร. ธนาวัฒน์ สิริวัฒน์ธนกุล",
+  dussanee_kreawpatinon: "นางสาวดุษณี เกลียวปฏินนท์",
+  gazesatorn_chaiwanpen: "นายเกษตร ชัยวันเพ็ญ",
+  gulranant_chantaiwo: "นางกุลนันท์ ซานไทโว",
+  jarupan_intarung: "นางจารุพรรณ อินทรุ่ง",
+  kanokthip_saichumint: "นางสาวกนกทิพย์ สายชุ่มอินทร์",
+  narint_aekwongwiriya: "นายนรินทร์ เอกวงศ์วิริยะ",
   narumul_bunsnong: "นางสาวนฤมล บุญสนอง",
   nippich_govitvinichganon: "นายนิพพิชฌน์ โกวิทวณิชกานนท์",
+  norodom_wanichruedee: "นายนโรโดม วาณิชฤดี",
+  nuttapong_apinungul: "นายณัฐพงษ์ อภินันท์กูล",
   sagow_samrankong: "นางสาวสกาว สำราญคง",
-  somjin_sornpaisarn: "ดร.สมจินต์ ศรไพศาล",
   samra_lumsum: "นายสาระ ล่ำซำ",
-  sugit_udomsirigul: "นายสุกิจ อุดมศิริกุล",
   seksan_towiwat: "นายเสกสรร โตวิวัฒน์",
+  somjin_sornpaisarn: "ดร.สมจินต์ ศรไพศาล",
+  sugit_udomsirigul: "นายสุกิจ อุดมศิริกุล",
+  teeranat_rujimetapas: "นายธีรนาถ รุจิเมธาภาส",
+  thanawat_sitiwattanagul: "ผศ.ดร. ธนาวัฒน์ สิริวัฒน์ธนกุล",
+  tharisa_chaisunthornyothin: "นางสาวธริศา ชัยสุนทรโยธิน",
+  umapan_jareonying: "นางสาวอุมาพันธุ์ เจริญยิ่ง",
+  waraporn_wibunkanaruk: "นางสาววราภรณ์ วิบูลคณารักษ์",
+  wawta_prachmethegul: "นางสาวแววตา ปราชญ์เมธีกุล",
+  win_chaisirichot: "นายวินย์ ฉายศิริโชติ",
+  wirot_tangjareon: "นายวิโรจน์ ตั้งเจริญ",
+  wornradech_punjatongka: "นายวรเดช ปัญจรงคะ",  
 });
 
 
@@ -92,13 +104,11 @@ const org: Committee = {
   title: "คณะกรรมการสมาคม",
   levels: [
     {
-      // label: "นายกสมาคม",
       members: [
         {person: "wirot_tangjareon", role: "นายกสมาคม"}
       ]
     },
     {
-      // label: "อุปนายก",
       members: [
         { person: 'teeranat_rujimetapas', role: "อุปนายก" },
         { person: 'umapan_jareonying', role: "อุปนายก" }
@@ -134,44 +144,141 @@ const org: Committee = {
     {
       id: "professional_standards",
       title: "คณะกรรมการมาตรฐานวิชาชีพ",
-      levels: [],
+      levels: [
+        {
+          members: [
+            {person: "wirot_tangjareon", role: "ประธาน"}
+          ]
+        },
+        {
+          members: [
+            {person: "teeranat_rujimetapas", role: "กรรมการ"},
+            {person: "nuttapong_apinungul", role: "กรรมการ"},
+            {person: "somjin_sornpaisarn", role: "กรรมการ"}
+          ]
+        }
+      ],
       children: [
         {
           id: "sub_educational_standards",
           title: "คณะกรรมการมาตรฐานการศึกษา",
-          levels: [],
-          children: []
+          levels: [
+            {
+              members: [
+                { person: "nuttapong_apinungul", role: "ประธาน" }
+              ]
+            },
+            {
+              members: [
+                { person: "gazesatorn_chaiwanpen", role: "อนุกรรมการ" },
+                { person: "chartchai_meesukkho", role: "อนุกรรมการ" },
+                { person: "thanawat_sitiwattanagul", role: "อนุกรรมการ" },
+                { person: "win_chaisirichot", role: "อนุกรรมการ" },
+                { person: "wawta_prachmethegul", role: "อนุกรรมการ" },
+                { person: "sagow_samrankong", role: "อนุกรรมการ" },
+              ]
+            }
+          ],
         },
         {
           id: "sub_auditing_standards",
           title: "คณะอนุกรรมการมาตรฐานการสอบ",
-          levels: [],
-          children: []
+          levels: [
+            {
+              members: [
+                {person: "somjin_sornpaisarn", role: "ประธาน" }
+              ]
+            },
+            {
+              members: [
+                { person: "chonratee_potrotnanggul", role: "อนุกรรมการ" },
+                { person: "chuchchawan_wayamsuwan", role: "อนุกรรมการ" },
+                { person: "waraporn_wibunkanaruk", role: "อนุกรรมการ" }
+              ]
+            }
+          ],
         },
         {
           id: "sub_work_standards",
           title: "คณะอนุกรรมการมาตรฐานประสบการณ์การทำงานและจรรยาบรรณ",
-          levels: [],
-          children: []
+          levels: [
+            {
+              members: [
+                {person: "teeranat_rujimetapas", role: "ประธาน" }
+              ]
+            },
+            {
+              members: [
+                {person: "jarupan_intarung", role: "อนุกรรมการ" },
+                {person: "thanawat_sitiwattanagul", role: "อนุกรรมการ" },
+                {person: "narumul_bunsnong", role: "อนุกรรมการ" },
+                {person: "umapan_jareonying", role: "อนุกรรมการ" },
+              ]
+            }
+          ],
         }
       ]
     },
     {
       id: "marketing_and_business",
       title: "คณะกรรมการการตลาดและพัฒนาธุรกิจ",
-      levels: [],
+      levels: [
+        {
+          members: [
+            {person: "wirot_tangjareon", role: "ประธาน"}
+          ]
+        },
+        {
+          members: [
+            {person: "teeranat_rujimetapas", role: "กรรมการ"},
+            {person: "umapan_jareonying", role: "กรรมการ"},
+          ]
+        }
+      ],
       children: [
         {
           id: "sub_marketing",
           title: "คณะอนุกรรมการการตลาด",
-          levels: [],
-          children: []
+          levels: [
+            {
+              members: [
+                { person: "umapan_jareonying", role: "ประธาน" },
+              ]
+            },
+            {
+              members: [
+                { person: "kanokthip_saichumint", role: "อนุกรรมการ" },
+                { person: "dussanee_kreawpatinon", role: "อนุกรรมการ" },
+                { person: "tharisa_chaisunthornyothin", role: "อนุกรรมการ" },
+                { person: "narumul_bunsnong", role: "อนุกรรมการ" },
+                { person: "narint_aekwongwiriya", role: "อนุกรรมการ" },
+                { person: "norodom_wanichruedee", role: "อนุกรรมการ" },
+                { person: "nippich_govitvinichganon", role: "อนุกรรมการ" },
+                { person: "seksan_towiwat", role: "อนุกรรมการ" },
+              ]
+            }
+          ],
         },
         {
           id: "sub_business",
           title: "คณะอนุกรรมการพัฒนาธุรกิจ",
-          levels: [],
-          children: []
+          levels: [
+            {
+              members: [
+                { person: "teeranat_rujimetapas", role: "ประธาน" },
+              ]
+            },
+            { 
+              members: [
+                { person: "gulranant_chantaiwo", role: "อนุกรรมการ" },
+                { person: "chonratee_potrotnanggul", role: "อนุกรรมการ" },
+                { person: "wornradech_punjatongka", role: "อนุกรรมการ" },
+                { person: "wawta_prachmethegul", role: "อนุกรรมการ" },
+                { person: "sagow_samrankong", role: "อนุกรรมการ" },
+                { person: "sugit_udomsirigul", role: "อนุกรรมการ" },
+              ]
+            }
+          ],
         }
       ]
     },
@@ -241,15 +348,23 @@ function Modal({ node, onClose }: ModalProps) {
         </h2>
 
         {/* Scrollable content */}
-        <div className="p-6 space-y-8 overflow-y-auto">
-          {node.levels?.map((level, i) => (
-            <div key={i} className="flex justify-center gap-8 flex-wrap">
-              {level.members.map((m) => (
-                <MemberCard key={people[m.person].name} m={m} large={i === 0} />
-              ))}
-            </div>
-          ))}
-        </div>
+        {node.levels?.length ? (
+          <div className="p-6 space-y-8 overflow-y-auto">
+            {node.levels.map((level, i) => (
+              <div key={i} className="flex justify-center gap-8 flex-wrap">
+                {level.members.map((m) => (
+                  <MemberCard
+                    key={people[m.person].name}
+                    m={m}
+                    large={i === 0}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-gray-500 text-center">No member to show</p>
+        )}
 
         {/* Footer */}
         <button
