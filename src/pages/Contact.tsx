@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-import map from "../assets/tfpa_map_cropped.jpg"
+import map from "../assets/how_to_go_to_tfpa.png"
 import { Link } from "react-router-dom";
 
 // 1. 📍 Location (header block): instant usefulness
@@ -9,25 +9,23 @@ import { Link } from "react-router-dom";
 // 3. 🧭 Infographic (supporting): “how to get there” + MRT / landmarks
 // 4. 👥 Staff / departments: contact persons + roles
 
-// TODO: format texts and spacings
-
 
 function TFPAInfo() {
   return (
-    <section className="space-y-4">
-      <div className="space-y-2 text-sm leading-relaxed">
-        <h2 className="text-xl font-semibold border-b pb-2">Location</h2>
-        <p className="font-semibold">
-          สมาคมนักวางแผนการเงินไทย
-        </p>
+    <section className="space-y-6">
+      <h2 className="text-xl font-semibold border-b pb-2">Location</h2>
+      <div className="border border-black rounded-xl p-4 text-sm leading-relaxed">
+        <p className="font-semibold">สมาคมนักวางแผนการเงินไทย</p>
         <p>
           ชั้น 6 อาคารตลาดหลักทรัพย์แห่งประเทศไทย<br />
           93 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง<br />
           กรุงเทพมหานคร 10400
         </p>
-        <p>โทรศัพท์: 0 2009 9393</p>
-        <p>โทรสาร: 0 2247 7479</p>
-        <p>Website: <Link to="/" className="underline text-blue-500">www.tfpa.or.th</Link></p>
+        <p>
+          โทรศัพท์: 0 2009 9393<br />
+          โทรสาร: 0 2247 7479<br />
+          Website: <Link to="/" className="underline text-blue-500">www.tfpa.or.th</Link>
+        </p>
       </div>
     </section>
   );
@@ -36,25 +34,32 @@ function TFPAInfo() {
 
 function GoogleMap() {
   return (
-    <div className="w-full h-[400px] rounded-xl overflow-hidden">
-      <h2 className="text-xl font-semibold border-b pb-2 my-2">Google Map</h2>
-      <iframe
-        src="https://www.google.com/maps?q=The+Stock+Exchange+of+Thailand&output=embed"
-        className="w-full h-full border-0"
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
-    </div>
+    <section className="space-y-6">
+      <div className="w-full h-[500px] rounded-xl overflow-hidden">
+        <h2 className="text-xl font-semibold border-b pb-2 my-2">Google Map</h2>
+        <iframe
+          src="https://www.google.com/maps?q=The+Stock+Exchange+of+Thailand&output=embed"
+          className="w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+    </section>
   );
 }
 
 
+// TODO: edit into pic
 function InfographicMap() {
   return (
     <section>
       <h2 className="text-xl font-semibold border-b pb-2 my-2">วิธีเดินทาง</h2>
-      <img src={map} alt="How to go to TFPA" className="mx-auto object-contain" />
-      <p className="bg-red-300">รถไฟฟ้าใต้ดิน (MRT) สถานีศูนย์วัฒนธรรม ทางออก 3</p>
+      <p className="my-4"><b>รถไฟฟ้าใต้ดิน (MRT):</b> สถานีศูนย์วัฒนธรรม ทางออก 3</p>
+
+      <p className="text-xs text-gray-500">แผนที่การเดินทางมายังสมาคมฯ</p>
+      <div className="border border-gray-300">
+        <img src={map} alt="How to go to TFPA" className="mx-auto object-contain" />
+      </div>
     </section>
   );
 }
@@ -91,7 +96,6 @@ function ContactSection() {
             อีเมล:  tfpa@tfpa.or.th
           </p>
         </div>
-
     </section>
   );
 }
@@ -157,7 +161,7 @@ function ReportSection() {
           โทรศัพท์: 0 2009 9393
         </p>
       </div>
-      
+
     </section>
   );
 }
