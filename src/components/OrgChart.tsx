@@ -1,30 +1,72 @@
 import { useState } from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
 
-import wirot_tangjareon from "../assets/people/wirot_tangjareon.jpg";
-import teeranat_rujimetapas from "../assets/people/teeranat_rujimetapas.jpg";
-import umapan_jareonying from "../assets/people/umapan_jareonying.jpg";
-import tharisa_chaisunthornyothin from "../assets/people/tharisa_chaisunthornyothin.jpg";
-import nuttapong_apinungul from "../assets/people/nuttapong_apinungul.jpg";
-import wawta_prachmethegul from "../assets/people/wawta_prachmethegul.jpg";
-import chonratee_potrotnanggul from "../assets/people/chonratee_potrotnanggul.jpg";
-import thanawat_sitiwattanagul from "../assets/people/thanawat_sitiwattanagul.jpg";
-import narumul_bunsnong from "../assets/people/narumul_bunsnong.png";
+
+const rawImages = import.meta.glob<string>("../assets/people/*.jpg", {
+  eager: true,
+  import: "default"
+});
 
 
+const peopleImages: Record<string, string> = Object.fromEntries(
+  Object.entries(rawImages).map(([path, img]) => {
+    const name = path.split("/").pop()?.replace(".jpg", "")!;
+    return [name, img];
+  })
+);
 
-type Member = {
+
+type Person = {
   name: string;
-  role: string;
   image: string;
 };
 
+type Input = Record<string, string>;
+
+export function makePeople(input: Input): Record<string, Person> {
+  return Object.fromEntries(
+    Object.entries(input).map(([key, name]) => [
+      key,
+      {
+        name,
+        image: peopleImages[key],
+      },
+    ])
+  );
+}
+
+// usage
+const people = makePeople({
+  wirot_tangjareon: "นายวิโรจน์ ตั้งเจริญ",
+  teeranat_rujimetapas: "นายธีรนาถ รุจิเมธาภาส",
+  umapan_jareonying: "นางสาวอุมาพันธุ์ เจริญยิ่ง",
+  tharisa_chaisunthornyothin: "นางสาวธริศา ชัยสุนทรโยธิน",
+  nuttapong_apinungul: "นายณัฐพงษ์ อภินันท์กูล",
+  wawta_prachmethegul: "นางสาวแววตา ปราชญ์เมธีกุล",
+  chonratee_potrotnanggul: "นายชลธี พรโรจนางกูร",
+  thanawat_sitiwattanagul: "ผศ.ดร. ธนาวัฒน์ สิริวัฒน์ธนกุล",
+  narumul_bunsnong: "นางสาวนฤมล บุญสนอง",
+  nippich_govitvinichganon: "นายนิพพิชฌน์ โกวิทวณิชกานนท์",
+  sagow_samrankong: "นางสาวสกาว สำราญคง",
+  somjin_sornpaisarn: "ดร.สมจินต์ ศรไพศาล",
+  samra_lumsum: "นายสาระ ล่ำซำ",
+  sugit_udomsirigul: "นายสุกิจ อุดมศิริกุล",
+  seksan_towiwat: "นายเสกสรร โตวิวัฒน์",
+});
+
+
+type PersonKey = keyof typeof people;
+
+
+type Member = {
+  person: PersonKey;
+  role: string;
+};
 
 type MemberLevel = {
   label?: string;     // optional (e.g. "Vice Presidents")
   members: Member[];
 };
-
 
 type Committee = {
   id: string;
@@ -44,62 +86,70 @@ type ModalProps = {
 };
 
 
-// TODO put down ids, and members
+// TODO put members
 const org: Committee = {
   id: "main",
   title: "คณะกรรมการสมาคม",
   levels: [
     {
-      label: "นายกสมาคม",
+      // label: "นายกสมาคม",
       members: [
-        { name: "นายวิโรจน์ ตั้งเจริญ", role: "นายกสมาคม", image: wirot_tangjareon }
+        {person: "wirot_tangjareon", role: "นายกสมาคม"}
       ]
     },
     {
-      label: "อุปนายก",
+      // label: "อุปนายก",
       members: [
-        { name: "นายธีรนาถ รุจิเมธาภาส", role: "อุปนายก", image: teeranat_rujimetapas },
-        { name: "นางสาวอุมาพันธุ์ เจริญยิ่ง", role: "อุปนายก", image: umapan_jareonying }
+        { person: 'teeranat_rujimetapas', role: "อุปนายก" },
+        { person: 'umapan_jareonying', role: "อุปนายก" }
       ]
     },
     {
       members: [
-        { name: "นางสาวธริศา ชัยสุนทรโยธิน", role: "เหรัญญิก", image: tharisa_chaisunthornyothin },
-        { name: "นายณัฐพงษ์ อภินันท์กูล", role: "เลขาธิการ", image: nuttapong_apinungul },
-        { name: "นางสาวแววตา ปราชญ์เมธีกุล", role: "นายทะเบียน", image: wawta_prachmethegul },
-        { name: "นายชลธี พรโรจนางกูร", role: "กรรมการ", image: chonratee_potrotnanggul },
-        { name: "ผศ.ดร. ธนาวัฒน์ สิริวัฒน์ธนกุล", role: "กรรมการ", image: thanawat_sitiwattanagul },
-        { name: "นางสาวนฤมล บุญสนอง", role: "กรรมการ", image: narumul_bunsnong },
-        // add more
+        { person: "tharisa_chaisunthornyothin", role: "เหรัญญิก" },
+        { person: "nuttapong_apinungul", role: "เลขาธิการ" },
+        { person: "wawta_prachmethegul", role: "นายทะเบียน" },
+
+        { person: "chonratee_potrotnanggul", role: "กรรมการ" },
+        { person: "thanawat_sitiwattanagul", role: "กรรมการ" },
+        { person: "narumul_bunsnong", role: "กรรมการ" },
+        
+        { person: "nippich_govitvinichganon", role: "กรรมการ" },
+        { person: "sagow_samrankong", role: "กรรมการ" },
+        { person: "somjin_sornpaisarn", role: "กรรมการ" },
+
+        { person: "samra_lumsum", role: "กรรมการ" },
+        { person: "sugit_udomsirigul", role: "กรรมการ" },
+        { person: "seksan_towiwat", role: "กรรมการ" },
       ]
     }
   ],
   children: [
     {
-      id: "",
+      id: "appeals",
       title: "คณะกรรมการอุทธรณ์",
       levels: [],
       children: []
     },
     {
-      id: "",
+      id: "professional_standards",
       title: "คณะกรรมการมาตรฐานวิชาชีพ",
       levels: [],
       children: [
         {
-          id: "",
+          id: "sub_educational_standards",
           title: "คณะกรรมการมาตรฐานการศึกษา",
           levels: [],
           children: []
         },
         {
-          id: "",
+          id: "sub_auditing_standards",
           title: "คณะอนุกรรมการมาตรฐานการสอบ",
           levels: [],
           children: []
         },
         {
-          id: "",
+          id: "sub_work_standards",
           title: "คณะอนุกรรมการมาตรฐานประสบการณ์การทำงานและจรรยาบรรณ",
           levels: [],
           children: []
@@ -107,18 +157,18 @@ const org: Committee = {
       ]
     },
     {
-      id: "",
+      id: "marketing_and_business",
       title: "คณะกรรมการการตลาดและพัฒนาธุรกิจ",
       levels: [],
       children: [
         {
-          id: "",
+          id: "sub_marketing",
           title: "คณะอนุกรรมการการตลาด",
           levels: [],
           children: []
         },
         {
-          id: "",
+          id: "sub_business",
           title: "คณะอนุกรรมการพัฒนาธุรกิจ",
           levels: [],
           children: []
@@ -163,16 +213,17 @@ export default function OrgChart() {
 }
 
 function MemberCard({ m, large = false }: { m: Member; large?: boolean }) {
+  const p = people[m.person];
   return (
     <div className="text-center">
       <img
-        src={m.image}
-        alt={m.name}
+        src={p.image}
+        alt={p.name}
         className={`mx-auto object-cover rounded-lg ${
           large ? "w-32 h-32" : "w-24 h-24"
         }`}
       />
-      <p className="mt-2 font-medium">{m.name}</p>
+      <p className="mt-2 font-medium">{p.name}</p>
       <p className="text-sm text-gray-500">{m.role}</p>
     </div>
   );
@@ -190,7 +241,7 @@ function Modal({ node, onClose }: ModalProps) {
           {node.levels?.map((level, i) => (
             <div key={i} className="flex justify-center gap-8 flex-wrap">
               {level.members.map((m) => (
-                <MemberCard key={m.name} m={m} large={i === 0} />
+                <MemberCard key={people[m.person].name} m={m} large={i === 0} />
               ))}
             </div>
           ))}
