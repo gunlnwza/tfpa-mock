@@ -19,7 +19,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 
 // About
-import Overview from "../pages/about/Overview";
+import Overview from "../pages/Overview";
 
 // CFP
 import Types from "../pages/cfp/Types";
@@ -49,10 +49,11 @@ import Entities from "../pages/training/Entities";
 import Contact from "../pages/Contact";
 
 // Login
-import Login from "../pages/login";
+import Login from "../pages/Login";
 
-// Privacy
-import PrivacyPolicy from "../pages/PrivacyPolicy";
+// Legal
+import ByLaws from "../pages/legal/ByLaws";
+import PrivacyPolicy from "../pages/legal/PrivacyPolicy";
 
 // Sitemap
 import Sitemap from "../pages/Sitemap";
@@ -98,6 +99,7 @@ export default function AppRouter() {
 
         {/* Footer */}
         <Route path="/privacy_policy" element={<PrivacyPolicy />}/>
+        <Route path="/by_raws" element={<ByLaws />}/>
         <Route path="/sitemap" element={<Sitemap />}/>
       </Routes>
     </BrowserRouter>

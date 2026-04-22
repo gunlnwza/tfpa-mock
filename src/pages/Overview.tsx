@@ -1,6 +1,6 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import OrgChart from "../../components/OrgChart";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import OrgChart from "../components/OrgChart";
 
 export default function Overview() {
   return (
@@ -25,7 +25,7 @@ export default function Overview() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold border-b pb-2">ประวัติสมาคม</h2>
           <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-            สมาคมนักวางแผนการเงินไทย (Thai Financial Planners Association – TFPA) เป็นองค์กรกำกับดูแลตนเองที่ไม่แสวงหากำไร
+            สมาคมนักวางแผนการเงินไทย (Thai Financial Planners Association - TFPA) เป็นองค์กรกำกับดูแลตนเองที่ไม่แสวงหากำไร
             จัดตั้งขึ้นตามพระราชบัญญัติสมาคมการค้า พ.ศ. 2509 เมื่อวันที่ 26 กันยายน พ.ศ. 2550 ซึ่งมีผู้ร่วมก่อตั้งทั้งในส่วนของบุคคลและนิติบุคคล จำนวน 39 ราย ประกอบด้วย
             ธนาคารพาณิชย์ บริษัทประกันชีวิต บริษัทหลักทรัพย์ บริษัทหลักทรัพย์จัดการกองทุน กองทุนบำเหน็จบำนาญข้าราชการ และตลาดหลักทรัพย์แห่งประเทศไทย
             โดยเล็งเห็นประโยชน์ของบริการวางแผนการเงินที่จะมีต่อประชาชนและอุตสากรรมการเงินของประเทศไทยเป็นสำคัญ
