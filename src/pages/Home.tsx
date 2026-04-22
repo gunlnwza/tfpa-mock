@@ -60,29 +60,17 @@ const corporate_members = [
 ];
 
 
-/*
-# Header
-About — Overview, Board & Staff, Rules & Regulations, Annual Reports
-CFP Certification — Member Types & Benefits, How to Get Certified, Maintain & Renew, FAQ
-Resources — Documents, News, Announcements, Videos, Alliance Companies
-Find a Financial Advisor — What is Financial Planning, Search for an Advisor, Contact
-Training — For Students, For Practitioners, For Training Schools, For Legal Entities
-DONE Contact — Address, Staff Directory
-*/
-export default function Home() {
+function Hero() {
   return (
     <div>
-      <Header />
-
-      {/* Primary CTAs */}
       <section className="py-50 text-center">
-      <h1 className="text-4xl font-bold mb-4">
-        Financial Planning Starts Here
-      </h1>
+        <h1 className="text-4xl font-bold mb-4">
+          Financial Planning Starts Here
+        </h1>
 
-      <p className="text-gray-600">
-        Build a career or find expert advice.
-      </p>
+        <p className="text-gray-600">
+          Build a career or find expert advice.
+        </p>
       </section>
 
       <section className="grid md:grid-cols-2 gap-6 px-8">
@@ -100,29 +88,48 @@ export default function Home() {
           Find a Financial Advisor
         </Link>
       </section>
+    </div>
+  );
+}
 
-      {/* Latest News */}
-      <section className="py-5">
-        <h2 className="p-2 text-center">Latest News</h2>
-        <div className="h-50 grid md:grid-cols-3 gap-6 px-8">
-          <div className="p-6 border rounded-xl hover:shadow">News Card 1</div>
-          <div className="p-6 border rounded-xl hover:shadow">News Card 2</div>
-          <div className="p-6 border rounded-xl hover:shadow">News Card 3</div>
-        </div>
-      </section>
 
-      {/* Corporate Members */}
-      <section className="py-5">
-        <h2 className="text-center">Corporate Members</h2>
-        <div className="grid grid-cols-13 gap-6">
-          {corporate_members.map((c) => (
-            <a key={c.name} href={c.url} target="_blank" rel="noopener noreferrer">
-              <img src={c.logo} alt={c.name} className="mx-auto h-12 object-contain" />
-            </a>
-          ))}
-        </div>
-      </section>
- 
+function News() {
+  return (
+    <section className="py-5">
+      <h2 className="p-2 text-center">Latest News</h2>
+      <div className="h-50 grid md:grid-cols-3 gap-6 px-8">
+        <div className="p-6 border rounded-xl hover:shadow">News Card 1</div>
+        <div className="p-6 border rounded-xl hover:shadow">News Card 2</div>
+        <div className="p-6 border rounded-xl hover:shadow">News Card 3</div>
+      </div>
+    </section>
+  );
+}
+
+
+function CorporateMembers() {
+  return (
+    <section className="py-5">
+      <h2 className="text-center">Corporate Members</h2>
+      <div className="grid grid-cols-13 gap-6">
+        {corporate_members.map((c) => (
+          <a key={c.name} href={c.url} target="_blank" rel="noopener noreferrer">
+            <img src={c.logo} alt={c.name} className="mx-auto h-12 object-contain" />
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
+export default function Home() {
+  return (
+    <div>
+      <Header />
+      <Hero />
+      <News />
+      <CorporateMembers />
       <Footer />
     </div>
   );
