@@ -64,33 +64,34 @@ function ContactSection() {
   return (
     <section className="space-y-6 whitespace-pre-line">
       <h2 className="text-xl font-semibold border-b pb-2 my-2">Department</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-6 border border-black rounded-xl hover:shadow">
-          <p className="whitespace-pre-line">
-            <p className="text-xl">การอบรมและการสอบ</p>
-            {`คุณวนิดา  จรุงกิจกุล
-            โทรศัพท์:  0 2009 9393 ต่อ 3731
-            อีเมล:  tfpaexam@tfpa.or.th`}
+
+        <div className="border border-black rounded-xl p-4 text-sm leading-relaxed">
+          <p className="font-semibold">การอบรมและการสอบ</p>
+          <p>
+            คุณวนิดา  จรุงกิจกุล<br />
+            โทรศัพท์:  0 2009 9393 ต่อ 3731<br />
+            อีเมล:  tfpaexam@tfpa.or.th
           </p>
         </div>
 
-        <div className="p-6 border border-black rounded-xl hover:shadow">
-          <p className="whitespace-pre-line">
-            <p className="text-xl">การยื่นขึ้นทะเบียนคุณวุฒิวิชาชีพและการต่ออายุคุณวุฒิวิชาชีพ</p>
+        <div className="border border-black rounded-xl p-4 text-sm leading-relaxed">
+          <p className="font-semibold">การยื่นขึ้นทะเบียนคุณวุฒิวิชาชีพและการต่ออายุคุณวุฒิวิชาชีพ</p>
+          <p>
             คุณสุรีรัตน์  ทักขิณ<br />
             โทรศัพท์:  0 2009 9393 ต่อ 3727<br />
             อีเมล:  sureerat@tfpa.or.th
           </p>
         </div>
-        <div className="p-6 border border-black rounded-xl hover:shadow">
-          <p className="whitespace-pre-line">
-            <p className="text-xl">การเงิน</p>
-              คุณทัดดาว ลิขิตกิติกุล<br />
-              โทรศัพท์:  0 2009 9393 ต่อ 3729<br />
-              อีเมล:  tfpa@tfpa.or.th
+
+        <div className="border border-black rounded-xl p-4 text-sm leading-relaxed">
+          <p className="font-semibold">การเงิน</p>
+          <p>
+            คุณทัดดาว ลิขิตกิติกุล<br />
+            โทรศัพท์:  0 2009 9393 ต่อ 3729<br />
+            อีเมล:  tfpa@tfpa.or.th
           </p>
         </div>
-      </div>
+
     </section>
   );
 }
@@ -131,7 +132,6 @@ function ReportSection() {
             เลขที่ 93 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพฯ 10400
           </p>
         </div>
-
         <div className="space-y-2">
           <p className="font-semibold text-sm">เอกสารประกอบการแจ้งข้อร้องเรียน</p>
           <ul className="list-disc pl-5 text-sm space-y-1">
@@ -157,6 +157,7 @@ function ReportSection() {
           โทรศัพท์: 0 2009 9393
         </p>
       </div>
+      
     </section>
   );
 }
