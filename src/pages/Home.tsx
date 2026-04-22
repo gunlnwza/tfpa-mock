@@ -67,7 +67,7 @@ CFP Certification — Member Types & Benefits, How to Get Certified, Maintain & 
 Resources — Documents, News, Announcements, Videos, Alliance Companies
 Find a Financial Advisor — What is Financial Planning, Search for an Advisor, Contact
 Training — For Students, For Practitioners, For Training Schools, For Legal Entities
-Contact — Address, Staff Directory
+DONE Contact — Address, Staff Directory
 */
 export default function Home() {
   return (
