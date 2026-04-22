@@ -229,15 +229,19 @@ function MemberCard({ m, large = false }: { m: Member; large?: boolean }) {
   );
 }
 
+
 function Modal({ node, onClose }: ModalProps) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-xl max-w-2xl w-full">
-        <h2 className="text-xl font-bold mb-6 text-center">
+      <div className="bg-white rounded-xl max-w-5xl w-full max-h-[80vh] flex flex-col">
+        
+        {/* Header */}
+        <h2 className="text-xl font-bold p-6 pb-0 text-center">
           {node.title}
         </h2>
 
-        <div className="space-y-8">
+        {/* Scrollable content */}
+        <div className="p-6 space-y-8 overflow-y-auto">
           {node.levels?.map((level, i) => (
             <div key={i} className="flex justify-center gap-8 flex-wrap">
               {level.members.map((m) => (
@@ -247,12 +251,14 @@ function Modal({ node, onClose }: ModalProps) {
           ))}
         </div>
 
+        {/* Footer */}
         <button
           onClick={onClose}
-          className="mt-6 block mx-auto text-sm text-blue-600"
+          className="p-4 text-sm text-blue-600"
         >
           Close
         </button>
+
       </div>
     </div>
   );
