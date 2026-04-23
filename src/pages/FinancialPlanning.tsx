@@ -1,15 +1,20 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Page, PageHeader } from "../layouts/Page"
+import { Section } from "../layouts/Sections"
 
 
 export default function FinancialPlanning() {
   return (
-    <div>
-      <Header />
-      รู้จักกับการวางแผนการเงิน
-มุมความรู้การวางแผนการเงิน
-ติดต่อขอรับบริการวางแผนการเงิน CTA
-      <Footer />
-    </div>
+    <Page>
+      <PageHeader title="วางแผนการเงิน" />
+      <Section title="รู้จักกับการวางแผนการเงิน">
+        .
+      </Section>
+      <Section title="มุมความรู้การวางแผนการเงิน">
+        .
+      </Section>
+      <Section title="ติดต่อขอรับบริการวางแผนการเงิน CTA">
+        .
+      </Section>
+    </Page>
   );
 }

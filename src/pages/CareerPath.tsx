@@ -1,15 +1,20 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Page, PageHeader } from "../layouts/Page"
+import { Section } from "../layouts/Sections"
 
 
 export default function CareerPath() {
   return (
-    <div>
-      <Header />
-      การขึ้นทะเบียนคุณวุฒิวิชาชีพ
-สมัครอบรม
-ตารางสอบและสมัครสอบ
-      <Footer />
-    </div>
+    <Page>
+      <PageHeader title="เส้นทางอาชีพ" />
+      <Section title="การขึ้นทะเบียนคุณวุฒิวิชาชีพ">
+        .
+      </Section>
+      <Section title="สมัครอบรม">
+        .
+      </Section>
+      <Section title="ตารางสอบและสมัครสอบ">
+        .
+      </Section>
+    </Page>
   );
 }

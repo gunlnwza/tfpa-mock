@@ -1,11 +1,9 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import OrgChart from "../../components/OrgChart";
 
-import { Section, SubSectionUnorderedList, SubSectionParagraph } from "../../layouts/sections";
-
 import nsf_logo from "../../assets/logos/nsf.png"
-
+import { Page, PageHeader } from "../../layouts/Page";
+import { Section } from "../../layouts/Sections";
+import { SubSectionUnorderedList } from "../../layouts/SubSections";
 
 function Mission() {
   return (
@@ -24,7 +22,7 @@ function Mission() {
 function History() {
   return (
     <Section title="ประวัติสมาคม">
-      <SubSectionParagraph
+      <SubSectionUnorderedList
         items={[
           "สมาคมนักวางแผนการเงินไทย (Thai Financial Planners Association - TFPA) เป็นองค์กรกำกับดูแลตนเองที่ไม่แสวงหากำไร จัดตั้งขึ้นตามพระราชบัญญัติสมาคมการค้า พ.ศ. 2509 เมื่อวันที่ 26 กันยายน พ.ศ. 2550 ซึ่งมีผู้ร่วมก่อตั้งทั้งในส่วนของบุคคลและนิติบุคคล จำนวน 39 ราย ประกอบด้วย ธนาคารพาณิชย์ บริษัทประกันชีวิต บริษัทหลักทรัพย์ บริษัทหลักทรัพย์จัดการกองทุน กองทุนบำเหน็จบำนาญข้าราชการ และตลาดหลักทรัพย์แห่งประเทศไทย โดยเล็งเห็นประโยชน์ของบริการวางแผนการเงินที่จะมีต่อประชาชนและอุตสากรรมการเงินของประเทศไทยเป็นสำคัญ",
           "ในปี 2550 สมาคมฯ ได้เข้าร่วมเป็นสมาชิกของ Financial Planning Standards Board Ltd. (FPSB) นับเป็นสมาชิกลำดับที่ 22 จากสมาชิกรวม 26 ประเทศทั่วโลก โดยมุ่งส่งเสริมให้ผู้ที่ได้รับคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP และคุณวุฒิวิชาชีพที่ปรึกษาการเงิน AFPT ซึ่งถือเป็นผู้ที่มีความรู้ ทักษะ ความสามารถ และมีจรรยาบรรณในการประกอบวิชาชีพได้รับการยอมรับและมีความน่าเชื่อถือในระดับสากล รวมทั้งเป็นที่รู้จักและยอมรับในอุตสาหกรรมการเงินของประเทศไทยอย่างกว้างขวาง",
@@ -100,17 +98,13 @@ function Alliance() {
 
 export default function Overview() {
   return (
-    <div>
-      <Header />
-      <section className="p-4">
-        <h1 className="text-xl mb-10 font-bold">เกี่ยวกับสมาคม</h1>
-        <Mission />
-        <History />
-        <Founders />
-        <OrganizationStructure />
-        <Alliance />
-      </section>
-      <Footer />
-    </div>
+    <Page>
+      <PageHeader title="เกี่ยวกับสมาคม" />
+      <Mission />
+      <History />
+      <Founders />
+      <OrganizationStructure />
+      <Alliance />
+    </Page>
   );
 }

@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-
 import map from "../../assets/how_to_go_to_tfpa.png"
+import { Page, PageHeader } from "../../layouts/Page";
 
 /*
 1. 📍 Location (header block): instant usefulness
@@ -170,19 +168,17 @@ function ReportSection() {
 }
 
 
+//<div className="max-w-5xl mx-auto px-6 py-10 space-y-10">
+//<h1 className="text-3xl font-bold"></h1>
 export default function Contact() {
   return (
-    <div>
-      <Header />
-      <div className="max-w-5xl mx-auto px-6 py-10 space-y-10">
-        <h1 className="text-3xl font-bold">Contact</h1>
-        <TFPAInfo />
-        <GoogleMap />
-        <InfographicMap />
-        <ContactSection />
-        <ReportSection />
-      </div>
-      <Footer />
-    </div>
+    <Page>
+      <PageHeader title="ติดต่อ" />
+      <TFPAInfo />
+      <GoogleMap />
+      <InfographicMap />
+      <ContactSection />
+      <ReportSection />
+    </Page>
   );
 }

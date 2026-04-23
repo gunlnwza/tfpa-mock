@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Page } from "../layouts/Page";
 import CorporateMembers from "../components/CorporateMembers";
-
 
 /*
 # Homepage
@@ -66,12 +64,10 @@ function News() {
 
 export default function Home() {
   return (
-    <div>
-      <Header />
+    <Page>
       <Hero />
       <News />
       <CorporateMembers />
-      <Footer />
-    </div>
+    </Page>
   );
 }

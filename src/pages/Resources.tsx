@@ -1,12 +1,12 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Page, PageHeader } from "../layouts/Page";
+import { Section } from "../layouts/Sections"
 
 
 export default function Resources() {
   return (
-    <div>
-      <Header />
-      <Footer />
-    </div>
+    <Page>
+      <PageHeader title="แหล่งข้อมูล"/>
+      
+    </Page>
   );
 }

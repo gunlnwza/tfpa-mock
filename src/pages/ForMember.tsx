@@ -1,13 +1,10 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Page, PageHeader } from "../layouts/Page"
 
 
 export default function ForMember() {
   return (
-    <div>
-      <Header />
-      info and stuffs
-      <Footer />
-    </div>
+    <Page>
+      <PageHeader title="สำหรับสมาชิก" />
+    </Page>
   );
 }

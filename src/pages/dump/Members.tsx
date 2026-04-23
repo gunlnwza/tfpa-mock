@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-import { Section, SubSection } from "../../layouts/sections";
+// import { Section, SubSection } from "../../layouts/Sections";
 
 /*
 info dump for now, likely will need to split and organize
