@@ -2,8 +2,7 @@ import OrgChart from "../../components/OrgChart";
 
 import nsf_logo from "../../assets/logos/nsf.png"
 import { Page, PageHeader } from "../../layouts/Page";
-import { Section } from "../../layouts/Sections";
-import { SubSectionUnorderedList } from "../../layouts/SubSections";
+import { Section } from "../../layouts/Section";
 
 function Mission() {
   return (

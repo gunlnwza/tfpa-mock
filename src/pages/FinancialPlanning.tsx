@@ -1,5 +1,5 @@
 import { Page, PageHeader } from "../layouts/Page"
-import { Section } from "../layouts/Sections"
+import { Section } from "../layouts/Section"
 
 
 export default function FinancialPlanning() {
