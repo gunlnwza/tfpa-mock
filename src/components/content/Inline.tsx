@@ -16,5 +16,8 @@ export default function RenderInline( { inline }: { inline: Inline } ) {
 
     case "break":
       return (<br />);
+
+    case "bold":
+      return <b>{inline.content}</b>;
   }
 }

@@ -38,9 +38,9 @@ const reportBlocks: Block[] = [
   {
     type: "list",
     items: [  
-      [{ type: "text", content: "แบบฟอร์มออนไลน์: " }, { type: "link", href: "https://www.surveymonkey.com/r/D2Y9VMQ", content: "ร้องเรียน" }],
-      [{ type: "text", content: "อีเมล: info@tfpa.or.th" }],
-      [{ type: "text", content: "โทรศัพท์: 0 2009 9393" }]
+      { content: [{ type: "text", content: "แบบฟอร์มออนไลน์: " }, { type: "link", href: "https://www.surveymonkey.com/r/D2Y9VMQ", content: "ร้องเรียน" }] },
+      { content: [{ type: "text", content: "อีเมล: info@tfpa.or.th" }] },
+      { content: [{ type: "text", content: "โทรศัพท์: 0 2009 9393" }] }
     ]
   },
 
@@ -72,12 +72,12 @@ const reportBlocks: Block[] = [
   {
     type: "list",
     items: [
-      [{ type: "text", content: "จดหมายแจ้งข้อร้องเรียนเป็นลายลักษณ์อักษร" }],
-      [{ type: "text", content: "ระบุชื่อและที่อยู่ของผู้ร้องเรียน" }],
-      [{ type: "text", content: "ระบุชื่อนักวางแผนการเงินที่มีการกระทำที่อาจเป็นการฝ่าฝืนจรรยาบรรณ" }],
-      [{ type: "text", content: "ระบุรายละเอียดการกระทำที่อาจเป็นการฝ่าฝืนจรรยาบรรณ พร้อมหลักฐาน" }],
-      [{ type: "text", content: "สัญญาการให้บริการการวางแผนการเงิน (ถ้ามี)" }],
-      [{ type: "text", content: "ลงลายมือชื่อของผู้ร้องเรียนในจดหมายร้องเรียน" }],
+      { content: [{ type: "text", content: "จดหมายแจ้งข้อร้องเรียนเป็นลายลักษณ์อักษร" }] },
+      { content: [{ type: "text", content: "ระบุชื่อและที่อยู่ของผู้ร้องเรียน" }] },
+      { content: [{ type: "text", content: "ระบุชื่อนักวางแผนการเงินที่มีการกระทำที่อาจเป็นการฝ่าฝืนจรรยาบรรณ" }] },
+      { content: [{ type: "text", content: "ระบุรายละเอียดการกระทำที่อาจเป็นการฝ่าฝืนจรรยาบรรณ พร้อมหลักฐาน" }] },
+      { content: [{ type: "text", content: "สัญญาการให้บริการการวางแผนการเงิน (ถ้ามี)" }] },
+      { content: [{ type: "text", content: "ลงลายมือชื่อของผู้ร้องเรียนในจดหมายร้องเรียน" }] },
     ]
   },
 

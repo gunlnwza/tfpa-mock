@@ -1,5 +1,3 @@
-
-
 import RenderDivider from "./Divider";
 import RenderHeading from "./Heading";
 import RenderList from "./List";
@@ -21,6 +19,7 @@ export default function RenderBlocks({ blocks }: { blocks: Block[] }) {
           case "text":
           case "link":
           case "break":
+          case "bold":
             return <RenderInline inline={block} />;
           case "paragraph":
             return <RenderParagraph paragraph={block} />;
