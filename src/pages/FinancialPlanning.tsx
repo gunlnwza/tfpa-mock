@@ -2,7 +2,6 @@ import { Page, PageHeader } from "../layouts/Page"
 import { Section } from "../layouts/Section"
 import type { Block } from "../components/content/types";
 import RenderBlocks from "../components/content/Blocks";
-import { Link } from "react-router-dom";
 import Button from "../components/Button";
 
 const whatIsFinancialPlanning: Block[] = [
@@ -207,13 +206,13 @@ export default function FinancialPlanning() {
         <RenderBlocks blocks={financialPlannerInfoObligations}/>
       </Section>
 
-      <Section title="มุมความรู้การวางแผนการเงิน">
-        .
-      </Section>
-
       <div className="flex justify-center my-4">
         <Button to="/find_planner">ติดต่อขอรับบริการวางแผนการเงิน</Button>
       </div>
+
+      <Section title="มุมความรู้การวางแผนการเงิน">
+        .
+      </Section>
     </Page>
   );
 }
