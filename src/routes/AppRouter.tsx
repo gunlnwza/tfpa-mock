@@ -14,9 +14,9 @@ import Home from "../pages/Home";
 import About from "../pages/info/About";
 import FinancialPlanning from "../pages/FinancialPlanning";
 import FindPlanner from "../pages/FindPlanner";
+import CareerPath from "../pages/CareerPath";
+import ForMember from "../pages/ForMember";
 import Contact from "../pages/info/Contact";
-import BecomeMember from "../pages/BecomeMember";
-
 
 export default function AppRouter() {
   return (
@@ -26,7 +26,8 @@ export default function AppRouter() {
         <Route path="/about" element={<About />} />
         <Route path="/financial_planning" element={<FinancialPlanning />} />
         <Route path="/find_planner" element={<FindPlanner />} />
-        <Route path="/become_member" element={<BecomeMember />} />
+        <Route path="/career_path" element={<CareerPath />} />
+        <Route path="/become_member" element={<ForMember />} />
         <Route path="/contact" element={<Contact />} />
         {/* "/login" links to real login site */}
       </Routes>

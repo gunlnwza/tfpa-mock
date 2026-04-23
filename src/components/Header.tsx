@@ -30,10 +30,11 @@ export default function Header() {
         <Link to="/" className="hover:text-blue-600">หน้าหลัก</Link>
         <Link to="/about" className="hover:text-blue-600">เกี่ยวกับ</Link>
         <Link to="/financial_planning" className="hover:text-blue-600">วางแผนการเงิน</Link>
-        <Link to="/find_planner" className="hover:text-blue-600">รับบริการวางแผนการเงิน</Link>
-        <Link to="/become_member" className="hover:text-blue-600">สมาชิก</Link>
+        <Link to="/find_planner" className="hover:text-blue-600">รับบริการ</Link>
+        <Link to="/career_path" className="hover:text-blue-600">เส้นทางอาชีพ</Link>
+        <Link to="/become_member" className="hover:text-blue-600">สำหรับสมาชิก</Link>
         <Link to="/contact" className="hover:text-blue-600">ติดต่อ</Link>
-        <a href="https://member.tfpa.or.th/UserLoginNew.aspx" className="hover:text-blue-600">Login</a>
+        <a href="https://member.tfpa.or.th/UserLoginNew.aspx" className="text-white hover:text-blue-200 bg-blue-700">Login</a>
         
 
         {/* <Link to="/cfp/types" className="hover:text-blue-600">CFP Certification</Link> */}

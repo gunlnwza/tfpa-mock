@@ -1,40 +1,12 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+
+import { Section, SubSection } from "../../layouts/sections";
 
 /*
 info dump for now, likely will need to split and organize
 */
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="m-10">
-      <h2 className="text-xl font-semibold border-b pb-2">{title}</h2>
-      {children}
-    </section>
-  );
-}
-
-
-function SubSection({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
-  return (
-    <div className="">
-      <h4 className="font-bold">{title}</h4>
-      <ul className="list-disc pl-6 space-y-2 text-gray-700 mt-2">
-        {items.map((item, i) => (
-          <li key={i} className="leading-relaxed">
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
 
 function NaturalPerson() {
