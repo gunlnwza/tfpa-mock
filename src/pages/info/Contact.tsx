@@ -70,9 +70,11 @@ function InfographicMap() {
 function StaffContactCardContents(contact: StaffContact): Block[] {
   return [
     { type: "heading", level: "h3", content: contact.responsibility },
-    { type: "paragraph", content: [{ type: "text", content: contact.staff_name }] },
-    { type: "paragraph", content: [{ type: "text", content: `โทรศัพท์: ${contact.telephone}` }] },
-    { type: "paragraph", content: [{ type: "text", content: `อีเมล: ${contact.email}` }] }
+    { type: "paragraph", content: [
+      { type: "text", content: contact.staff_name }, { type: "break" },
+      { type: "text", content: `โทรศัพท์: ${contact.telephone}` }, { type: "break" },
+      { type: "text", content: `อีเมล: ${contact.email}` }
+    ]}
   ];
 }
 
@@ -92,66 +94,78 @@ function ContactSection() {
 function ReportSection() {
   return (
     <Section title="ร้องเรียน">
-      <div className="space-y-2">
-        <h3 className="text-lg font-semibold">ร้องเรียนสมาคมนักวางแผนการเงินไทย</h3>
-        <p className="text-sm leading-relaxed">
-          ท่านสามารถแจ้งข้อร้องเรียนเกี่ยวกับการดำเนินงานของสมาคมฯ ผ่านช่องทางต่อไปนี้
-        </p>
-        <p className="text-sm">
-          แบบฟอร์มออนไลน์: <a href="https://www.surveymonkey.com/r/D2Y9VMQ" className="text-blue-500 underline">คลิก</a><br />
-          อีเมล: info@tfpa.or.th<br />
-          โทรศัพท์: 0 2009 9393
-        </p>
-      </div>
+      <RenderBlocks blocks={[
+        { type: "heading", level: "h3", content: "ร้องเรียนสมาคมนักวางแผนการเงินไทย" },
+        { 
+          type: "paragraph",
+          content: [{ type: "text", content: "ท่านสามารถแจ้งข้อร้องเรียนเกี่ยวกับการดำเนินงานของสมาคมฯ ผ่านช่องทางต่อไปนี้" }]
+        },
+        {
+          type: "list",
+          items: [  
+            [{ type: "text", content: "แบบฟอร์มออนไลน์: " }, { type: "link", href: "https://www.surveymonkey.com/r/D2Y9VMQ", content: "ร้องเรียน" }],
+            [{ type: "text", content: "อีเมล: info@tfpa.or.th" }],
+            [{ type: "text", content: "โทรศัพท์: 0 2009 9393" }]
+          ]
+        },
 
-      <div className="space-y-2">
-        <h3 className="text-lg font-semibold">
-          ร้องเรียนนักวางแผนการเงิน CFP/ที่ปรึกษาการเงิน AFPT
-        </h3>
-        <p className="text-sm leading-relaxed">
-          นักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT จะต้องปฏิบัติตาม “จรรยาบรรณและความรับผิดชอบในฐานะผู้ประกอบวิชาชีพวางแผนการเงิน” ซึ่งสะท้อนให้เห็นว่านักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT มุ่งมั่นที่จะปฏิบัติงานวางแผนการเงินให้ลูกค้าโดยอยู่บนพื้นฐานของแนวปฏิบัติ และจรรยาบรรณของนักวางแผนการเงิน
-        </p>
-        <p className="text-sm leading-relaxed">
-          สมาคมฯ ได้กำหนดกระบวนการพิจารณาความผิดทางวินัย กระบวนการอุทธรณ์ และการดำเนินการทางวินัย เพื่อใช้เป็นแนวปฏิบัติในกรณีที่พบว่านักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT กระทำใดๆ ที่อาจเป็นการฝ่าฝืนจรรยาบรรณดังกล่าว ท่านสามารถแจ้งข้อร้องเรียนเกี่ยวกับการให้บริการของนักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT ผ่านทางอีเมลที่ info@tfpa.or.th หรือทางจดหมายถึง 
-        </p>
-        <div className="border border-black rounded-xl p-4 text-sm leading-relaxed">
-          <p className="font-semibold">ผู้อำนวยการสมาคมนักวางแผนการเงินไทย</p>
-          <p>
-            สมาคมนักวางแผนการเงินไทย<br />
-            ชั้น 6 อาคารตลาดหลักทรัพย์แห่งประเทศไทย<br />
-            เลขที่ 93 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพฯ 10400
-          </p>
-        </div>
-        
-        <RenderBlocks blocks={[
-          // { type: "paragraph", content: "เอกสารประกอบการแจ้งข้อร้องเรียน" },
-          {
-            type: "list",
-            items: [
-              { text: "จดหมายแจ้งข้อร้องเรียนเป็นลายลักษณ์อักษร" },
-              { text: "ระบุชื่อและที่อยู่ของผู้ร้องเรียน" },
-              { text: "ระบุชื่อนักวางแผนการเงินที่มีการกระทำที่อาจเป็นการฝ่าฝืนจรรยาบรรณ" },
-              { text: "ระบุรายละเอียดการกระทำที่อาจเป็นการฝ่าฝืนจรรยาบรรณ พร้อมหลักฐาน" },
-              { text: "สัญญาการให้บริการการวางแผนการเงิน (ถ้ามี)" },
-              { text: "ลงลายมือชื่อของผู้ร้องเรียนในจดหมายร้องเรียน" }
-            ]
-          }
-        ]}/>
+        { type: "heading", level: "h3", content: "ร้องเรียนนักวางแผนการเงิน CFP/ที่ปรึกษาการเงิน AFPT" },
+        { 
+          type: "paragraph",
+          content: [{ type: "text", content: "นักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT จะต้องปฏิบัติตาม “จรรยาบรรณและความรับผิดชอบในฐานะผู้ประกอบวิชาชีพวางแผนการเงิน” ซึ่งสะท้อนให้เห็นว่านักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT มุ่งมั่นที่จะปฏิบัติงานวางแผนการเงินให้ลูกค้าโดยอยู่บนพื้นฐานของแนวปฏิบัติ และจรรยาบรรณของนักวางแผนการเงิน" }]
+        },
+        { 
+          type: "paragraph",
+          content: [{ type: "text", content: "สมาคมฯ ได้กำหนดกระบวนการพิจารณาความผิดทางวินัย กระบวนการอุทธรณ์ และการดำเนินการทางวินัย เพื่อใช้เป็นแนวปฏิบัติในกรณีที่พบว่านักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT กระทำใดๆ ที่อาจเป็นการฝ่าฝืนจรรยาบรรณดังกล่าว ท่านสามารถแจ้งข้อร้องเรียนเกี่ยวกับการให้บริการของนักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT ผ่านทางอีเมลที่ info@tfpa.or.th หรือทางจดหมายถึง" }]
+        },
+        {
+          type: "card",
+          blocks: [
+            { type: "heading", level: "h3", content: "ผู้อำนวยการสมาคมนักวางแผนการเงินไทย" },
+            { 
+              type: "paragraph",
+              content: [
+                { type: "text", content: "สมาคมนักวางแผนการเงินไทย" }, { type: "break"},
+                { type: "text", content: "ชั้น 6 อาคารตลาดหลักทรัพย์แห่งประเทศไทย" }, { type: "break"},
+                { type: "text", content: "เลขที่ 93 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพฯ 10400" }
+              ]
+            }
+          ]
+        },
 
-      </div>
+        { type: "heading", level: "h3", content: "เอกสารประกอบการแจ้งข้อร้องเรียน" },
+        {
+          type: "list",
+          items: [
+            [{ type: "text", content: "จดหมายแจ้งข้อร้องเรียนเป็นลายลักษณ์อักษร" }],
+            [{ type: "text", content: "ระบุชื่อและที่อยู่ของผู้ร้องเรียน" }],
+            [{ type: "text", content: "ระบุชื่อนักวางแผนการเงินที่มีการกระทำที่อาจเป็นการฝ่าฝืนจรรยาบรรณ" }],
+            [{ type: "text", content: "ระบุรายละเอียดการกระทำที่อาจเป็นการฝ่าฝืนจรรยาบรรณ พร้อมหลักฐาน" }],
+            [{ type: "text", content: "สัญญาการให้บริการการวางแผนการเงิน (ถ้ามี)" }],
+            [{ type: "text", content: "ลงลายมือชื่อของผู้ร้องเรียนในจดหมายร้องเรียน" }],
+          ]
+        },
 
-
-        <RenderBlocks blocks={[
-          { type: "heading", level: "h3", content: "ร้องเรียนการใช้เครื่องหมายรับรองคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP" },
-          // { type: "paragraph", content: "ท่านสามารถสอบถามข้อมูลการใช้เครื่องหมายรับรองคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP และเครื่องหมายรับรองคุณวุฒิวิชาชีพที่ปรึกษาการเงิน AFPT และแจ้งกรณีที่พบเห็นผู้นำเครื่องหมายดังกล่าวไปใช้อย่างไม่ถูกต้อง หรือละเมิดลิขสิทธิ์ได้ที่" },
-          // { type: "card", blocks: {
-
-          // }}
-        ]}/>
-        {/* <Card> */}
-          {/* <p className="text-sm">อีเมล: info@tfpa.or.th</p> */}
-          {/* <p className="text-sm">โทรศัพท์: 0 2009 9393</p> */}
-        {/* </Card> */}
+        { type: "heading", level: "h3", content: "" },
+        {
+          type: "paragraph",
+          content: [
+            { type: "text", content: "ท่านสามารถสอบถามข้อมูลการใช้เครื่องหมายรับรองคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP และเครื่องหมายรับรองคุณวุฒิวิชาชีพที่ปรึกษาการเงิน AFPT และแจ้งกรณีที่พบเห็นผู้นำเครื่องหมายดังกล่าวไปใช้อย่างไม่ถูกต้อง หรือละเมิดลิขสิทธิ์ได้ที่" }
+          ]
+        },
+        {
+          type: "card",
+          blocks: [
+            {
+              type: "paragraph",
+              content: [
+                { type: "text", content: "อีเมล: info@tfpa.or.th" }, { type: "break" },
+                { type: "text", content: "โทรศัพท์: 0 2009 9393" },
+              ]
+            }
+          ]
+        },
+      ]}/>
     </Section>
   );
 }
