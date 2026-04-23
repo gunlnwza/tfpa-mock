@@ -8,8 +8,13 @@ type InternetLink = {
   href: string;
 }
 
+type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+
+
+
 export type Paragraph = { type: "paragraph", content: string };
-export type Heading = { type: "heading", content: string, level?: number };
+export type Heading = { type: "heading", content: string, level: HeadingLevel };
 export type List = { type: "list", items: ListItem[] };
 export type NumberedList = { type: "numbered-list", items: ListItem[] };
 export type LinkList = { type: "link-list"; items: InternetLink[] };
