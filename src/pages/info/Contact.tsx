@@ -6,7 +6,7 @@ import type { Block } from "../../components/content/types";
 
 import { type StaffContact, training_staff_contact, license_staff_contact, financial_staff_contact } from "../../data/Contact";
 
-const TFPA_INFO_BLOCKS: Block[] = [
+const tfpaInfoBlocks: Block[] = [
   { type: "card", blocks: [
     { type: "heading", level: "h3", content: "สมาคมนักวางแผนการเงินไทย" },
     {
@@ -23,13 +23,13 @@ const TFPA_INFO_BLOCKS: Block[] = [
   ]}
 ];
 
-const CONTACT_BLOCKS: Block[] = [
+const contactBlocks: Block[] = [
   { type: "card", blocks: StaffContactCardContents(training_staff_contact) },
   { type: "card", blocks: StaffContactCardContents(license_staff_contact) },
   { type: "card", blocks: StaffContactCardContents(financial_staff_contact) },
 ];
 
-const REPORT_BLOCKS: Block[] = [
+const reportBlocks: Block[] = [
   { type: "heading", level: "h3", content: "ร้องเรียนสมาคมนักวางแผนการเงินไทย" },
   { 
     type: "paragraph",
@@ -113,7 +113,7 @@ const REPORT_BLOCKS: Block[] = [
 function TFPAInfo() {
   return (
     <Section title="Location">
-      <RenderBlocks blocks={TFPA_INFO_BLOCKS}/>
+      <RenderBlocks blocks={tfpaInfoBlocks}/>
     </Section>
   );
 }
@@ -162,7 +162,7 @@ function StaffContactCardContents(contact: StaffContact): Block[] {
 function ContactSection() {
   return (
     <Section title="Department">
-      <RenderBlocks blocks={CONTACT_BLOCKS}/>
+      <RenderBlocks blocks={contactBlocks}/>
     </Section>
   );
 }
@@ -171,7 +171,7 @@ function ContactSection() {
 function ReportSection() {
   return (
     <Section title="ร้องเรียน">
-      <RenderBlocks blocks={REPORT_BLOCKS}/>
+      <RenderBlocks blocks={reportBlocks}/>
     </Section>
   );
 }

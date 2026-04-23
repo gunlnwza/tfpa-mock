@@ -30,16 +30,11 @@ export default function RenderBlocks({ blocks }: { blocks: Block[] }) {
             return <RenderList list={block} />;
           case "card":
             return <RenderCard blocks={block.blocks} />;
-          // case "numbered-list":
-            // return <RenderNumberedList block={block} />;
-          // case "link-list":
-            // return <RenderLinkList block={block} />;
+
           case "note":
             return <RenderNote block={block} />;
           case "divider":
             return <RenderDivider block={block} />;
-          // case "card-list":
-            // return <RenderCardList block={block} />;
           case "table":
             return <RenderTable block={block} />;
           case "media":
