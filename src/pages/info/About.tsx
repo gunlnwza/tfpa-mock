@@ -4,7 +4,7 @@ import nsf_logo from "../../assets/logos/nsf.png"
 import { Page, PageHeader } from "../../layouts/Page";
 import { Section } from "../../layouts/Section";
 
-import ContentRenderer from "../../components/content/ContentRenderer";
+import RenderBlocks from "../../components/content/Blocks";
 import type { Block } from "../../components/content/types";
 
 
@@ -63,7 +63,7 @@ const founderBlocks: Block[] = [
 function Mission() {
   return (
     <Section title="พันธกิจ">
-      <ContentRenderer blocks={ missionBlocks }/>
+      <RenderBlocks blocks={ missionBlocks }/>
     </Section>
   );
 }
@@ -72,7 +72,7 @@ function Mission() {
 function History() {
   return (
     <Section title="ประวัติสมาคม">
-      <ContentRenderer blocks={ historyBlocks }/>
+      <RenderBlocks blocks={ historyBlocks }/>
     </Section>
   );
 }
@@ -82,7 +82,7 @@ function History() {
 function Founders() {
   return (
     <Section title="สมาชิกผู้ร่วมก่อตั้ง">
-      <ContentRenderer blocks={ founderBlocks }/>
+      <RenderBlocks blocks={ founderBlocks }/>
     </Section>
   );
 }

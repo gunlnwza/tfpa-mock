@@ -9,9 +9,10 @@ import RenderNumberedList from "./NumberedList";
 import RenderParagraph from "./Paragraph";
 import RenderTable from "./Table";
 import type { Block } from "./types";
+import RenderCard from "./Card";
 
 
-export default function ContentRenderer({ blocks }: { blocks: Block[] }) {
+export default function RenderBlocks({ blocks }: { blocks: Block[] }) {
   return (
     <>
       {blocks.map((block) => {
@@ -22,6 +23,8 @@ export default function ContentRenderer({ blocks }: { blocks: Block[] }) {
             return <RenderHeading block={block} />;
           case "list":
             return <RenderList block={block} />;
+          case "card":
+            return <RenderCard blocks={block.blocks} />;
           case "numbered-list":
             return <RenderNumberedList block={block} />;
           case "link-list":

@@ -1,12 +1,10 @@
-import { Link } from "react-router-dom";
-
 import map from "../../assets/how_to_go_to_tfpa.png"
 import { Page, PageHeader } from "../../layouts/Page";
 import { Section } from "../../layouts/Section";
-import ContentRenderer from "../../components/content/ContentRenderer";
+import RenderBlocks from "../../components/content/Blocks";
+import type { Block } from "../../components/content/types";
 
-import { training_staff_contact, license_staff_contact, financial_staff_contact } from "../../data/Contact";
-import { ContactCard, StaffContactCard } from "../../components/ContactCard";
+import { type StaffContact, training_staff_contact, license_staff_contact, financial_staff_contact } from "../../data/Contact";
 
 /*
 1. 📍 Location (header block): instant usefulness
@@ -19,18 +17,22 @@ import { ContactCard, StaffContactCard } from "../../components/ContactCard";
 function TFPAInfo() {
   return (
     <Section title="Location">
-      <ContactCard title="สมาคมนักวางแผนการเงินไทย">
-        <p>
-          ชั้น 6 อาคารตลาดหลักทรัพย์แห่งประเทศไทย<br />
-          93 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง<br />
-          กรุงเทพมหานคร 10400
-        </p>
-        <p>
-          โทรศัพท์: 0 2009 9393<br />
-          โทรสาร: 0 2247 7479<br />
-          Website: <Link to="/" className="underline text-blue-500">www.tfpa.or.th</Link>
-        </p>
-      </ContactCard>
+      <RenderBlocks blocks={[
+        { type: "card", blocks: [
+          { type: "heading", level: "h3", content: "สมาคมนักวางแผนการเงินไทย" },
+          {
+            type: "paragraph", content: [
+              { type: "text", content: "ชั้น 6 อาคารตลาดหลักทรัพย์แห่งประเทศไทย" }, { type: "break" },
+              { type: "text", content: "93 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง" }, { type: "break" },
+              { type: "text", content: "กรุงเทพมหานคร 10400" }, { type: "break" },
+              { type: "break" },
+              { type: "text", content: "โทรศัพท์: 0 2009 9393" }, { type: "break" },
+              { type: "text", content: "โทรสาร: 0 2247 7479" }, { type: "break" },
+              { type: "text", content: "Website: " }, { type: "link", href: "/", content: "www.tfpa.or.th" }, 
+            ]
+          }
+        ]}
+      ]}/>
     </Section>
   );
 }
@@ -64,12 +66,24 @@ function InfographicMap() {
 }
 
 
+
+function StaffContactCardContents(contact: StaffContact): Block[] {
+  return [
+    { type: "heading", level: "h3", content: contact.responsibility },
+    { type: "paragraph", content: [{ type: "text", content: contact.staff_name }] },
+    { type: "paragraph", content: [{ type: "text", content: `โทรศัพท์: ${contact.telephone}` }] },
+    { type: "paragraph", content: [{ type: "text", content: `อีเมล: ${contact.email}` }] }
+  ];
+}
+
 function ContactSection() {
   return (
     <Section title="Department">
-      <StaffContactCard contact={training_staff_contact} />
-      <StaffContactCard contact={license_staff_contact} />
-      <StaffContactCard contact={financial_staff_contact} />
+      <RenderBlocks blocks={[
+        { type: "card", blocks: StaffContactCardContents(training_staff_contact) },
+        { type: "card", blocks: StaffContactCardContents(license_staff_contact) },
+        { type: "card", blocks: StaffContactCardContents(financial_staff_contact) },
+      ]}/>
     </Section>
   );
 }
@@ -109,8 +123,8 @@ function ReportSection() {
           </p>
         </div>
         
-        <ContentRenderer blocks={[
-          { type: "paragraph", content: "เอกสารประกอบการแจ้งข้อร้องเรียน" },
+        <RenderBlocks blocks={[
+          // { type: "paragraph", content: "เอกสารประกอบการแจ้งข้อร้องเรียน" },
           {
             type: "list",
             items: [
@@ -126,18 +140,18 @@ function ReportSection() {
 
       </div>
 
-      <div className="space-y-2">
-        <h3 className="text-lg font-semibold">
-          ร้องเรียนการใช้เครื่องหมายรับรองคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP
-        </h3>
-        <p className="text-sm leading-relaxed">
-          ท่านสามารถสอบถามข้อมูลการใช้เครื่องหมายรับรองคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP และเครื่องหมายรับรองคุณวุฒิวิชาชีพที่ปรึกษาการเงิน AFPT และแจ้งกรณีที่พบเห็นผู้นำเครื่องหมายดังกล่าวไปใช้อย่างไม่ถูกต้อง หรือละเมิดลิขสิทธิ์ได้ที่
-        </p>
-        <p className="text-sm">
-          อีเมล: info@tfpa.or.th<br />
-          โทรศัพท์: 0 2009 9393
-        </p>
-      </div>
+
+        <RenderBlocks blocks={[
+          { type: "heading", level: "h3", content: "ร้องเรียนการใช้เครื่องหมายรับรองคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP" },
+          // { type: "paragraph", content: "ท่านสามารถสอบถามข้อมูลการใช้เครื่องหมายรับรองคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP และเครื่องหมายรับรองคุณวุฒิวิชาชีพที่ปรึกษาการเงิน AFPT และแจ้งกรณีที่พบเห็นผู้นำเครื่องหมายดังกล่าวไปใช้อย่างไม่ถูกต้อง หรือละเมิดลิขสิทธิ์ได้ที่" },
+          // { type: "card", blocks: {
+
+          // }}
+        ]}/>
+        {/* <Card> */}
+          {/* <p className="text-sm">อีเมล: info@tfpa.or.th</p> */}
+          {/* <p className="text-sm">โทรศัพท์: 0 2009 9393</p> */}
+        {/* </Card> */}
     </Section>
   );
 }
