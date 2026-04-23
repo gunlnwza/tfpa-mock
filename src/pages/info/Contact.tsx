@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-import map from "../assets/how_to_go_to_tfpa.png"
+import map from "../../assets/how_to_go_to_tfpa.png"
 
 /*
 1. 📍 Location (header block): instant usefulness

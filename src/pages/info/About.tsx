@@ -1,8 +1,8 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import OrgChart from "../components/OrgChart";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import OrgChart from "../../components/OrgChart";
 
-import nsf_logo from "../assets/logos/nsf.png"
+import nsf_logo from "../../assets/logos/nsf.png"
 
 
 function Mission() {

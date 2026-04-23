@@ -22,18 +22,19 @@ export default function Header() {
     <header className="sticky top-0 bg-white z-50 flex items-center justify-between px-8 py-4 shadow-sm">
       {/* Logo */}
       <Link to="/">
-        <img src={tfpa} alt="TFPA Logo" className="h-10" />
+        <img src={tfpa} alt="TFPA Logo" className="h-16" />
       </Link>
 
       {/* Nav */}
       <nav className="flex gap-6 text-sm font-medium">
-        <Link to="/" className="hover:text-blue-600">Home</Link>
-        <Link to="/about" className="hover:text-blue-600">About</Link>
-        <Link to="/members" className="hover:text-blue-600">Members</Link>
-        <Link to="/learn" className="hover:text-blue-600">Learn</Link>
-        <Link to="/contact" className="hover:text-blue-600">Contact</Link>
+        <Link to="/" className="hover:text-blue-600">หน้าหลัก</Link>
+        <Link to="/about" className="hover:text-blue-600">เกี่ยวกับ</Link>
+        <Link to="/financial_planning" className="hover:text-blue-600">วางแผนการเงิน</Link>
+        <Link to="/find_planner" className="hover:text-blue-600">รับบริการวางแผนการเงิน</Link>
+        <Link to="/become_member" className="hover:text-blue-600">สมาชิก</Link>
+        <Link to="/contact" className="hover:text-blue-600">ติดต่อ</Link>
         <a href="https://member.tfpa.or.th/UserLoginNew.aspx" className="hover:text-blue-600">Login</a>
-        {/* <Link to="/login" className="hover:text-blue-600">Login</Link> */}
+        
 
         {/* <Link to="/cfp/types" className="hover:text-blue-600">CFP Certification</Link> */}
         {/* <Link to="/resources/documents" className="hover:text-blue-600">Resources</Link> */}
