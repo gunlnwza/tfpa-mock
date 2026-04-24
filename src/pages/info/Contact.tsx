@@ -1,28 +1,23 @@
-import map from "../../assets/how_to_go_to_tfpa.png"
-import { Page, PageHeader } from "../../layouts/Page";
+/*
+1. 📍 Location (header block): instant usefulness
+2. 🗺️ Google Map (primary visual): interactive + main “where is this place”
+3. 🧭 Infographic (supporting): “how to get there” + MRT / landmarks
+4. 👥 Staff / departments: contact persons + roles
+*/
+
+import map from "../../assets/map/how_to_go_to_tfpa.png"
+import { Page } from "../../layouts/Page";
+import { PageHeader } from "../../components/page/PageHeader";
 import { Section } from "../../layouts/Section";
-import RenderBlocks from "../../components/content/Blocks";
+import { RenderBlocks } from "../../components/content/Blocks";
 import type { Block } from "../../components/content/types";
-
-import { type StaffContact, training_staff_contact, license_staff_contact, financial_staff_contact } from "../../data/Contact";
-
-export default function Contact() {
-  return (
-    <Page>
-      <PageHeader title="ติดต่อ" />
-      <TFPAInfo />
-      <GoogleMap />
-      <InfographicMap />
-      <ContactSection />
-      <ReportSection />
-    </Page>
-  );
-}
+import { type StaffContact, training_staff_contact,
+  license_staff_contact, financial_staff_contact } from "../../data/Contact";
 
 
 const tfpaInfoBlocks: Block[] = [
   { type: "card", blocks: [
-    { type: "heading", level: "h3", content: "สมาคมนักวางแผนการเงินไทย" },
+    { type: "heading", level: "h4", content: "สมาคมนักวางแผนการเงินไทย" },
     {
       type: "paragraph", content: [
         { type: "text", content: "ชั้น 6 อาคารตลาดหลักทรัพย์แห่งประเทศไทย" }, { type: "break" },
@@ -36,6 +31,19 @@ const tfpaInfoBlocks: Block[] = [
     }
   ]}
 ];
+
+
+function StaffContactCardContents(contact: StaffContact): Block[] {
+  return [
+    { type: "heading", level: "h4", content: contact.responsibility },
+    { type: "paragraph", content: [
+      { type: "text", content: contact.staff_name }, { type: "break" },
+      { type: "text", content: `โทรศัพท์: ${contact.telephone}` }, { type: "break" },
+      { type: "text", content: `อีเมล: ${contact.email}` }
+    ]}
+  ];
+}
+
 
 const contactBlocks: Block[] = [
   { type: "card", blocks: StaffContactCardContents(training_staff_contact) },
@@ -70,7 +78,7 @@ const reportBlocks: Block[] = [
   {
     type: "card",
     blocks: [
-      { type: "heading", level: "h3", content: "ผู้อำนวยการสมาคมนักวางแผนการเงินไทย" },
+      { type: "heading", level: "h4", content: "ผู้อำนวยการสมาคมนักวางแผนการเงินไทย" },
       { 
         type: "paragraph",
         content: [
@@ -116,12 +124,31 @@ const reportBlocks: Block[] = [
   },
 ];
 
-/*
-1. 📍 Location (header block): instant usefulness
-2. 🗺️ Google Map (primary visual): interactive + main “where is this place”
-3. 🧭 Infographic (supporting): “how to get there” + MRT / landmarks
-4. 👥 Staff / departments: contact persons + roles
-*/
+const googleMapBlocks: Block[] = [
+  {
+    type: "media",
+    item: {
+      type: "embed",
+      src: "https://www.google.com/maps?q=The+Stock+Exchange+of+Thailand&output=embed",
+    }
+  }
+];
+
+const infographicMapBlocks: Block[] = [
+  {
+    type: "paragraph",
+    content: [{ type: "bold", content: "รถไฟฟ้าใต้ดิน (MRT): " }, { type: "text", content: "สถานีศูนย์วัฒนธรรม ทางออก 3" }]
+  },
+  {
+    type: "media",
+    item: {
+      type: "image",
+      src: map,
+      alt: "How to go to TFPA",
+      caption: "แผนที่การเดินทางมายังสมาคมฯ",
+    }
+  }
+]
 
 
 function TFPAInfo() {
@@ -136,15 +163,7 @@ function TFPAInfo() {
 function GoogleMap() {
   return (
     <Section title="Google Map">
-      <RenderBlocks blocks={[
-        {
-          type: "media",
-          item: {
-            type: "embed",
-            src: "https://www.google.com/maps?q=The+Stock+Exchange+of+Thailand&output=embed",
-          }
-        }
-      ]}/>
+      <RenderBlocks blocks={googleMapBlocks}/>
     </Section>
   );
 }
@@ -153,37 +172,11 @@ function GoogleMap() {
 function InfographicMap() {
   return (
     <Section title="วิธีเดินทาง">
-      <RenderBlocks blocks={[
-        {
-          type: "paragraph",
-          content: [{ type: "bold", content: "รถไฟฟ้าใต้ดิน (MRT): " }, { type: "text", content: "สถานีศูนย์วัฒนธรรม ทางออก 3" }]
-        },
-        {
-          type: "media",
-          item: {
-            type: "image",
-            src: map,
-            alt: "How to go to TFPA",
-            caption: "แผนที่การเดินทางมายังสมาคมฯ",
-          }
-        }
-      ]}/>
+      <RenderBlocks blocks={infographicMapBlocks}/>
     </Section>
   );
 }
 
-
-
-function StaffContactCardContents(contact: StaffContact): Block[] {
-  return [
-    { type: "heading", level: "h3", content: contact.responsibility },
-    { type: "paragraph", content: [
-      { type: "text", content: contact.staff_name }, { type: "break" },
-      { type: "text", content: `โทรศัพท์: ${contact.telephone}` }, { type: "break" },
-      { type: "text", content: `อีเมล: ${contact.email}` }
-    ]}
-  ];
-}
 
 function ContactSection() {
   return (
@@ -203,3 +196,15 @@ function ReportSection() {
 }
 
 
+export default function Contact() {
+  return (
+    <Page>
+      <PageHeader title="ติดต่อ" />
+      <TFPAInfo />
+      <GoogleMap />
+      <InfographicMap />
+      <ContactSection />
+      <ReportSection />
+    </Page>
+  );
+}

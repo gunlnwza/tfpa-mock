@@ -1,11 +1,15 @@
-import RenderBlocks from "../../components/content/Blocks";
-import { Page, PageHeader } from "../../layouts/Page";
+import { RenderBlocks } from "../../components/content/Blocks";
+import { RenderHeading } from "../../components/content/Heading";
+
+import { Page } from "../../layouts/Page";
+import { PageHeader } from "../../components/page/PageHeader";
 import type { Block } from "../../components/content/types";
 
-type QuestionAnswer = {
-  question: Block[];
-  answer: Block[];
-}
+import { useState } from "react";
+
+import transcript_review from "../../assets/faq/transcript_review.png"
+import challenge_status from "../../assets/faq/challenge_status.png"
+
 
 const training: QuestionAnswer[] = [
   {
@@ -16,7 +20,6 @@ const training: QuestionAnswer[] = [
       { type: "paragraph", content: [ { type: "text", content: "สำหรับชุดวิชาที่ 1-5 ผู้เข้าอบรมสามารถเลือกเข้าอบรมชุดวิชาใดก่อนก็ได้ ไม่จำเป็นต้องเข้าอบรมตามลำดับของชุดวิชา อย่างไรก็ตาม สมาคมฯ แนะนำให้เข้าอบรมชุดวิชาที่ 1 ก่อนชุดวิชาอื่นเนื่องจากมีเนื้อหาเกี่ยวกับพื้นฐานการวางแผนการเงิน สำหรับชุดวิชาที่ 6 ผู้เข้าอบรมต้องผ่านการอบรมชุดวิชาที่ 1-5 เสียก่อนจึงจะสามารถเข้าอบรมในชุดวิชาที่ 6 ได้" } ] },
     ],
   },
-  
   {
     question: [
       { type: "paragraph", content: [ { type: "text", content: "สามารถเข้ารับการอบรมหลักสูตรการวางแผนการเงิน CFP ได้จากที่ใดบ้าง มีค่าธรรมเนียมการอบรมเท่าใด" } ] },
@@ -39,28 +42,146 @@ const training: QuestionAnswer[] = [
       }
     ],
   },
-
   {
-    question: [],
-    answer: []
-  },  
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "สามารถขอยกเว้นการเข้าอบรมบางชุดวิชาหรือทุกชุดวิชาได้หรือไม่" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "สมาคมฯ อนุญาตให้ผู้มีคุณวุฒิการศึกษาหรือคุณวุฒิวิชาชีพในสาขาวิชาที่เกี่ยวข้องโดยตรงกับเนื้อหาการอบรม สามารถยื่นขอยกเว้นการอบรมในชุดวิชาที่เกี่ยวข้องผ่าน การเทียบเคียงพื้นฐานความรู้ (Transcript Review)" } ] },
+      
+      { type: "heading", level: "h3", content: "การเทียบเคียงพื้นฐานความรู้ (Transcript Review)" },
+      { type: "paragraph", content: [ { type: "text", content: "ผู้สมัครที่มีความรู้ในสาขาวิชาที่เกี่ยวข้องโดยตรงกับเนื้อหาการอบรมในบางชุดวิชา เนื่องจากมีคุณวุฒิการศึกษา หรือมีใบอนุญาตปฏิบัติงานที่เกี่ยวข้อง สามารถยื่นขอยกเว้นการเข้า   อบรมในชุดวิชานั้นๆ ได้ โดยมีหลักเกณฑ์และรายละเอียดดังนี้" } ] },
+      { type: "media", item: { type: "image", src: transcript_review, alt: "Transcript Review" }},
+      { type: "paragraph", content: [ { type: "text", content: "*หมายเหตุ: มีการปรับหลักเกณฑ์การเทียบเคียงพื้นฐานความรู้ (Transcript Review) ในชุดวิชาที่ 1 พื้นฐานการวางแผนการเงิน ภาษีและจรรยาบรรณ ให้เป็นตามประกาศสมาคมฯ ที่ 002/2568 ซึ่งมีผลบังคับใช้วันที่ 1 มกราคม พ.ศ. 2569 เป็นต้นไป " } ] },
+    
+      { type: "heading", level: "h3", content: "การขอสิทธิ์เข้าสอบโดยไม่ผ่านการอบรม (Challenge Status)" },
+      { type: "paragraph", content: [ { type: "text", content: "ผู้สมัครที่มีคุณสมบัติดังต่อไปนี้ มีสิทธิ์เข้าสอบได้โดยไม่ต้องผ่านการอบรมทุกชุดวิชา" } ] },
+      { type: "media", item: { type: "image", src: challenge_status, alt: "Challenge Status" }},
+      { type: "paragraph", content: [ { type: "text", content: "**หมายเหตุ: มีการเปลี่ยนแปลงรูปแบบการอบรมชุดวิชาที่ 6 การวางแผนการเงินแบบองค์รวม ให้เป็นไปตามประกาศสมาคมฯที่ 004/2568 ซึ่งมีผลบังคับใช้วันที่ 1 มกราคม พ.ศ. 2569 เป็นต้นไป" } ] },
+      { type: "paragraph", content: [
+        { type: "text", content: "ผู้ที่มีความประสงค์จะใช้สิทธิ์การเทียบเคียงพื้นฐานความรู้ หรือการขอสิทธิ์เข้าสอบโดยไม่ผ่านการอบรม สามารถยื่นขอพิจารณาการเทียบเคียงพื้นฐานความรู้ หรือการขอสิทธิ์เข้าสอบโดยไม่ผ่านการอบรมทางออนไลน์ผ่านเว็บไซต์สมาคมฯ (www.tfpa.or.th) ที่เมนู " },
+        { type: "link", href: "https://member.tfpa.or.th/UserLogin.aspx", content: "ระบบสมาชิก" },
+        { type: "text", content: " (การเข้าใช้งานระบบครั้งแรก ต้องสมัครสมาชิกเว็บไซต์สมาคมฯ ก่อน) ชำระค่าธรรมเนียมการพิจารณาคำขอ พร้อมเอกสารประกอบการพิจารณา ได้แก่" }
+      ]},
+      { type: "list", items: [
+        { content: [ { type: "text", content: "สำเนาบัตรประชาชน" } ] },
+        { content: [ { type: "text", content: "สำเนาหลักฐานรับรองผลการศึกษา หรือใบอนุญาตปฏิบัติงาน (กรณีการเทียบเคียงพื้นฐานความรู้) หรือสำเนาหลักฐานรับรองการสำเร็จการศึกษาในระดับปริญญาเอกในสาขาวิชาที่กำหนด หรือสำเนาหลักฐานแสดงการสอบผ่านคุณวุฒิวิชาชีพตามที่กำหนด(กรณีการขอสิทธิ์เข้าสอบโดยไม่ผ่านการอบรม)"  } ] },
+        { content: [ { type: "text", content: "เอกสารประกอบการพิจารณาทุกฉบับต้องมีการลงนามรับรองสำเนา" } ] },
+      ]}
+    ]
+  },
+];
+
+const exam: QuestionAnswer[] = [
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "การสอบหลักสูตรวางแผนการเงิน CFP ประกอบด้วยข้อสอบกี่ฉบับ และครอบคลุมเนื้อหาการอบรมในแต่ละชุดวิชาอย่างไรบ้าง" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "การสอบหลักสูตรวางแผนการเงิน CFP ประกอบด้วยข้อสอบจำนวน 4 ฉบับ โดยมีเนื้อหาครอบคลุมการอบรมแต่ละชุดวิชา ดังนี้" } ] },
+      { type: "paragraph", content: [ { type: "text", content: "<ตารางข้อมูล>" } ] },
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "จำเป็นต้องสมัครสอบตามลำดับของฉบับข้อสอบหรือไม่" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "ในการสมัครสอบข้อสอบฉบับที่ 1 ฉบับที่ 2 และฉบับที่ 3 ผู้สมัครสอบสามารถสมัครสอบข้อสอบฉบับใดฉบับหนึ่งก่อนก็ได้ ไม่จำเป็นต้องสมัครสอบตามลำดับของฉบับข้อสอบ ทั้งนี้ ผู้สมัครสอบจะต้องผ่านการอบรมในชุดวิชาที่ 1 และชุดวิชาที่มีเนื้อหาตรงกับข้อสอบฉบับนั้นๆ ก่อน" } ] },
+      { type: "paragraph", content: [ { type: "text", content: "ในการสมัครสอบข้อสอบฉบับที่ 4 ส่วนที่ 1 ผู้สมัครสอบจะต้องสอบผ่านข้อสอบฉบับที่ 1 ฉบับที่ 2 และฉบับที่ 3 และต้องผ่านการอบรมในชุดวิชาที่ 5 ก่อน" } ] },
+      { type: "paragraph", content: [ { type: "text", content: "ในการสมัครสอบข้อสอบฉบับที่ 4 ส่วนที่ 2 ผู้สมัครสอบจะต้องสอบผ่านข้อสอบฉบับที่ 1 ฉบับที่ 2 และฉบับที่ 3 และต้องผ่านการอบรมในทุกชุดวิชาก่อน" } ] },
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "มีการจัดสอบหลักสูตรการวางแผนการเงิน CFP ถี่มากน้อยแค่ไหน" } ] },
+    ],
+    answer: [
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: " ประกาศผลการสอบหลังจากวันสอบกี่วัน สามารถตรวจสอบผลการสอบได้อย่างไร" } ] },
+    ],
+    answer: [
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "การขอหนังสือรับผลการสอบ" } ] },
+    ],
+    answer: [
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "สามารถร้องขอให้สมาคมฯ ตรวจข้อสอบใหม่ได้หรือไม่" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "ผู้สมัครสอบสามารถร้องขอให้สมาคมฯ ตรวจนับคะแนนในกระดาษคำตอบใหม่ด้วยวิธีตรวจด้วยมือ โดยจะต้องส่งคำร้องเป็นลายลักษณ์อักษรถึงสมาคมฯ ภายใน 30 วันทำการหลังจากได้รับหนังสือแจ้งผลการสอบ ระบุรายละเอียดดังนี้ ชื่อ-นามสกุลผู้สอบ ฉบับข้อสอบ วันที่เข้าสอบ เหตุผลประกอบคำร้อง พร้อมหลักฐานการชำระค่าธรรมเนียม จำนวน 3,000 บาท/ฉบับข้อสอบ" } ] },
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "การสอบข้อสอบฉบับที่ 4 ส่วนที่ 2 ข้อสอบแผนการเงิน มีรายละเอียดอย่างไร (ข้อมูล ณ วันที่ 30 มีนาคม 2569)" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "" } ] },
+    ],
+  },
+];
+
+const work_experience: QuestionAnswer[] = [
 
 ];
 
-import { useState } from "react";
-import RenderHeading from "../../components/content/Heading";
+const register_cert: QuestionAnswer[] = [
+
+];
+
+
+const extend_cert: QuestionAnswer[] = [
+
+];
+
+const cert_development: QuestionAnswer[] = [
+
+];
+
+
+type QuestionAnswer = {
+  question: Block[];
+  answer: Block[];
+}
+
 
 function QuestionTab({ qa }: { qa: QuestionAnswer }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div>
-      <div onClick={() => setOpen(!open)}>
-        <RenderBlocks blocks={qa.question} />
-      </div>
+    <div className="border border-gray-200 rounded-xl overflow-hidden mb-3">
+      {/* Question */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center"
+      >
+        <div className="pr-4">
+          <RenderBlocks blocks={qa.question} />
+        </div>
 
+        {/* simple chevron */}
+        <span
+          className={`transition-transform ${
+            open ? "rotate-180" : ""
+          }`}
+        >
+          ▼
+        </span>
+      </button>
+
+      {/* Answer */}
       {open && (
-        <div>
+        <div className="px-4 py-3 bg-white border-t border-gray-200">
           <RenderBlocks blocks={qa.answer} />
         </div>
       )}
@@ -72,7 +193,7 @@ function QuestionTab({ qa }: { qa: QuestionAnswer }) {
 function QuestionSection({ title, section }: { title: string; section: QuestionAnswer[] }) {
   return (
     <div>
-    <RenderHeading heading={ {type: "heading", level: "h2", content: title} }></RenderHeading>
+    <RenderHeading heading={ {type: "heading", level: "h3", content: title} }></RenderHeading>
       {section.map((qa, index) => (
         <QuestionTab key={index} qa={qa} />
       ))}
@@ -86,6 +207,11 @@ export default function FAQ() {
     <Page>
       <PageHeader title="FAQ" />
       <QuestionSection title="การศึกษา" section={training} />
+      <QuestionSection title="การสอบ" section={exam} />
+      <QuestionSection title="ประสบการณ์ทำงาน" section={work_experience} />
+      <QuestionSection title="การยื่นขึ้นทะเบียนคุณวุฒิวิชาชีพ" section={register_cert} />
+      <QuestionSection title="การต่ออายุคุณวุฒิวิชาชีพ" section={extend_cert} />
+      <QuestionSection title="การพัฒนาคุณวุฒิวิชาชีพอย่างต่อเนื่อง" section={cert_development} />
     </Page>
   );
 }

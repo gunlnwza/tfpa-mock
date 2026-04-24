@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 // const 
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="bg-blue-900 text-white px-8 py-10">
       <div className="max-w-6xl mx-auto space-y-8">

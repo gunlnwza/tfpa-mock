@@ -1,4 +1,4 @@
-import RenderInline from "./Inline";
+import { RenderInline } from "./Inline";
 import type { Media } from "./types";
 
 
@@ -25,7 +25,7 @@ function BorderWithCaption({
 }
 
 
-export default function RenderMedia({ block }: { block: Media }) {
+export function RenderMedia({ block }: { block: Media }) {
   const item = block.item;
 
   switch (item.type) {

@@ -1,7 +1,3 @@
-import { Link } from "react-router-dom";
-
-import tfpa from "../../assets/logos/tfpa.png";
-
 /*
 # Need place to live
 Annual Reports
@@ -9,15 +5,19 @@ Annual Reports
 
 # Header
 (DONE) About — Overview, Board & Staff
-CFP Certification — Member Types & Benefits, How to Get Certified, Maintain & Renew, FAQ
-Resources — Documents, News, Announcements, Videos, Alliance Companies
-Find a Financial Advisor — What is Financial Planning, Search for an Advisor, Contact
-Training — For Students, For Practitioners, For Training Schools, For Legal Entities
+() CFP Certification — Member Types & Benefits, How to Get Certified, Maintain & Renew, FAQ
+() Resources — Documents, News, Announcements, Videos, Alliance Companies
+(service) Find a Financial Advisor — What is Financial Planning, Search for an Advisor, Contact
+(career path) Training — For Students, For Practitioners, For Training Schools, For Legal Entities
 (DONE) Contact — Address, Staff Directory
 */
 
+import { Link } from "react-router-dom";
 
-export default function Header() {
+import tfpa from "../../assets/logos/tfpa.png";
+
+
+export function Header() {
   return (
     <header className="sticky top-0 bg-white z-50 flex items-center justify-between px-8 py-4 shadow-sm">
       {/* Logo */}

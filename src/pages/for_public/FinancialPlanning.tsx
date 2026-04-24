@@ -1,10 +1,10 @@
-import { Page, PageHeader } from "../../layouts/Page"
+import { Page } from "../../layouts/Page"
+import { PageHeader } from "../../components/page/PageHeader";
 import { Section } from "../../layouts/Section"
 import type { Block } from "../../components/content/types";
-import RenderBlocks from "../../components/content/Blocks";
-import Button from "../../components/Button";
+import { RenderBlocks } from "../../components/content/Blocks";
+import { Button } from "../../components/Button";
 
-import { TODO } from "../../components/Dev";
 
 const whatIsFinancialPlanning: Block[] = [
   { type: "heading", level: "h3", content: "การวางแผนการเงินคืออะไร"},
@@ -212,7 +212,7 @@ export default function FinancialPlanning() {
       </Section>
 
       <Section title="มุมความรู้การวางแผนการเงิน">
-        <TODO />
+        .
       </Section>
     </Page>
   );

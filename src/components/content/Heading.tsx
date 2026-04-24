@@ -10,7 +10,7 @@ const styles = {
   h6: "text-sm font-medium text-gray-600 mt-2 mb-1 uppercase tracking-wide",
 };
 
-export default function RenderHeading({ heading }: { heading: Heading }) {
+export function RenderHeading({ heading }: { heading: Heading }) {
   const Tag = heading.level as keyof JSX.IntrinsicElements;
   return <Tag className={styles[heading.level]}>{heading.content}</Tag>;
 }

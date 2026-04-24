@@ -1,7 +1,7 @@
 import type { List } from "./types";
-import RenderInline from "./Inline";
+import { RenderInline } from "./Inline";
 
-export default function RenderList({ list }: { list: List }) {
+export function RenderList({ list }: { list: List }) {
   const { items, ordered = false } = list;
 
   const Tag = ordered ? "ol" : "ul";

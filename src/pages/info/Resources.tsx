@@ -1,5 +1,5 @@
-import { Page, PageHeader } from "../../layouts/Page";
-import { Section } from "../../layouts/Section"
+import { Page } from "../../layouts/Page";
+import { PageHeader } from "../../components/page/PageHeader";
 
 
 export default function Resources() {

@@ -1,16 +1,14 @@
 import type { Block } from "./types";
-import RenderParagraph from "./Paragraph";
-import RenderHeading from "./Heading";
-import RenderList from "./List";
-import RenderCard from "./Card";
-import RenderMedia from "./Media";
-
-// import RenderDivider from "./Divider";
-// import RenderNote from "./Note";
-// import RenderTable from "./Table";
+import { RenderParagraph } from "./Paragraph";
+import { RenderHeading } from "./Heading";
+import { RenderList } from "./List";
+import { RenderCard } from "./Card";
+import { RenderMedia } from "./Media";
+import { RenderDivider } from "./Divider";
+import { RenderTable } from "./Table";
 
 
-export default function RenderBlocks({ blocks }: { blocks: Block[] }) {
+export function RenderBlocks({ blocks }: { blocks: Block[] }) {
   return (
     <>
       {blocks.map((block) => {
@@ -25,13 +23,10 @@ export default function RenderBlocks({ blocks }: { blocks: Block[] }) {
             return <RenderCard blocks={block.blocks} />;
           case "media":
             return <RenderMedia block={block} />;
-
-          // case "note":
-          //   return <RenderNote block={block} />;
-          // case "divider":
-          //   return <RenderDivider block={block} />;
-          // case "table":
-          //   return <RenderTable block={block} />;
+          case "divider":
+            return <RenderDivider block={block} />;
+          case "table":
+            return <RenderTable block={block} />;
           default:
             return null;
         }

@@ -1,12 +1,12 @@
-import RenderBlocks from "./Blocks";
+import { RenderBlocks } from "./Blocks";
 import type { Block } from "./types";
 
 
-export default function RenderCard({ blocks }: { blocks: Block[] }) {
+export function RenderCard({ blocks }: { blocks: Block[] }) {
   return (
     <div
       // onClick={onClick}
-      className={`border border-black rounded-xl p-4 text-sm leading-relaxedm m-4`}
+      className={`border border-black rounded-xl p-4 my-4 text-sm leading-relaxed`}
     >
       <RenderBlocks blocks={blocks}/>
     </div>

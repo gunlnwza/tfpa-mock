@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import type { Inline } from "./types";
 
 
-export default function RenderInline( { inline }: { inline: Inline } ) {
+export function RenderInline( { inline }: { inline: Inline } ) {
   switch (inline.type) {
     case "text":
       return <span className="text-gray-700">{inline.content}</span>;

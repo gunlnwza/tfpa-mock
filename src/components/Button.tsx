@@ -7,7 +7,7 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
-export default function Button({ children, to, href, onClick }: ButtonProps) {
+export function Button({ children, to, href, onClick }: ButtonProps) {
   const base = `
     inline-flex items-center justify-center
     px-6 py-3

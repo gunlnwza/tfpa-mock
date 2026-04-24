@@ -1,7 +1,7 @@
-import { Page, PageHeader } from "../../layouts/Page"
+import { Page } from "../../layouts/Page"
+import { PageHeader } from "../../components/page/PageHeader";
 
-
-// TODO: UI needs change.
+// TODO: Old UI needs change.
 // - Single Search bar, smarter parsing, use tags
 // - Advisor Card: remove ID, put more interesting info in card, square is OK. Must put portrait pic.
 // - Advisor Modal: info ok, but need more UI to make it pazzaz

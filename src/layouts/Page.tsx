@@ -1,20 +1,16 @@
-import Header from "../components/page/Header";
-import Footer from "../components/page/Footer";
+import { Header } from "../components/page/Header";
+import { Footer } from "../components/page/Footer";
 
 
 export function Page({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <Header />
-      {children}
+      <div className="p-4">
+        {children}
+      </div>
       <Footer />
     </div>
   ) 
 }
 
-
-export function PageHeader({ title }: { title: string }) {
-  return (
-    <h1 className="p-4 text-xl mb-10 font-bold">{title}</h1>
-  );
-}

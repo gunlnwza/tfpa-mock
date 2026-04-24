@@ -27,11 +27,9 @@ type MediaEmbed = { type: "embed"; src: string; caption?: string; className?: st
 type MediaItem = MediaImage | MediaVideo | MediaEmbed;
 export type Media = { type: "media"; item: MediaItem };
 
-// export type Note = { type: "note"; content: string };
+export type Divider = { type: "divider" };
 
-// export type Divider = { type: "divider" };
-
-// export type Table = { type: "table"; headers: string[], rows: string[][] };
+export type Table = { type: "table"; headers: string[], rows: string[][] };
 
 export type Block =
   | Paragraph
@@ -39,6 +37,5 @@ export type Block =
   | List
   | Card
   | Media
-  // | Note
-  // | Divider
-  // | Table
+  | Divider
+  | Table

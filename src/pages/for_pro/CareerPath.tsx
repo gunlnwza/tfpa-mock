@@ -1,5 +1,7 @@
-import { Page, PageHeader } from "../../layouts/Page"
+import { Page } from "../../layouts/Page"
 import { Section } from "../../layouts/Section"
+import { PageHeader } from "../../components/page/PageHeader";
+import { Button } from "../../components/Button";
 
 
 export default function CareerPath() {
@@ -15,6 +17,7 @@ export default function CareerPath() {
       <Section title="ตารางสอบและสมัครสอบ">
         .
       </Section>
+      <Button to="/faq">คำถามที่พบบ่อย</Button>
     </Page>
   );
 }

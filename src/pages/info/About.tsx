@@ -1,10 +1,11 @@
 import OrgChart from "../../components/org/OrgChart";
 
 import nsf_logo from "../../assets/logos/nsf.png"
-import { Page, PageHeader } from "../../layouts/Page";
+import { Page } from "../../layouts/Page";
+import { PageHeader } from "../../components/page/PageHeader";
 import { Section } from "../../layouts/Section";
 
-import RenderBlocks from "../../components/content/Blocks";
+import { RenderBlocks } from "../../components/content/Blocks";
 import type { Block } from "../../components/content/types";
 
 
