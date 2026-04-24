@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
 
 
-const rawImages = import.meta.glob<string>("../assets/people/*.jpg", {
+const rawImages = import.meta.glob<string>("../../assets/people/*.jpg", {
   eager: true,
   import: "default"
 });

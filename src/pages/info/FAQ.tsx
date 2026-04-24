@@ -132,20 +132,83 @@ const exam: QuestionAnswer[] = [
 ];
 
 const work_experience: QuestionAnswer[] = [
-
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "ต้องมีประสบการณ์การทำงานหรือไม่ มีเกณฑ์ประสบการณ์การทำงานอย่างไร" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "สำหรับผู้ที่ต้องการขอรับรองคุณวุฒิวิชาชีพที่ปรึกษาการเงิน AFPT ไม่ต้องมีประสบการณ์การทำงาน แต่สำหรับผู้ที่ต้องการขอรับรองคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP จะต้องมีประสบการณ์ทำงานตามที่กำหนดเป็นระยะเวลาอย่างน้อย 3 ปี " } ] },
+      { type: "paragraph", content: [ { type: "text", content: "ประสบการณ์การทำงานในวิชาชีพที่เกี่ยวข้องโดยตรงกับลูกค้าถือเป็นสิ่งสำคัญและเป็นเครื่องยืนยันว่าผู้สมัครมีความสามารถในการประยุกต์ใช้ความรู้และทักษะสำหรับให้คำปรึกษาและจัดทำแผนการเงินให้แก่ลูกค้าแต่ละรายในสถานการณ์จริงได้อย่างมีประสิทธิภาพ" } ] },
+      { type: "paragraph", content: [ { type: "text", content: "ทั้งนี้ ในการปฏิบัติหน้าที่ตามความรับผิดชอบ นักวางแผนการเงิน CFP จะต้อง" } ] },
+      { type: "paragraph", content: [ { type: "text", content: "<a lot more text>" } ] },
+    ],
+  },
 ];
 
 const register_cert: QuestionAnswer[] = [
-
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "ใช้เวลาในการพิจารณาคำขึ้นทะเบียนคุณวุฒิวิชาชีพนานเท่าไร" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "" } ] },
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "ในการยื่นขอรับรองคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP และคุณวุฒิวิชาชีพที่ปรึกษาการเงิน AFPT ต้องใช้เอกสารอะไรบ้าง" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "" } ] },
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "มีค่าธรรมเนียมในการยื่นขอรับรองคุณวุฒิวิชาชีพเท่าไร" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "" } ] },
+    ],
+  },
 ];
 
 
 const extend_cert: QuestionAnswer[] = [
-
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "นักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT ต้องต่ออายุคุณวุฒิวิชาชีพทุกกี่ปี" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "" } ] },
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "การยื่นต่ออายุภายหลังครบกำหนดยื่นต่ออายุคุณวุฒิวิชาชีพต้องทำอย่างไร" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "" } ] },
+    ],
+  },
 ];
 
 const cert_development: QuestionAnswer[] = [
-
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "ต้องมีจำนวนชั่วโมงการพัฒนาคุณวุฒิวิชาชีพอย่างต่อเนื่อง (CPD) เพื่อประกอบการยื่นต่ออายุคุณวุฒิวิชาชีพนักวางแผนการเงิน CFP และคุณวุฒิวิชาชีพที่ปรึกษาการเงิน AFPT กี่ชั่วโมง" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "" } ] },
+    ],
+  },
+  {
+    question: [
+      { type: "paragraph", content: [ { type: "text", content: "กิจกรรมใดบ้างที่สามารถนับเป็นชั่วโมงการพัฒนาคุณวุฒิวิชาชีพอย่างต่อเนื่อง" } ] },
+    ],
+    answer: [
+      { type: "paragraph", content: [ { type: "text", content: "" } ] },
+    ],
+  },
 ];
 
 
@@ -159,11 +222,11 @@ function QuestionTab({ qa }: { qa: QuestionAnswer }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-gray-200 rounded-xl overflow-hidden mb-3">
+    <div className="border border-gray-200 rounded-xl overflow-hidden my-3">
       {/* Question */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center"
+        className="w-full text-left px-4 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center"
       >
         <div className="pr-4">
           <RenderBlocks blocks={qa.question} />
@@ -188,16 +251,18 @@ function QuestionTab({ qa }: { qa: QuestionAnswer }) {
     </div>
   );
 }
+import { Section } from "../../layouts/Section";
 
-
+// <div>
+{/* <RenderHeading heading={ {type: "heading", level: "h3", content: title} }></RenderHeading> */}
+{/* </div> */}
 function QuestionSection({ title, section }: { title: string; section: QuestionAnswer[] }) {
   return (
-    <div>
-    <RenderHeading heading={ {type: "heading", level: "h3", content: title} }></RenderHeading>
+    <Section title={ title }>
       {section.map((qa, index) => (
         <QuestionTab key={index} qa={qa} />
       ))}
-    </div>
+    </Section>
   );
 }
 
