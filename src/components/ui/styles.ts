@@ -10,4 +10,4 @@ const basePrimaryCTAButtonClass = `
 export const PrimaryCTAButtonClass = `${basePrimaryCTAButtonClass} rounded`;
 export const roundedPrimaryCTAButtonClass = `${basePrimaryCTAButtonClass} rounded-full`;
 
-export const blueOnHoverClass = "hover:text-blue-600 transition";
+export const blueOnHoverClass = "group-hover:text-blue-600 transition";

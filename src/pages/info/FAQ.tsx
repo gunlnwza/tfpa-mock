@@ -11,7 +11,7 @@ import {
 export default function FAQ() {
   return (
     <Page>
-      <PageHeader title="FAQ" />
+      <PageHeader title="คำถามที่พบบ่อย (FAQ)" />
       <QuestionSection title="การศึกษา" section={training} />
       <QuestionSection title="การสอบ" section={exam} />
       <QuestionSection title="ประสบการณ์ทำงาน" section={work_experience} />

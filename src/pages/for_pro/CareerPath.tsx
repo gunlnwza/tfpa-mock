@@ -34,7 +34,7 @@ export default function CareerPath() {
       </Section>
 
       <Section title="สมัครอบรม">
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 justify-center">
           <Card src={thaiPFALogo} href="https://www.thaipfa.co.th" title="ศูนย์อบรมไทยพีเอฟเอ (ThaiPFA)" />
           <Card src={atiLogo} imgDivClassName="bg-black" href="https://ati-asco.org" title="สถาบันฝึกอบรมสมาคมบริษัทหลักทรัพย์ (ATI)" />
           <Card src={aimcLogo} href="https://www.aimc.or.th/center/" title="ศูนย์ความรู้ผู้ประกอบวิชาชีพทางการเงิน สมาคมบริษัทจัดการลงทุน (AIMC)" />

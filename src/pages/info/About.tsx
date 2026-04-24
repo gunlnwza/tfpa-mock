@@ -8,6 +8,8 @@ import { Section } from "../../components/layout/Section";
 
 import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
 
+import { Card } from "../../components/ui/Card";
+
 import { missionBlocks, historyBlocks, founderBlocks } from "../../data/About";
 
 
@@ -48,15 +50,11 @@ function OrganizationStructure() {
 }
 
 
-// TODO: make clickable card. A card UI is very important
 function Alliance() {
   return (
     <Section title="หน่วยงานพันธมิตร">
       <div className="flex flex-col items-center space-y-2">
-        <a href="https://www.nsf.or.th">
-          <img src={nsf_logo} alt="NSF Logo" className="h-40 mx-auto border border-gray-300" />
-        </a>
-        <p className="text-center">กองทุนการออมแห่งชาติ</p>
+        <Card src={nsf_logo} alt="NSF Logo" href="https://www.nsf.or.th/" title="กองทุนการออมแห่งชาติ" />
       </div>
     </Section>
   );
