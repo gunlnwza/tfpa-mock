@@ -1,5 +1,5 @@
-import { Page, PageHeader } from "../layouts/Page"
-import { Section } from "../layouts/Section"
+import { Page, PageHeader } from "../../layouts/Page"
+import { Section } from "../../layouts/Section"
 
 
 export default function CareerPath() {

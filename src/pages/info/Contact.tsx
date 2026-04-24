@@ -6,6 +6,20 @@ import type { Block } from "../../components/content/types";
 
 import { type StaffContact, training_staff_contact, license_staff_contact, financial_staff_contact } from "../../data/Contact";
 
+export default function Contact() {
+  return (
+    <Page>
+      <PageHeader title="ติดต่อ" />
+      <TFPAInfo />
+      <GoogleMap />
+      <InfographicMap />
+      <ContactSection />
+      <ReportSection />
+    </Page>
+  );
+}
+
+
 const tfpaInfoBlocks: Block[] = [
   { type: "card", blocks: [
     { type: "heading", level: "h3", content: "สมาคมนักวางแผนการเงินไทย" },
@@ -136,12 +150,23 @@ function GoogleMap() {
 function InfographicMap() {
   return (
     <Section title="วิธีเดินทาง">
-      <p className="my-4"><b>รถไฟฟ้าใต้ดิน (MRT):</b> สถานีศูนย์วัฒนธรรม ทางออก 3</p>
+      <RenderBlocks blocks={[
+        {
+          type: "paragraph",
+          content: [{ type: "bold", content: "รถไฟฟ้าใต้ดิน (MRT): " }, { type: "text", content: "สถานีศูนย์วัฒนธรรม ทางออก 3" }]
+        },
+        // {
+        //   type: "image",
+        //   src: {map},
+        //   alt: "How to go to TFPA",
+        //   caption: "แผนที่การเดินทางมายังสมาคมฯ",
+        // }
+      ]}/>
 
-      <p className="text-xs text-gray-500">แผนที่การเดินทางมายังสมาคมฯ</p>
+      {/* <p className="text-xs text-gray-500">แผนที่การเดินทางมายังสมาคมฯ</p>
       <div className="border border-gray-300">
         <img src={map} alt="How to go to TFPA" className="mx-auto object-contain" />
-      </div>
+      </div> */}
     </Section>
   );
 }
@@ -177,15 +202,3 @@ function ReportSection() {
 }
 
 
-export default function Contact() {
-  return (
-    <Page>
-      <PageHeader title="ติดต่อ" />
-      <TFPAInfo />
-      <GoogleMap />
-      <InfographicMap />
-      <ContactSection />
-      <ReportSection />
-    </Page>
-  );
-}

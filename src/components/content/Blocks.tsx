@@ -16,11 +16,6 @@ export default function RenderBlocks({ blocks }: { blocks: Block[] }) {
     <>
       {blocks.map((block) => {
         switch (block.type) {
-          case "text":
-          case "link":
-          case "break":
-          case "bold":
-            return <RenderInline inline={block} />;
           case "paragraph":
             return <RenderParagraph paragraph={block} />;
           case "heading":

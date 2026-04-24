@@ -1,4 +1,4 @@
-import { Page, PageHeader } from "../layouts/Page"
+import { Page, PageHeader } from "../../layouts/Page"
 
 
 // TODO: UI needs change.

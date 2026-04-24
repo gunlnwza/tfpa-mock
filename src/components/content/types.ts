@@ -22,14 +22,14 @@ export type List = {
 
 export type Card = { type: "card", blocks: Block[] };
 
-export type Image = { type: "image", }
+export type Image = { type: "image", src: string, alt: string, caption: Inline[] }
 
 export type Block =
-  | Inline
   | Paragraph
   | Heading
   | List
   | Card
+  | Image
 
   | Note
   | Divider

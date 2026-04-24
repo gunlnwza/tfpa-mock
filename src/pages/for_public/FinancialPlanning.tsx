@@ -1,8 +1,10 @@
-import { Page, PageHeader } from "../layouts/Page"
-import { Section } from "../layouts/Section"
-import type { Block } from "../components/content/types";
-import RenderBlocks from "../components/content/Blocks";
-import Button from "../components/Button";
+import { Page, PageHeader } from "../../layouts/Page"
+import { Section } from "../../layouts/Section"
+import type { Block } from "../../components/content/types";
+import RenderBlocks from "../../components/content/Blocks";
+import Button from "../../components/Button";
+
+import { TODO } from "../../components/Dev";
 
 const whatIsFinancialPlanning: Block[] = [
   { type: "heading", level: "h3", content: "การวางแผนการเงินคืออะไร"},
@@ -201,17 +203,16 @@ export default function FinancialPlanning() {
       <Section title="รู้จักกับการวางแผนการเงิน">
         <RenderBlocks blocks={whatIsFinancialPlanning}/>
         <RenderBlocks blocks={financialPlanningBenefits}/>
+        <div className="flex justify-center my-4">
+          <Button to="/find_planner">ติดต่อขอรับบริการวางแผนการเงิน</Button>
+        </div>
         <RenderBlocks blocks={whoIsFinancialPlanner}/>
         <RenderBlocks blocks={financialPlanningSixSteps}/>
         <RenderBlocks blocks={financialPlannerInfoObligations}/>
       </Section>
 
-      <div className="flex justify-center my-4">
-        <Button to="/find_planner">ติดต่อขอรับบริการวางแผนการเงิน</Button>
-      </div>
-
       <Section title="มุมความรู้การวางแผนการเงิน">
-        .
+        <TODO />
       </Section>
     </Page>
   );
