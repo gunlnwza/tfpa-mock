@@ -1,14 +1,13 @@
-import RenderDivider from "./Divider";
+import type { Block } from "./types";
+import RenderParagraph from "./Paragraph";
 import RenderHeading from "./Heading";
 import RenderList from "./List";
-import RenderMedia from "./Media";
-import RenderNote from "./Note";
-
-import RenderParagraph from "./Paragraph";
-import RenderTable from "./Table";
-import type { Block } from "./types";
 import RenderCard from "./Card";
-import RenderInline from "./Inline";
+import RenderMedia from "./Media";
+
+// import RenderDivider from "./Divider";
+// import RenderNote from "./Note";
+// import RenderTable from "./Table";
 
 
 export default function RenderBlocks({ blocks }: { blocks: Block[] }) {
@@ -24,15 +23,15 @@ export default function RenderBlocks({ blocks }: { blocks: Block[] }) {
             return <RenderList list={block} />;
           case "card":
             return <RenderCard blocks={block.blocks} />;
-
-          case "note":
-            return <RenderNote block={block} />;
-          case "divider":
-            return <RenderDivider block={block} />;
-          case "table":
-            return <RenderTable block={block} />;
           case "media":
             return <RenderMedia block={block} />;
+
+          // case "note":
+          //   return <RenderNote block={block} />;
+          // case "divider":
+          //   return <RenderDivider block={block} />;
+          // case "table":
+          //   return <RenderTable block={block} />;
           default:
             return null;
         }

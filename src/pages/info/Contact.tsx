@@ -136,12 +136,15 @@ function TFPAInfo() {
 function GoogleMap() {
   return (
     <Section title="Google Map">
-      <iframe
-        src="https://www.google.com/maps?q=The+Stock+Exchange+of+Thailand&output=embed"
-        className="w-full h-[500px] rounded-xl overflow-hidden border-0"
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
+      <RenderBlocks blocks={[
+        {
+          type: "media",
+          item: {
+            type: "embed",
+            src: "https://www.google.com/maps?q=The+Stock+Exchange+of+Thailand&output=embed",
+          }
+        }
+      ]}/>
     </Section>
   );
 }
@@ -155,18 +158,16 @@ function InfographicMap() {
           type: "paragraph",
           content: [{ type: "bold", content: "รถไฟฟ้าใต้ดิน (MRT): " }, { type: "text", content: "สถานีศูนย์วัฒนธรรม ทางออก 3" }]
         },
-        // {
-        //   type: "image",
-        //   src: {map},
-        //   alt: "How to go to TFPA",
-        //   caption: "แผนที่การเดินทางมายังสมาคมฯ",
-        // }
+        {
+          type: "media",
+          item: {
+            type: "image",
+            src: map,
+            alt: "How to go to TFPA",
+            caption: "แผนที่การเดินทางมายังสมาคมฯ",
+          }
+        }
       ]}/>
-
-      {/* <p className="text-xs text-gray-500">แผนที่การเดินทางมายังสมาคมฯ</p>
-      <div className="border border-gray-300">
-        <img src={map} alt="How to go to TFPA" className="mx-auto object-contain" />
-      </div> */}
     </Section>
   );
 }
