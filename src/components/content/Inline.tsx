@@ -5,7 +5,9 @@ import type { Inline } from "./types";
 export default function RenderInline( { inline }: { inline: Inline } ) {
   switch (inline.type) {
     case "text":
-      return <span>{inline.content}</span>;
+      return <span className="text-gray-700">{inline.content}</span>;
+    case "bold":
+      return <b className="text-gray-700">{inline.content}</b>;
 
     case "link":
       return (
@@ -16,8 +18,5 @@ export default function RenderInline( { inline }: { inline: Inline } ) {
 
     case "break":
       return (<br />);
-
-    case "bold":
-      return <b>{inline.content}</b>;
   }
 }

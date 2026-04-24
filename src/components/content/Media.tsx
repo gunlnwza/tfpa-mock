@@ -2,10 +2,6 @@ import RenderInline from "./Inline";
 import type { Media } from "./types";
 
 
-function Caption(caption) {
-
-}
-
 function BorderWithCaption({
   caption,
   children,
@@ -21,7 +17,7 @@ function BorderWithCaption({
         </div>
       )}
 
-      <div className="inline-block border border-gray-300">
+      <div className="inline-block border border-gray-300 rounded">
         {children}
       </div>
     </div>
@@ -39,7 +35,7 @@ export default function RenderMedia({ block }: { block: Media }) {
           <img
             src={item.src}
             alt={item.alt ?? ""}
-            className="mx-auto object-contain"
+            className={`rounded block max-w-3xl object-contain ${item.className}`}
           />
         </BorderWithCaption>
       );
@@ -50,20 +46,22 @@ export default function RenderMedia({ block }: { block: Media }) {
           <video
             src={item.src}
             controls={item.controls ?? true}
-            className="w-full"
+            className={`rounded block max-w-3xl ${item.className}`}
           />
-        </BorderWithCaption>    
+        </BorderWithCaption>  
       );
 
     case "embed":
       return (
-        <iframe
-          src={item.src}
-          className="w-1/2 h-100 rounded-xl overflow-hidden border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
+        <BorderWithCaption caption={item.caption}>
+          <iframe
+            src={item.src}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+            className={`rounded w-200 h-100 ${item.className}`}
+          />
+        </BorderWithCaption>
       );
 
     default:
