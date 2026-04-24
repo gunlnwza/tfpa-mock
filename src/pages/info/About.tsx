@@ -1,4 +1,4 @@
-import OrgChart from "../../components/OrgChart";
+import OrgChart from "../../components/org/OrgChart";
 
 import nsf_logo from "../../assets/logos/nsf.png"
 import { Page, PageHeader } from "../../layouts/Page";

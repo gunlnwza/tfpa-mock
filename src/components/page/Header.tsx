@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import tfpa from "../assets/logos/tfpa.png";
+import tfpa from "../../assets/logos/tfpa.png";
 
 /*
 # Need place to live

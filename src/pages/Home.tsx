@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { Page } from "../layouts/Page";
-import CorporateMembers from "../components/CorporateMembers";
+import CorporateMembers from "../components/org/CorporateMembers";
 
 /*
 # Homepage
