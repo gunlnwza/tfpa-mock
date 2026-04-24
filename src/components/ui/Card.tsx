@@ -1,44 +1,37 @@
-// type CoolCardProps = {
-//   title: string;
-//   description?: string;
-//   image?: string;
-//   href?: string;
-// };
+import { blueOnHoverClass } from "./styles";
 
-// export function CoolCard({ title, description, image, href }: CoolCardProps) {
-//   const Wrapper = href ? "a" : "div";
+type CardProps = {
+  src: string;
+  imgDivClassName?: string;
+  href?: string;
+  title?: string;
+};
 
-//   return (
-//     <Wrapper
-//       href={href}
-//       className="group block rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1"
-//     >
-//       {image && (
-//         <div className="relative h-44 w-full overflow-hidden">
-//           <img
-//             src={image}
-//             alt={title}
-//             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-//           />
-//           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition" />
-//         </div>
-//       )}
+// COMPONENT
+export function Card({ src, imgDivClassName, href, title }: CardProps) {
+  const Wrapper = href ? "a" : "div";
 
-//       <div className="p-4 space-y-2">
-//         <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition">
-//           {title}
-//         </h3>
+  return (
+    <Wrapper
+      href={href}
+      className="group w-full sm:w-1/2 md:w-1/3 lg:w-1/4 rounded-xl border border-gray-300 bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden"
+    >
+      {/* Image top */}
+      <div className={`border-b border-gray-200 w-full h-36 overflow-hidden flex justify-center items-center ${imgDivClassName}`}>
+        <img
+          src={src}
+          className={`max-w-full max-h-full object-contain p-4`}
+        />
+      </div>
 
-//         {description && (
-//           <p className="text-sm text-gray-400 line-clamp-2">
-//             {description}
-//           </p>
-//         )}
-
-//         <div className="pt-2 text-sm text-blue-400 opacity-0 group-hover:opacity-100 transition">
-//           View →
-//         </div>
-//       </div>
-//     </Wrapper>
-//   );
-// }
+      {/* Text bottom */}
+      {title && (
+        <div className="p-4">
+          <p className={`text-sm font-medium text-gray-700 ${blueOnHoverClass}`}>
+            {title}
+          </p>
+        </div>
+      )}
+    </Wrapper>
+  );
+}

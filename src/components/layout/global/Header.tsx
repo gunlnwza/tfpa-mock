@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import tfpa from "../../../assets/logos/tfpa.png";
 
-import { roundedPrimaryCTAButtonStyle } from "../../ui/styles";
+import { roundedPrimaryCTAButtonClass } from "../../ui/styles";
 
 
 function NavBarLink({ to, label }: { to: string, label: string }) {
@@ -30,7 +30,7 @@ export function Header() {
         <NavBarLink to="/contact" label="ติดต่อ" />
         <a
           href="https://member.tfpa.or.th/UserLoginNew.aspx"
-          className={roundedPrimaryCTAButtonStyle}
+          className={roundedPrimaryCTAButtonClass}
         >
           Login
         </a>
