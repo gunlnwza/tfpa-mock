@@ -1,8 +1,3 @@
-import { Link } from "react-router-dom";
-
-import { Page } from "../layouts/Page";
-import CorporateMembers from "../components/org/CorporateMembers";
-
 /*
 # Homepage
 One hero (not a carousel of 8)
@@ -11,6 +6,11 @@ Find a Financial Advisor CTA
 Latest News (3 cards, linking to actual pages — not PDFs)
 No duplicate sections
 */
+
+import { Link } from "react-router-dom";
+
+import { Page } from "../components/layout/Page";
+import CorporateMembers from "../features/CorporateMembers";
 
 
 function Hero() {

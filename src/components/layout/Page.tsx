@@ -1,5 +1,5 @@
-import { Header } from "../components/page/Header";
-import { Footer } from "../components/page/Footer";
+import { Header } from "./global/Header";
+import { Footer } from "./global/Footer";
 
 
 export function Page({ children }: { children: React.ReactNode }) {

@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import { Section } from "../layouts/Section";
-import { RenderBlocks } from "../components/content/Blocks";
+import { Section } from "./Section";
+import { RenderBlocks } from "../primitive/renderer/Blocks";
 
-import type { QuestionAnswer } from "../data/FAQ";
+import type { QuestionAnswer } from "../../data/FAQ";
 
 
 export function QuestionTab({ qa }: { qa: QuestionAnswer }) {

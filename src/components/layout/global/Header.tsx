@@ -14,7 +14,7 @@ Annual Reports
 
 import { Link } from "react-router-dom";
 
-import tfpa from "../../assets/logos/tfpa.png";
+import tfpa from "../../../assets/logos/tfpa.png";
 
 
 export function Header() {

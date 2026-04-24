@@ -1,10 +1,12 @@
-import { Page } from "../../layouts/Page"
-import { PageHeader } from "../../components/page/PageHeader";
-import { Section } from "../../layouts/Section"
-import type { Block } from "../../components/content/types";
-import { RenderBlocks } from "../../components/content/Blocks";
-import { Button } from "../../components/Button";
+import { Page } from "../../components/layout/Page";
+import { PageHeader } from "../../components/layout/global/PageHeader";
+import { Section } from "../../components/layout/Section";
 
+import { Center } from "../../components/primitive/Center";
+import type { Block } from "../../components/primitive/renderer/types";
+import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
+
+import { Button } from "../../components/ui/Button";
 
 const whatIsFinancialPlanning: Block[] = [
   { type: "heading", level: "h3", content: "การวางแผนการเงินคืออะไร"},
@@ -194,7 +196,6 @@ const financialPlannerInfoObligations: Block[] = [
 ]
 
 
-
 export default function FinancialPlanning() {
   return (
     <Page>
@@ -203,9 +204,9 @@ export default function FinancialPlanning() {
       <Section title="รู้จักกับการวางแผนการเงิน">
         <RenderBlocks blocks={whatIsFinancialPlanning}/>
         <RenderBlocks blocks={financialPlanningBenefits}/>
-        <div className="flex justify-center my-4">
-          <Button to="/find_planner">ติดต่อขอรับบริการวางแผนการเงิน</Button>
-        </div>
+        
+        <Center><Button to="/find_planner">ติดต่อขอรับบริการวางแผนการเงิน</Button></Center>
+
         <RenderBlocks blocks={whoIsFinancialPlanner}/>
         <RenderBlocks blocks={financialPlanningSixSteps}/>
         <RenderBlocks blocks={financialPlannerInfoObligations}/>

@@ -1,3 +1,7 @@
+/*
+Organization chart in About
+*/
+
 import { useState } from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
 

@@ -1,5 +1,11 @@
-import { Page } from "../../layouts/Page";
-import { PageHeader } from "../../components/page/PageHeader";
+import { Page } from "../../components/layout/Page";
+import { PageHeader } from "../../components/layout/global/PageHeader";
+
+import { QuestionSection } from "../../components/layout/QuestionSection";
+
+import {
+  training, exam, work_experience, register_cert, extend_cert, cert_development
+} from "../../data/FAQ";
 
 
 export default function FAQ() {

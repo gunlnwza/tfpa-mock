@@ -1,4 +1,4 @@
-import type { ListItems } from "./Core";
+import type { ListItems } from "./types";
 
 
 export const roles_items: ListItems = [

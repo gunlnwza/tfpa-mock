@@ -1,7 +1,10 @@
-import { Page } from "../../layouts/Page"
-import { Section } from "../../layouts/Section"
-import { PageHeader } from "../../components/page/PageHeader";
-import { Button } from "../../components/Button";
+import { Page } from "../../components/layout/Page";
+import { Section } from "../../components/layout/Section";
+import { PageHeader } from "../../components/layout/global/PageHeader";
+
+import { Center } from "../../components/primitive/Center";
+
+import { Button } from "../../components/ui/Button";
 
 
 export default function CareerPath() {
@@ -17,7 +20,9 @@ export default function CareerPath() {
       <Section title="ตารางสอบและสมัครสอบ">
         .
       </Section>
-      <Button to="/faq">คำถามที่พบบ่อย</Button>
+
+      <Center><Button to="/faq">คำถามที่พบบ่อย</Button></Center>
+    
     </Page>
   );
 }

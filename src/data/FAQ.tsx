@@ -1,7 +1,7 @@
-import type { Block } from "../components/content/types";
+import type { Block } from "../components/primitive/renderer/types";
 
-import transcript_review from "../../assets/faq/transcript_review.png"
-import challenge_status from "../../assets/faq/challenge_status.png"
+import transcript_review from "../assets/faq/transcript_review.png"
+import challenge_status from "../assets/faq/challenge_status.png"
 
 
 export type QuestionAnswer = {

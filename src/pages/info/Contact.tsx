@@ -6,14 +6,18 @@
 */
 
 import map from "../../assets/map/how_to_go_to_tfpa.png"
-import { Page } from "../../layouts/Page";
-import { PageHeader } from "../../components/page/PageHeader";
-import { Section } from "../../layouts/Section";
-import { RenderBlocks } from "../../components/content/Blocks";
-import type { Block } from "../../components/content/types";
-import { type StaffContact, training_staff_contact,
-  license_staff_contact, financial_staff_contact } from "../../data/Contact";
 
+import { Page } from "../../components/layout/Page";
+import { PageHeader } from "../../components/layout/global/PageHeader";
+import { Section } from "../../components/layout/Section";
+
+import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
+import type { Block } from "../../components/primitive/renderer/types";
+
+import {
+  type StaffContact, training_staff_contact,
+  license_staff_contact, financial_staff_contact
+} from "../../data/Contact";
 
 const tfpaInfoBlocks: Block[] = [
   { type: "card", blocks: [
