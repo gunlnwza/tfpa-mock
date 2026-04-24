@@ -135,7 +135,7 @@ A card is a container block that groups other blocks.
 ### Type
 ```ts
 type Card = {
-  type: "card";
+  type: "quote";
   blocks: Block[];
 };
 ```
@@ -148,7 +148,7 @@ type Card = {
 ### Example
 ```ts
 {
-  type: "card",
+  type: "quote",
   blocks: [
     {
       type: "heading",

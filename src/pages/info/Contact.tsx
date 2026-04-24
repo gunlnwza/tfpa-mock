@@ -12,64 +12,47 @@ import { Section } from "../../components/layout/Section";
 import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
 
 import {
-  tfpaContactCard, googleMapBlocks, infographicMapBlocks, contactBlocks, reportBlocks
+  tfpaContactBlocks,
+  googleMapBlocks,
+  infographicMapBlocks,
+  trainingStaffContactBlocks, licenseStaffContactBlocks, financialStaffContactBlocks,
+  reportBlocks
 } from "../../data/Contact"
 
-
-function TFPAInfo() {
-  return (
-    <Section title="Location">
-      <RenderBlocks blocks={tfpaContactCard}/>
-    </Section>
-  );
-}
-
-
-function GoogleMap() {
-  return (
-    <Section title="Google Map">
-      <RenderBlocks blocks={googleMapBlocks}/>
-    </Section>
-  );
-}
-
-
-function InfographicMap() {
-  return (
-    <Section title="วิธีเดินทาง">
-      <RenderBlocks blocks={infographicMapBlocks}/>
-    </Section>
-  );
-}
-
-
-function ContactSection() {
-  return (
-    <Section title="ติดต่อเจ้าหน้าที่">
-      <RenderBlocks blocks={contactBlocks}/>
-    </Section>
-  );
-}
-
-
-function ReportSection() {
-  return (
-    <Section title="ร้องเรียน">
-      <RenderBlocks blocks={reportBlocks}/>
-    </Section>
-  );
-}
+import { TextCard } from "../../components/ui/TextCard";
+import { CenterPile } from "../../components/primitive/CenterPile";
 
 
 export default function Contact() {
   return (
     <Page>
       <PageHeader title="ติดต่อ" />
-      <TFPAInfo />
-      <GoogleMap />
-      <InfographicMap />
-      <ContactSection />
-      <ReportSection />
+
+      <Section title="Location">
+        <CenterPile>
+          <TextCard blocks={tfpaContactBlocks} />
+        </CenterPile>
+      </Section>
+
+      <Section title="Google Map">
+        <RenderBlocks blocks={googleMapBlocks}/>
+      </Section>
+
+      <Section title="วิธีเดินทาง">
+        <RenderBlocks blocks={infographicMapBlocks}/>
+      </Section>
+
+      <Section title="ติดต่อเจ้าหน้าที่">
+        <CenterPile>
+          <TextCard blocks={trainingStaffContactBlocks}/>
+          <TextCard blocks={licenseStaffContactBlocks}/>
+          <TextCard blocks={financialStaffContactBlocks}/>
+        </CenterPile>
+      </Section>
+      
+      <Section title="ร้องเรียน">
+        <RenderBlocks blocks={reportBlocks}/>
+      </Section>
     </Page>
   );
 }

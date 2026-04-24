@@ -41,28 +41,28 @@ export const registerForLicenseBlocks: Block[] = [
   ]},
   { type: "list", items: [
     { content: [
-      { type: "bold", content: "ชุดวิชาที่ 1" },
-      { type: "text", content: " พื้นฐานการวางแผนการเงิน ภาษี และจรรยาบรรณ (Foundation of Financial Planning, Taxation, and Ethics and Practice Standards)" },
+      { type: "bold", content: "ชุดวิชาที่ 1: " },
+      { type: "text", content: "พื้นฐานการวางแผนการเงิน ภาษี และจรรยาบรรณ (Foundation of Financial Planning, Taxation, and Ethics and Practice Standards)" },
     ]},
     { content: [
-      { type: "bold", content: "ชุดวิชาที่ 2" },
-      { type: "text", content: " การวางแผนการลงทุน (Investment Planning)" },
+      { type: "bold", content: "ชุดวิชาที่ 2: " },
+      { type: "text", content: "การวางแผนการลงทุน (Investment Planning)" },
     ]},
     { content: [
-      { type: "bold", content: "ชุดวิชาที่ 3" },
-      { type: "text", content: " การวางแผนการประกันภัย (Insurance Planning)" },
+      { type: "bold", content: "ชุดวิชาที่ 3: " },
+      { type: "text", content: "การวางแผนการประกันภัย (Insurance Planning)" },
     ]},
     { content: [
-      { type: "bold", content: "ชุดวิชาที่ 4" },
-      { type: "text", content: " การวางแผนเพื่อวัยเกษียณ (Retirement Planning)" },
+      { type: "bold", content: "ชุดวิชาที่ 4: " },
+      { type: "text", content: "การวางแผนเพื่อวัยเกษียณ (Retirement Planning)" },
     ]},
     { content: [
-      { type: "bold", content: "ชุดวิชาที่ 5" },
-      { type: "text", content: " การวางแผนภาษีและมรดก (Tax and Estate Planning)" },
+      { type: "bold", content: "ชุดวิชาที่ 5: " },
+      { type: "text", content: "การวางแผนภาษีและมรดก (Tax and Estate Planning)" },
     ]},
     { content: [
-      { type: "bold", content: "ชุดวิชาที่ 6" },
-      { type: "text", content: " การจัดทำแผนการเงิน (Financial Plan Construction)" },
+      { type: "bold", content: "ชุดวิชาที่ 6: " },
+      { type: "text", content: "การจัดทำแผนการเงิน (Financial Plan Construction)" },
     ]},
   ]},
   { type: "paragraph", content: [

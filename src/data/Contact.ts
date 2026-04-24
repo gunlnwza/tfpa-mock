@@ -20,7 +20,7 @@ type TFPAContact = {
   address: string[];
   telephone: string;
   telegraph: string;
-  website: InlineLink;
+  website: string;
 }
 
 const tfpaContact: TFPAContact = {
@@ -32,28 +32,26 @@ const tfpaContact: TFPAContact = {
   ],
   telephone: "0 2009 9393",
   telegraph: "0 2247 7479",
-  website: { type: "link", href: "/", content: "www.tfpa.or.th" }
+  website: "www.tfpa.or.th"
 }
 
-export const tfpaContactCard: Block[] = [
-  { type: "card", blocks: [
-    { type: "heading", level: "h4", content: tfpaContact.title },
-    {
-      type: "paragraph", content: [
-        ...withBreaks(tfpaContact.address), { type: "break" },
-        { type: "break" },
-        { type: "text", content: `โทรศัพท์: ${tfpaContact.telephone}` }, { type: "break" },
-        { type: "text", content: `โทรสาร: ${tfpaContact.telegraph}` }, { type: "break" },
-        { type: "text", content: "Website: " }, tfpaContact.website, 
-      ]
-    }
-  ]}
+export const tfpaContactBlocks: Block[] = [
+  { type: "heading", level: "h4", content: tfpaContact.title },
+  {
+    type: "paragraph", content: [
+      ...withBreaks(tfpaContact.address), { type: "break" },
+      { type: "break" },
+      { type: "text", content: `โทรศัพท์: ${tfpaContact.telephone}` }, { type: "break" },
+      { type: "text", content: `โทรสาร: ${tfpaContact.telegraph}` }, { type: "break" },
+      { type: "text", content: "Website: " }, { type: "link", href: "/", content: tfpaContact.website }
+    ]
+  }
 ];
 
 
 type StaffContact = { responsibility: string, staff_name: string, telephone: string, email: string };
 
-function StaffContactCardContents(contact: StaffContact): Block[] {
+function StaffContactBlocks(contact: StaffContact): Block[] {
   return [
     { type: "heading", level: "h4", content: contact.responsibility },
     { type: "paragraph", content: [
@@ -64,32 +62,30 @@ function StaffContactCardContents(contact: StaffContact): Block[] {
   ];
 }
 
-const training_staff_contact: StaffContact = {
+const trainingStaffContact: StaffContact = {
   responsibility: "การอบรมและการสอบ",
   staff_name: "คุณวนิดา จรุงกิจกุล",
   telephone: "0 2009 9393 ต่อ 3731",
   email: "tfpaexam@tfpa.or.th"
 }
 
-const license_staff_contact: StaffContact = {
+const licenseStaffContact: StaffContact = {
   responsibility: "การยื่นขึ้นทะเบียนคุณวุฒิวิชาชีพและการต่ออายุคุณวุฒิวิชาชีพ",
   staff_name: "คุณสุรีรัตน์  ทักขิณ",
   telephone: "0 2009 9393 ต่อ 3727",
   email: "sureerat@tfpa.or.th"
 }
 
-const financial_staff_contact: StaffContact = {
+const financialStaffContact: StaffContact = {
   responsibility: "การเงิน",
   staff_name: "คุณทัดดาว ลิขิตกิติกุล",
   telephone: "0 2009 9393 ต่อ 3729",
   email: "tfpa@tfpa.or.th"
 }
 
-export const contactBlocks: Block[] = [
-  { type: "card", blocks: StaffContactCardContents(training_staff_contact) },
-  { type: "card", blocks: StaffContactCardContents(license_staff_contact) },
-  { type: "card", blocks: StaffContactCardContents(financial_staff_contact) },
-];
+export const trainingStaffContactBlocks = StaffContactBlocks(trainingStaffContact);
+export const licenseStaffContactBlocks = StaffContactBlocks(licenseStaffContact);
+export const financialStaffContactBlocks = StaffContactBlocks(financialStaffContact);
 
 
 export const reportBlocks: Block[] = [
@@ -117,7 +113,7 @@ export const reportBlocks: Block[] = [
     content: [{ type: "text", content: "สมาคมฯ ได้กำหนดกระบวนการพิจารณาความผิดทางวินัย กระบวนการอุทธรณ์ และการดำเนินการทางวินัย เพื่อใช้เป็นแนวปฏิบัติในกรณีที่พบว่านักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT กระทำใดๆ ที่อาจเป็นการฝ่าฝืนจรรยาบรรณดังกล่าว ท่านสามารถแจ้งข้อร้องเรียนเกี่ยวกับการให้บริการของนักวางแผนการเงิน CFP และที่ปรึกษาการเงิน AFPT ผ่านทางอีเมลที่ info@tfpa.or.th หรือทางจดหมายถึง" }]
   },
   {
-    type: "card",
+    type: "quote",
     blocks: [
       { type: "heading", level: "h4", content: "ผู้อำนวยการสมาคมนักวางแผนการเงินไทย" },
       { 
@@ -152,13 +148,13 @@ export const reportBlocks: Block[] = [
     ]
   },
   {
-    type: "card",
+    type: "quote",
     blocks: [
       {
         type: "paragraph",
         content: [
-          { type: "text", content: "อีเมล: info@tfpa.or.th" }, { type: "break" },
-          { type: "text", content: "โทรศัพท์: 0 2009 9393" },
+          { type: "bold", content: "อีเมล: " }, { type: "text", content: "info@tfpa.or.th" }, { type: "break" },
+          { type: "bold", content: "โทรศัพท์: " }, { type: "text", content: "0 2009 9393" },
         ]
       }
     ]

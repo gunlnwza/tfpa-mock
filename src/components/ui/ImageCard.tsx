@@ -1,18 +1,18 @@
-import { blueOnHoverClass } from "./styles";
+import { groupHighlightOnHoverClass } from "./styles";
+import { cardAddBorderClass, cardAddRaiseUpClass } from "./styles";
 
-type CardProps = {
-  src: string;
+type ImageCardProps = {
+  src?: string;
   alt?: string;
   imgDivClassName?: string;
   href?: string;
   title?: string;
 };
 
-export function Card({ src, alt, imgDivClassName, href, title }: CardProps) {
+
+export function ImageCard({ src, alt, imgDivClassName, href, title }: ImageCardProps) {
   const Wrapper = href ? "a" : "div";
-  const base = "w-full sm:w-1/2 md:w-1/3 lg:w-1/4 rounded-xl border border-gray-300 bg-white shadow-sm overflow-hidden";
-  const animation = "group hover:shadow-md hover:-translate-y-0.5 transition-all duration-200";
-  const wrapperClass = href ? `${base} ${animation}` : base;
+  const wrapperClass = href ? `w-full sm:w-1/2 md:w-1/3 lg:w-1/4 ${cardAddBorderClass} ${cardAddRaiseUpClass}` : cardAddBorderClass;
 
   return (
     <Wrapper
@@ -31,7 +31,7 @@ export function Card({ src, alt, imgDivClassName, href, title }: CardProps) {
       {/* Text bottom */}
       {title && (
         <div className="p-4">
-          <p className={`text-sm font-medium text-gray-700 ${blueOnHoverClass}`}>
+          <p className={`text-sm font-medium text-gray-700 ${groupHighlightOnHoverClass}`}>
             {title}
           </p>
         </div>

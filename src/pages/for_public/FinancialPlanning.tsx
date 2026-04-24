@@ -7,6 +7,8 @@ import type { Block } from "../../components/primitive/renderer/types";
 import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
 
 import { Button } from "../../components/ui/Button";
+import { ImageCard } from "../../components/ui/ImageCard";
+import { CenterPile } from "../../components/primitive/CenterPile";
 
 const whatIsFinancialPlanning: Block[] = [
   { type: "heading", level: "h3", content: "การวางแผนการเงินคืออะไร"},
@@ -212,8 +214,12 @@ export default function FinancialPlanning() {
         <RenderBlocks blocks={financialPlannerInfoObligations}/>
       </Section>
 
-      <Section title="มุมความรู้การวางแผนการเงิน">
-        .
+      <Section title="มุมความรู้">
+        <CenterPile>
+          <ImageCard />
+          <ImageCard />
+          <ImageCard />
+        </CenterPile>
       </Section>
     </Page>
   );

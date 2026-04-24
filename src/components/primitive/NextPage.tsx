@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { blueOnHoverClass } from "../ui/styles";
+import { highlightOnHoverClass } from "../ui/styles";
 
 type NextPageProps = {
   children: React.ReactNode;
@@ -8,12 +8,14 @@ type NextPageProps = {
 
 export function NextPage({ children, to }: NextPageProps) {
   return (
-    <Link
-      to={to}
-      className={`flex items-center justify-end gap-2 py-2 ${blueOnHoverClass}`}
-    >
-      <span className="text-lg">{children}</span>
-      <span className="text-xl">→</span> 
-    </Link>
+    <div className="flex justify-end">
+      <Link
+        to={to}
+        className={`inline-flex items-center gap-2 py-2 ${highlightOnHoverClass}`}
+      >
+        <span className="text-lg">{children}</span>
+        <span className="text-xl">→</span> 
+      </Link>
+    </div>
   );
 }

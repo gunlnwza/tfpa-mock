@@ -19,7 +19,7 @@ export type List = {
   ordered?: boolean;
 };
 
-export type Card = { type: "card"; blocks: Block[] };
+export type Quote = { type: "quote"; blocks: Block[] };  // Enclose in nice gray border
 
 type MediaImage = { type: "image"; src: string; alt: string; caption?: string; className?: string };
 type MediaVideo = { type: "video"; src: string; controls: boolean; caption?: string; className?: string };
@@ -35,7 +35,7 @@ export type Block =
   | Paragraph
   | Heading
   | List
-  | Card
+  | Quote
   | Media
   | Divider
   | Table

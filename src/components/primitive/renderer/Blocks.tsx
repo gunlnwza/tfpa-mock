@@ -2,7 +2,7 @@ import type { Block } from "./types";
 import { RenderParagraph } from "./Paragraph";
 import { RenderHeading } from "./Heading";
 import { RenderList } from "./List";
-import { RenderCard } from "./Card";
+import { RenderQuote } from "./Quote";
 import { RenderMedia } from "./Media";
 import { RenderDivider } from "./Divider";
 import { RenderTable } from "./Table";
@@ -10,7 +10,7 @@ import { RenderTable } from "./Table";
 
 export function RenderBlocks({ blocks }: { blocks: Block[] }) {
   return (
-    <>
+    <div>
       {blocks.map((block) => {
         switch (block.type) {
           case "paragraph":
@@ -19,8 +19,8 @@ export function RenderBlocks({ blocks }: { blocks: Block[] }) {
             return <RenderHeading heading={block} />;
           case "list":
             return <RenderList list={block} />;
-          case "card":
-            return <RenderCard blocks={block.blocks} />;
+          case "quote":
+            return <RenderQuote blocks={block.blocks} />;
           case "media":
             return <RenderMedia block={block} />;
           case "divider":
@@ -31,6 +31,6 @@ export function RenderBlocks({ blocks }: { blocks: Block[] }) {
             return null;
         }
       })}
-    </>
+    </div>
   );
 }

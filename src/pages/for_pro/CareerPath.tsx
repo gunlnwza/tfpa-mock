@@ -20,9 +20,11 @@ import thaiPFATraining from "../../assets/training_tables/thai_pfa_training.jpg"
 import examPage1 from "../../assets/exam/exam_page1.jpg";
 import examPage2 from "../../assets/exam/exam_page2.jpg";
 
-import { Card } from "../../components/ui/Card";
+import { ImageCard } from "../../components/ui/ImageCard";
 import { PDFLink } from "../../components/primitive/PDFLink";
 import { NextPage } from "../../components/primitive/NextPage";
+
+import { CenterPile } from "../../components/primitive/CenterPile";
 
 export default function CareerPath() {
   return (
@@ -33,14 +35,15 @@ export default function CareerPath() {
         <RenderBlocks blocks={registerForLicenseBlocks} />
       </Section>
 
+
       <Section title="สมัครอบรม">
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Card src={thaiPFALogo} href="https://www.thaipfa.co.th" title="ศูนย์อบรมไทยพีเอฟเอ (ThaiPFA)" />
-          <Card src={atiLogo} imgDivClassName="bg-black" href="https://ati-asco.org" title="สถาบันฝึกอบรมสมาคมบริษัทหลักทรัพย์ (ATI)" />
-          <Card src={aimcLogo} href="https://www.aimc.or.th/center/" title="ศูนย์ความรู้ผู้ประกอบวิชาชีพทางการเงิน สมาคมบริษัทจัดการลงทุน (AIMC)" />
-          <Card src={cmskLogo} href="https://mycmsk.com/filter/11" title="บริษัท ซีเอ็มเอสเค จำกัด (CMSK Academy)" />
-          <Card src={avpAcademyLogo} href="https://www.avp-academy.com" title="สถาบันฝึกอบรม เอวีพี อะคาเดมี่ (AVP Academy)" />
-        </div>
+        <CenterPile>
+          <ImageCard src={thaiPFALogo} href="https://www.thaipfa.co.th" title="ศูนย์อบรมไทยพีเอฟเอ (ThaiPFA)" />
+          <ImageCard src={atiLogo} imgDivClassName="bg-black" href="https://ati-asco.org" title="สถาบันฝึกอบรมสมาคมบริษัทหลักทรัพย์ (ATI)" />
+          <ImageCard src={aimcLogo} href="https://www.aimc.or.th/center/" title="ศูนย์ความรู้ผู้ประกอบวิชาชีพทางการเงิน สมาคมบริษัทจัดการลงทุน (AIMC)" />
+          <ImageCard src={cmskLogo} href="https://mycmsk.com/filter/11" title="บริษัท ซีเอ็มเอสเค จำกัด (CMSK Academy)" />
+          <ImageCard src={avpAcademyLogo} href="https://www.avp-academy.com" title="สถาบันฝึกอบรม เอวีพี อะคาเดมี่ (AVP Academy)" />
+        </CenterPile>
 
         <RenderBlocks blocks={[
           { type: "paragraph", content: [

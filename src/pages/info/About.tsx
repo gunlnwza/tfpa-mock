@@ -8,7 +8,7 @@ import { Section } from "../../components/layout/Section";
 
 import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
 
-import { Card } from "../../components/ui/Card";
+import { ImageCard } from "../../components/ui/ImageCard";
 
 import { missionBlocks, historyBlocks, founderBlocks } from "../../data/About";
 
@@ -54,7 +54,7 @@ function Alliance() {
   return (
     <Section title="หน่วยงานพันธมิตร">
       <div className="flex flex-col items-center space-y-2">
-        <Card src={nsf_logo} alt="NSF Logo" href="https://www.nsf.or.th/" title="กองทุนการออมแห่งชาติ" />
+        <ImageCard src={nsf_logo} alt="NSF Logo" href="https://www.nsf.or.th/" title="กองทุนการออมแห่งชาติ" />
       </div>
     </Section>
   );
