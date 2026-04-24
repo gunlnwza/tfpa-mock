@@ -14,8 +14,6 @@ const companyImages: Record<string, string> = Object.fromEntries(
   })
 );
 
-console.log(companyImages);
-
 type LogoKey = keyof typeof companyImages;
 
 type Company = {

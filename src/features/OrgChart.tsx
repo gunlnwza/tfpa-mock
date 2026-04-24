@@ -102,7 +102,6 @@ type ModalProps = {
 };
 
 
-// TODO put members
 const org: Committee = {
   id: "main",
   title: "คณะกรรมการสมาคม",
