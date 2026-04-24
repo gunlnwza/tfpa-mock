@@ -15,11 +15,7 @@ export function RenderList({ list }: { list: List }) {
             <RenderInline key={j} inline={inline} />
           ))}
 
-          {item.children && (
-            <div className="mt-2">
-              <RenderList list={item.children} />
-            </div>
-          )}
+          {item.children && <RenderList list={item.children} />}
         </li>
       ))}
     </Tag>

@@ -17,6 +17,17 @@ import { Link } from "react-router-dom";
 import tfpa from "../../../assets/logos/tfpa.png";
 
 
+const loginButtonStyle = `
+  inline-flex items-center justify-center
+  px-5 py-2
+  rounded-full
+  bg-blue-600 text-white font-semibold text-sm
+  shadow-sm
+  transition
+  hover:bg-blue-700
+  active:scale-[0.97]
+`;
+
 export function Header() {
   return (
     <header className="sticky top-0 bg-white z-50 flex items-center justify-between px-8 py-4 shadow-sm">
@@ -34,7 +45,12 @@ export function Header() {
         <Link to="/career_path" className="hover:text-blue-600">เส้นทางอาชีพ</Link>
         <Link to="/become_member" className="hover:text-blue-600">สำหรับสมาชิก</Link>
         <Link to="/contact" className="hover:text-blue-600">ติดต่อ</Link>
-        <a href="https://member.tfpa.or.th/UserLoginNew.aspx" className="text-white hover:text-blue-200 bg-blue-700">Login</a>
+        <a
+          href="https://member.tfpa.or.th/UserLoginNew.aspx"
+          className={loginButtonStyle}
+        >
+          Login
+        </a>
         
 
         {/* <Link to="/cfp/types" className="hover:text-blue-600">CFP Certification</Link> */}
