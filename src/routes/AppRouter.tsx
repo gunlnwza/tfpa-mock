@@ -11,6 +11,7 @@ import FindPlanner from "../pages/for_public/FindPlanner";
 
 import CareerPath from "../pages/for_pro/CareerPath";
 import ForMember from "../pages/for_pro/ForMember";
+import FAQ from "../pages/info/FAQ";
 
 
 export default function AppRouter() {
@@ -29,6 +30,8 @@ export default function AppRouter() {
         <Route path="/career_path" element={<CareerPath />} />
         <Route path="/become_member" element={<ForMember />} />
         {/* path="/login" links to real member's login site */}
+
+        <Route path="faq" element={<FAQ />} />
       </Routes>
     </BrowserRouter>
   );
