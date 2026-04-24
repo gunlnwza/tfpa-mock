@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
 
 
-const rawImages = import.meta.glob<string>("../../assets/people/*.jpg", {
+const rawImages = import.meta.glob<string>("../assets/people/*.jpg", {
   eager: true,
   import: "default"
 });
@@ -304,7 +304,7 @@ function OrgNode({ node, onClick }: OrgNodeProps) {
 }
 
 
-export default function OrgChart() {
+export default function OrganizationChart() {
   const [selected, setSelected] = useState<Committee | null>(null);
   return (
     <>
