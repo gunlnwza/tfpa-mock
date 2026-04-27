@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-
-import tfpaLogo from "../../../assets/logos/tfpa.png";
-
 import { roundedprimaryCTAButtonClass } from "../../ui/styles";
+import tfpaLogo from "../../../assets/logos/tfpa.png"
 
 
 function NavBarLink({ to, label }: { to: string, label: string }) {
@@ -11,14 +9,15 @@ function NavBarLink({ to, label }: { to: string, label: string }) {
   );
 }
 
+
+
 export function Header() {
   return (
     <header className="sticky top-0 bg-white z-50 flex items-center justify-between px-8 py-4 shadow-sm">
-
       <Link to="/">
         <img
           src={tfpaLogo}
-          alt="TFPALogo"
+          alt="TFPA Logo"
           className="h-auto w-24 sm:w-32 md:w-80"
         />
       </Link>

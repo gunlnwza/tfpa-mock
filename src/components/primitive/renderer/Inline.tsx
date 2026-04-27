@@ -5,9 +5,9 @@ import type { Inline } from "./types";
 export function RenderInline( { inline }: { inline: Inline } ) {
   switch (inline.type) {
     case "text":
-      return <span className="text-gray-700">{inline.content}</span>;
+      return <span className="">{inline.content}</span>;
     case "bold":
-      return <b className="text-gray-700">{inline.content}</b>;
+      return <b className="">{inline.content}</b>;
 
     case "link":
       return (
