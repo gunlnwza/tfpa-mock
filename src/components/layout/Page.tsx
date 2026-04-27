@@ -4,9 +4,9 @@ import { Footer } from "./global/Footer";
 
 export function Page({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <div className="font-sans">
       <Header />
-      <div className="px-20 py-10">
+      <div>
         {children}
       </div>
       <Footer />

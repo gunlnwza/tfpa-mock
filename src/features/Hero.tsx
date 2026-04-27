@@ -1,34 +1,39 @@
-import { Link } from "react-router-dom";
+import handshakeImg from "../assets/stock/handshake.png"
+import { PrimaryCTAButton } from "../components/ui/Button";
 
 
 export function Hero() {
   return (
-    <div>
-      <section className="py-50 text-center">
-        <h1 className="text-4xl font-bold mb-4">
-          Financial Planning Starts Here
-        </h1>
+    <div className="relative h-[500px] w-full">
+      {/* background image */}
+      <img
+        src={handshakeImg}
+        alt="Handshake Image"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-        <p className="text-gray-600">
-          Build a career or find expert advice.
-        </p>
-      </section>
+      {/* optional dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/10" />
 
-      <section className="grid md:grid-cols-2 gap-6 px-8">
-        <Link
-          to="/cfp/types"
-          className="p-6 border rounded-xl hover:shadow"
-        >
-          CFP Career Journey
-        </Link>
-
-        <Link
-          to="/advisor/search"
-          className="p-6 border rounded-xl hover:shadow"
-        >
-          Find a Financial Advisor
-        </Link>
-      </section>
+      {/* text */}
+      <div className="relative z-10 h-full flex flex-col justify-center p-8">
+        <div className="md:text-5xl font-bold leading-tight space-y-2 bg-white/90 rounded-xl p-4">
+          <h1 className="mb-6">
+            <span className="block text-black text-3xl mb-4">
+              CFP® Professionals
+            </span>
+            <span className="block text-blue-800 text-5xl mb-6">
+              "The Standard of Excellence"
+            </span>
+            <span className="block text-yellow-600 text-3xl mb-4">
+              เป้าหมายชีวิตสำเร็จได้ด้วยนักวางแผนการเงิน CFP®
+            </span>
+          </h1>
+          <div className="text-xl">
+            <PrimaryCTAButton to="find_planner">รับบริการวางแผนการเงิน</PrimaryCTAButton>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

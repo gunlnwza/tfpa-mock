@@ -41,7 +41,7 @@ function Right() {
       <div className="">
         <div>
           <p className="text-right mb-2">ติดตามเราได้ที่</p>
-          <div className="flex gap-4 justify-end mb-8">
+          <div className="flex gap-4 justify-end mb-16">
             
             <Icon src={facebookIcon} href="https://www.facebook.com/ThaiFinancialPlanners" />
             <Icon src={youtubeIcon} href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw?sub_confirmation=1" />
@@ -49,12 +49,13 @@ function Right() {
           </div>
         </div>
 
-        <div className="flex gap-4 justify-end mb-8">
+        <div className="flex gap-4 justify-end mb-4">
           <WhitePDFLink title="นโยบายความเป็นส่วนตัว" href="https://www.tfpa.or.th/upload/tfpa-2205311451021516.pdf" />
           <WhitePDFLink title="ข้อบังคับสมาคม" href="https://www.tfpa.or.th/upload/tfpa-2109221601078698.pdf" />
-          <Link to="/sitemap" className="hover:underline text-blue-100 underline block text-center">
-            Sitemap
-          </Link>
+        </div>
+
+        <div className="flex gap-4 justify-end mb-8">
+          <Link to="/sitemap" className="hover:underline text-blue-100 underline block text-center">Sitemap</Link>
         </div>
       </div>
 

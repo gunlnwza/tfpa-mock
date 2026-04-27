@@ -6,7 +6,7 @@ import { Center } from "../../components/primitive/Center";
 import type { Block } from "../../components/primitive/renderer/types";
 import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
 
-import { Button } from "../../components/ui/Button";
+import { PrimaryCTAButton } from "../../components/ui/Button";
 import { ImageCard } from "../../components/ui/ImageCard";
 import { CenterPile } from "../../components/primitive/CenterPile";
 
@@ -207,7 +207,7 @@ export default function FinancialPlanning() {
         <RenderBlocks blocks={whatIsFinancialPlanning}/>
         <RenderBlocks blocks={financialPlanningBenefits}/>
         
-        <Center><Button to="/find_planner">ติดต่อขอรับบริการวางแผนการเงิน</Button></Center>
+        <Center><PrimaryCTAButton to="/find_planner">ติดต่อขอรับบริการวางแผนการเงิน</PrimaryCTAButton></Center>
 
         <RenderBlocks blocks={whoIsFinancialPlanner}/>
         <RenderBlocks blocks={financialPlanningSixSteps}/>

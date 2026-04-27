@@ -329,7 +329,7 @@ function MemberCard({ m, large = false }: { m: Member; large?: boolean }) {
       <img
         src={p.image}
         alt={p.name}
-        className={`mx-auto object-cover rounded-lg ${
+        className={`mx-auto object-cover rounded-lg flex-1 ${
           large ? "w-32 h-32" : "w-24 h-24"
         }`}
       />
@@ -354,13 +354,15 @@ function Modal({ node, onClose }: ModalProps) {
         {node.levels?.length ? (
           <div className="p-6 space-y-8 overflow-y-auto">
             {node.levels.map((level, i) => (
-              <div key={i} className="flex justify-center gap-8 flex-wrap">
+              <div key={i} className="flex flex-wrap justify-center gap-8">
                 {level.members.map((m) => (
-                  <MemberCard
-                    key={people[m.person].name}
-                    m={m}
-                    large={i === 0}
-                  />
+                  <div className="basis-[225px] flex justify-center">
+                    <MemberCard
+                      key={people[m.person].name}
+                      m={m}
+                      large={i === 0}
+                    />
+                  </div>
                 ))}
               </div>
             ))}

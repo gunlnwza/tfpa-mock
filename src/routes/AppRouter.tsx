@@ -15,9 +15,26 @@ import FAQ from "../pages/info/FAQ";
 import Resources from "../pages/info/Resources";
 
 
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+
+export function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+
 export default function AppRouter() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Home />} />
 

@@ -1,7 +1,3 @@
-/*
-Company member strip in Home
-*/
-
 const rawImages = import.meta.glob("../assets/logos/*.png", {
   eager: true,
   import: "default"
@@ -22,7 +18,7 @@ type Company = {
   url: string;
 }
 
-const corporate_members: Company[] = [
+const companies: Company[] = [
     { name: "AIA", logo: "aia", url: "https://www.aia.co.th/th" },
     { name: "Allianz Ayudhya", logo: "allianz_ayudhya", url: "https://www.allianz.co.th/en_TH.html" },
     { name: "Bangkok Bank", logo: "bangkok_bank", url: "https://www.bangkokbank.com/" },
@@ -50,23 +46,47 @@ const corporate_members: Company[] = [
     { name: "UOB Asset", logo: "uob_asset", url: "https://www.uobam.co.th/th/home" },
     { name: "Yuanta", logo: "yuanta", url: "http://www.yuanta.co.th/" },
 ];
-  
 
-export default function CorporateMembers() {
+
+function Card({ company }: { company: Company }) {
   return (
-    <section className="py-5">
-      <h2 className="text-center">Corporate Members</h2>
-      <div className="grid grid-cols-13 gap-6">
-        {corporate_members.map((c) => (
-          <a key={c.name} href={c.url} target="_blank" rel="noopener noreferrer">
-            <img
-              src={companyImages[c.logo]}
-              alt={c.name}
-              className="mx-auto h-12 object-contain"
-            />
-          </a>
+    <a href={company.url}>
+      <div className="w-24 h-24 bg-white rounded-xl shadow-sm flex items-center justify-center border border-gray-200">
+        <img src={companyImages[company.logo]} className="max-w-[70%] max-h-[70%] object-contain" />
+      </div>
+    </a>
+  );
+}
+
+function Row({ direction = "right", offset = false }) {
+  // duplicate for toroidal effect
+  const loop = [...companies, ...companies];
+
+  return (
+    <div className="relative overflow-hidden p-4">
+      <div
+        className={`
+          flex gap-4 w-max
+          ${direction === "right" ? "animate-marquee-right" : "animate-marquee-left"}
+        `}
+        style={{
+          transform: offset ? "translateX(-50%)" : undefined,
+        }}
+      >
+        {loop.map((company, i) => (
+          <Card key={i} company={company} />
         ))}
       </div>
-    </section>
+    </div>
+  );
+}
+
+
+export function CompanyMarquee() {
+  return (
+    <div className="my-4">
+      <h2 className="text-center text-lg">สมาชิกนิติบุคคล</h2>
+      <Row />
+    </div>
   );
 }
