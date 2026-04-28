@@ -1,17 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Home from "../pages/Home";
-
-import About from "../pages/info/About";
-import Contact from "../pages/info/Contact";
-import Sitemap from "../pages/info/Sitemap";
-
-import FindPlanner from "../pages/FindPlanner";
-import Resources from "../pages/info/Resources";
-
-
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+import Home from "../pages/Home";
+import FindPlanner from "../pages/FindPlanner";
+import About from "../pages/About";
+
 import ForYou from "../pages/for_you/ForYou";
 import ForGeneralAudience from "../pages/for_you/ForGeneralAudience";
 import ForStudent from "../pages/for_you/ForStudent";
@@ -19,12 +13,16 @@ import ForProfessional from "../pages/for_you/ForProfessional";
 import ForCompany from "../pages/for_you/ForCompany";
 import ForTrainingSchool from "../pages/for_you/ForTrainingSchool";
 import ForMedia from "../pages/for_you/ForMedia";
+
+import Resources from "../pages/resources/Resources";
 import ResourcesNews from "../pages/resources/News";
 import ResourcesArticles from "../pages/resources/Articles";
 import ResourcesPublications from "../pages/resources/Publications";
 import ResourcesVideos from "../pages/resources/Videos";
 import ResourcesDocuments from "../pages/resources/Documents";
 import ResourcesAnnouncements from "../pages/resources/Announcements";
+
+import Contact from "../pages/Contact";
 
 
 export function ScrollToTop() {
@@ -44,14 +42,11 @@ export default function AppRouter() {
       <ScrollToTop />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/find_planner" element={<FindPlanner />} />
         {/* path="/login" links to real member's login site */}
 
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/sitemap" element={<Sitemap />} />
+        <Route path="/find_planner" element={<FindPlanner />} />
 
         <Route path="/for_you" element={<ForYou />} />
         <Route path="/for_you/general_audience" element={<ForGeneralAudience />} />
@@ -69,7 +64,7 @@ export default function AppRouter() {
         <Route path="/resources/videos" element={<ResourcesVideos />} />
         <Route path="/resources/documents" element={<ResourcesDocuments />} />
 
-        {/* <Route path="/faq" element={<FAQ />} /> */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

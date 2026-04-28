@@ -5,11 +5,11 @@
 4. 👥 Staff / departments: contact persons + roles
 */
 
-import { Page } from "../../components/layout/Page";
-import { PageHeader } from "../../components/layout/global/PageHeader";
-import { Section } from "../../components/layout/Section";
+import { Page } from "../components/layout/Page";
+import { PageHeader } from "../components/layout/global/PageHeader";
+import { Section } from "../components/layout/Section";
 
-import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
+import { RenderBlocks } from "../components/primitive/renderer/Blocks";
 
 import {
   tfpaContactBlocks,
@@ -17,10 +17,10 @@ import {
   infographicMapBlocks,
   trainingStaffContactBlocks, licenseStaffContactBlocks, financialStaffContactBlocks,
   reportBlocks
-} from "../../data/Contact"
+} from "../data/Contact"
 
-import { TextCard } from "../../components/ui/TextCard";
-import { CenterPile } from "../../components/primitive/CenterPile";
+import { TextCard } from "../components/ui/TextCard";
+import { CenterPile } from "../components/primitive/CenterPile";
 
 
 export default function Contact() {

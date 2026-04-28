@@ -2,7 +2,7 @@ import { PageHeader } from "../../components/layout/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 
 import { cardAddBorderClass, cardAddRaiseUpClass, groupHighlightOnHoverClass } from "../../components/ui/styles";
-import { act, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Media = {
   url: string;
