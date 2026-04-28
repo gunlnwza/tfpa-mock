@@ -71,6 +71,8 @@ $RECYCLE.BIN/
 *.sqlite
 *.sqlite3
 
+types/generated
+
 
 ############################
 # Misc.
