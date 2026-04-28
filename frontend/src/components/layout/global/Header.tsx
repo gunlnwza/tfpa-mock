@@ -78,7 +78,7 @@ function NavBar() {
         <DropdownItem to="/for_you/media" label="สื่อมวลชน" />
       </DropdownContainer>
 
-      <DropdownContainer to="/resources" label="แหล่งความรู้">
+      <DropdownContainer to="/resources" label="แหล่งข้อมูล">
         <DropdownItem to="/resources/news" label="ข่าว / ประกาศ" />
         <DropdownItem to="/resources/articles" label="บทความ / ความรู้การเงิน" />
         <DropdownItem to="/resources/publications" label="สิ่งพิมพ์ / วารสาร" />

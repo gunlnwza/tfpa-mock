@@ -1,5 +1,5 @@
 export function PageHeader({ title }: { title: string }) {
   return (
-    <h1 className="text-xl mb-10 font-bold">{title}</h1>
+    <h1 className="text-3xl mb-8 font-bold">{title}</h1>
   );
 }

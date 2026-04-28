@@ -8,7 +8,7 @@ import { Announcements } from "../features/Announcements";
 
 export default function Home() {
   return (
-    <Page>
+    <Page padding={false} >
       <Hero />
       <CompanyMarquee />
       <SecondaryStrip />

@@ -10,7 +10,7 @@ import { PageHeader } from "../../components/layout/global/PageHeader";
 export default function FindPlanner() {
   return (
     <Page>
-      <PageHeader title="รับบริการ" />
+      <PageHeader title="รับบริการวางแผนการเงิน" />
       <PlannerSearchMock />
       <PlannerCard />
     </Page>

@@ -26,6 +26,14 @@ type NewsCardProps = {
   thumbnailUrl?: string;
 };
 
+function formatThaiDate(dateString: string) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("th-TH", {
+    year: "numeric",
+    month: "short",
+  });
+}
+
 export function NewsCard({
   title,
   date,
@@ -37,7 +45,7 @@ export function NewsCard({
     <a
       href={pdfUrl}
       target="_blank"
-      className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 ${cardAddBorderClass} ${cardAddRaiseUpClass}`}
+      className={`${cardAddBorderClass} ${cardAddRaiseUpClass}`}
     >
       {/* Image top */}
       <div className="border-b border-gray-200 w-full h-36 overflow-hidden flex justify-center items-center bg-gray-50">
@@ -70,13 +78,13 @@ export function NewsSection() {
   const [news, setNews] = useState<NewsPDF[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/news?populate=pdf")
+    fetch("http://localhost:1337/api/news?populate=pdf&sort=date:desc")
       .then(res => res.json())
       .then(data => setNews(data.data));
   }, []);
 
   return (
-    <div className="p-4 flex flex-wrap">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {news.map((item) => {
         const pdfUrl = item.pdf
           ? `http://localhost:1337${item.pdf.url}`
@@ -94,14 +102,6 @@ export function NewsSection() {
       })}
     </div>
   );
-}
-
-function formatThaiDate(dateString: string) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("th-TH", {
-    year: "numeric",
-    month: "short",
-  });
 }
 
 
