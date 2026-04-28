@@ -2,7 +2,11 @@ import { PageHeader } from "../../components/layout/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 
 import { cardAddBorderClass, cardAddRaiseUpClass, groupHighlightOnHoverClass } from "../../components/ui/styles";
-import { useEffect, useState } from "react";
+import { act, useEffect, useState } from "react";
+
+type Media = {
+  url: string;
+};
 
 type PDF = {
   id: number;
@@ -14,8 +18,10 @@ type NewsPDF = {
   title: string;
   date: string;
   issue: string;
+  blogUrl: string;
   pdf: PDF;
-}
+  thumbnail?: Media;
+};
 
 type NewsCardProps = {
   title: string;
@@ -40,6 +46,10 @@ export function NewsCard({
   pdfUrl,
   thumbnailUrl,
 }: NewsCardProps) {
+
+  const isExam = title.includes("ผลสอบ");
+  const bg = (isExam) ? "bg-blue-100" : "bg-gray-100";
+  
   return (
     <a
       href={pdfUrl}
@@ -47,14 +57,19 @@ export function NewsCard({
       className={`${cardAddBorderClass} ${cardAddRaiseUpClass}`}
     >
       {/* Image top */}
-      <div className="border-b border-gray-200 w-full h-36 overflow-hidden flex justify-center items-center bg-gray-50">
+      <div className={`border-b border-gray-200 w-full h-36 overflow-hidden flex justify-center items-center`}>
         {thumbnailUrl ? (
           <img
             src={thumbnailUrl}
             className="max-w-full max-h-full object-contain p-2"
           />
         ) : (
-          <span className="text-gray-400 text-sm">PDF</span> // fallback
+          <div className={`w-full h-full flex flex-col justify-center items-center ${bg}`}>
+            {/* <span className="text-xs text-gray-400">CFP®</span> */}
+            <span className="text-sm font-semibold text-gray-600">
+              {issue}
+            </span>
+          </div>
         )}
       </div>
 
@@ -70,6 +85,45 @@ export function NewsCard({
         </div>
       </div>
     </a>
+  );
+}
+
+export function PaginationMock() {
+  const disabled = "px-3 py-1 text-sm border rounded text-gray-400 cursor-not-allowed";
+  const active = "px-3 py-1 text-sm border rounded bg-blue-600 text-white";
+  const neutral = "px-3 py-1 text-sm border rounded text-gray-700 hover:bg-gray-100";
+
+  return (
+    <div className="flex justify-center items-center gap-2 mt-10">
+      {/* Prev */}
+      <button className={disabled}>
+        Prev
+      </button>
+
+      {/* Page numbers */}
+      <button className={active}>
+        1
+      </button>
+
+      <button className={neutral}>
+        2
+      </button>
+
+      <button className={neutral}>
+        3
+      </button>
+
+      <span className="px-2 text-gray-400">...</span>
+
+      <button className={neutral}>
+        10
+      </button>
+
+      {/* Next */}
+      <button className={neutral}>
+        Next
+      </button>
+    </div>
   );
 }
 
@@ -89,6 +143,10 @@ export function NewsSection({ url }: { url: string; }) {
           ? `http://localhost:1337${item.pdf.url}`
           : undefined;
 
+        const thumbnailUrl = item.thumbnail
+          ? `http://localhost:1337${item.thumbnail.url}`
+          : undefined;
+
         return (
           <NewsCard
             key={item.id}
@@ -96,6 +154,7 @@ export function NewsSection({ url }: { url: string; }) {
             date={item.date}
             issue={item.issue}
             pdfUrl={pdfUrl}
+            thumbnailUrl={thumbnailUrl}
           />
         );
       })}
@@ -109,6 +168,7 @@ export default function ResourcesNews() {
     <Page>
       <PageHeader title="ข่าว" />
       <NewsSection url="http://localhost:1337/api/news?populate=pdf&sort=date:desc" />
+      <PaginationMock />
     </Page>
   );
 }
