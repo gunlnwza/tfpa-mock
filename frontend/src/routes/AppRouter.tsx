@@ -64,7 +64,7 @@ export default function AppRouter() {
 
         <Route path="/resources" element={<Resources />} />
         <Route path="/resources/news" element={<ResourcesNews />} />
-        <Route path="/resources/annoucements" element={<ResourcesAnnouncements />} />
+        <Route path="/resources/announcements" element={<ResourcesAnnouncements />} />
         <Route path="/resources/articles" element={<ResourcesArticles />} />
         <Route path="/resources/publications" element={<ResourcesPublications />} />
         <Route path="/resources/videos" element={<ResourcesVideos />} />

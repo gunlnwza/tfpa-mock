@@ -80,7 +80,7 @@ function NavBar() {
 
       <DropdownContainer to="/resources" label="แหล่งข้อมูล">
         <DropdownItem to="/resources/news" label="ข่าว" />
-        <DropdownItem to="/resources/annoucements" label="ประกาศ" />
+        <DropdownItem to="/resources/announcements" label="ประกาศ" />
         <DropdownItem to="/resources/documents" label="ศูนย์เอกสาร" />
         <DropdownDivider />
         <DropdownItem to="/resources/articles" label="บทความ / ความรู้การเงิน" />
