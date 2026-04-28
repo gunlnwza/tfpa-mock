@@ -3,8 +3,8 @@
 // - Advisor Card: remove ID, put more interesting info in card, square is OK. Must put portrait pic.
 // - Advisor Modal: info ok, but need more UI to make it pazzaz
 
-import { Page } from "../../components/layout/Page";
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { Page } from "../components/layout/Page";
+import { PageHeader } from "../components/layout/global/PageHeader";
 
 
 export default function FindPlanner() {

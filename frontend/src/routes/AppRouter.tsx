@@ -6,10 +6,7 @@ import About from "../pages/info/About";
 import Contact from "../pages/info/Contact";
 import Sitemap from "../pages/info/Sitemap";
 
-import FinancialPlanning from "../pages/for_public/FinancialPlanning";
-import FindPlanner from "../pages/for_public/FindPlanner";
-
-import FAQ from "../pages/info/FAQ";
+import FindPlanner from "../pages/FindPlanner";
 import Resources from "../pages/info/Resources";
 
 
@@ -48,6 +45,8 @@ export default function AppRouter() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/find_planner" element={<FindPlanner />} />
+        {/* path="/login" links to real member's login site */}
 
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -70,11 +69,7 @@ export default function AppRouter() {
         <Route path="/resources/videos" element={<ResourcesVideos />} />
         <Route path="/resources/documents" element={<ResourcesDocuments />} />
 
-        <Route path="/find_planner" element={<FindPlanner />} />
-
-        {/* path="/login" links to real member's login site */}
-
-        <Route path="faq" element={<FAQ />} />
+        {/* <Route path="/faq" element={<FAQ />} /> */}
       </Routes>
     </BrowserRouter>
   );
