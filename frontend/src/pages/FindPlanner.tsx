@@ -1,3 +1,4 @@
+import { PageHeader } from "../components/layout/global/PageHeader";
 import { Page } from "../components/layout/Page";
 
 import { PaginationMock } from "./resources/News";
@@ -6,12 +7,12 @@ import { useState } from "react";
 
 export function PlannerSearchMock() {
   return (
-    <div className="max-w-4xl mx-auto py-8 space-y-6">
+    <div className="max-w-4xl mx-auto pt-20 pb-8 space-y-6">
 
       {/* Heading */}
       <div className="text-center space-y-2">
-        <h1 className="text-2xl font-semibold">
-          รับบริการวางแผนการเงิน
+        <h1 className="text-3xl font-semibold">
+          ค้นหานักวางแผนการเงิน
         </h1>
       </div>
 
@@ -205,6 +206,8 @@ function RepeatPlannerCard({ n }: { n: number }) {
 export default function FindPlanner() {
   return (
     <Page>
+      <PageHeader title="รับบริการวางแผนการเงิน" />
+
       <PlannerSearchMock />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
