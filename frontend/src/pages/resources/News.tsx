@@ -13,7 +13,6 @@ type NewsPDF = {
   id: number;
   title: string;
   date: string;
-  blogUrl: string;
   issue: string;
   pdf: PDF;
 }
