@@ -1,92 +1,26 @@
-// TODO: Old UI needs change.
-// - Single Search bar, smarter parsing, use tags
-// - Advisor Card: remove ID, put more interesting info in card, square is OK. Must put portrait pic.
-// - Advisor Modal: info ok, but need more UI to make it pazzaz
-
 import { Page } from "../components/layout/Page";
 import { PageHeader } from "../components/layout/global/PageHeader";
 
-
-export default function FindPlanner() {
-  return (
-    <Page>
-      <PageHeader title="รับบริการวางแผนการเงิน" />
-      <PlannerSearchMock />
-      <PlannerCard />
-    </Page>
-  );
-}
-
-function AdvisorSearchForm() {
-  return (
-    <div className="w-full max-w-3xl mx-auto bg-gray-100 rounded-2xl p-10">
-      <div className="space-y-6">
-        
-        {/* Name */}
-        <div className="flex items-center gap-6">
-          <label className="w-40 text-gray-700 font-medium text-right">
-            ชื่อ-นามสกุล:
-          </label>
-          <input
-            type="text"
-            placeholder="ระบุชื่อและ/หรือนามสกุล โดยไม่ต้องมีคำนำหน้า"
-            className="flex-1 px-4 py-2 rounded-md border border-gray-300 bg-gray-200 text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        {/* License */}
-        <div className="flex items-center gap-6">
-          <label className="w-40 text-gray-700 font-medium text-right">
-            เลขคุณวุฒิ:
-          </label>
-          <input
-            type="text"
-            placeholder="เช่น CFPTH1234567 หรือ AFPT123456"
-            className="flex-1 px-4 py-2 rounded-md border border-gray-300 bg-gray-200 text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        {/* Button */}
-        <div className="flex justify-center pt-4">
-          <button
-            className="
-              inline-flex items-center gap-2
-              px-6 py-2.5
-              rounded-md
-              bg-green-400 text-white font-medium
-              hover:bg-green-500
-              transition
-            "
-          >
-            🔍 ค้นหา
-          </button>
-        </div>
-
-      </div>
-    </div>
-  );
-}
+import { PaginationMock } from "./resources/News";
+import { useState } from "react";
 
 
 export function PlannerSearchMock() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16 space-y-6">
+    <div className="max-w-4xl mx-auto py-8 space-y-6">
 
       {/* Heading */}
       <div className="text-center space-y-2">
         <h1 className="text-2xl font-semibold">
-          ค้นหานักวางแผนการเงิน
+          รับบริการวางแผนการเงิน
         </h1>
-        <p className="text-gray-500 text-sm">
-          ลองพิมพ์ เช่น “เกษียณ กรุงเทพ ค่าที่ปรึกษา”
-        </p>
       </div>
 
       {/* Bean Search Bar */}
       <div className="relative">
         <input
           type="text"
-          placeholder="🔍 ค้นหา เช่น เกษียณ กรุงเทพ ไม่มีคอมมิชชั่น"
+          placeholder={`ลองพิมพ์ "ปรึกษาการลงทุน กรุงเทพ" หรือ ชื่อ/รหัสของนักวางแผนการเงิน`}
           className="
             w-full
             rounded-full
@@ -94,6 +28,7 @@ export function PlannerSearchMock() {
             px-6 py-4
             text-sm
             shadow-sm
+            text-gray-400
             focus:outline-none focus:ring-2 focus:ring-blue-500
           "
         />
@@ -111,15 +46,11 @@ export function PlannerSearchMock() {
         </button>
       </div>
 
-      {/* Quick Chips */}
+      {/* Chips */}
       <div className="flex flex-wrap gap-2 justify-center">
         {[
-          "เกษียณ",
-          "วางแผนลงทุน",
-          "ภาษี",
-          "ประกัน",
-          "ใกล้ฉัน",
-          "ไม่มีคอมมิชชั่น",
+          "x ลงทุน",
+          "x ใกล้ฉัน",
         ].map((chip) => (
           <button
             key={chip}
@@ -135,100 +66,85 @@ export function PlannerSearchMock() {
         ))}
       </div>
 
-      {/* Expand Filters */}
-      <div className="text-center">
-        <button className="text-sm text-blue-600 hover:underline">
-          + ตัวกรองเพิ่มเติม
-        </button>
-      </div>
-
-      {/* Expanded Filters (mock always open for now) */}
-      <div className="border rounded-2xl p-6 space-y-6 bg-gray-50">
-
-        {/* Service */}
-        <div>
-          <p className="text-sm font-medium mb-2">บริการ</p>
-          <div className="flex flex-wrap gap-2">
-            {["การลงทุน", "เกษียณ", "ภาษี", "ประกัน"].map((item) => (
-              <button
-                key={item}
-                className="px-3 py-1.5 rounded-full border text-sm hover:bg-gray-100"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Fee */}
-        <div>
-          <p className="text-sm font-medium mb-2">ค่าบริการ</p>
-          <div className="flex gap-2">
-            {["ค่าที่ปรึกษา", "คอมมิชชั่น"].map((item) => (
-              <button
-                key={item}
-                className="px-3 py-1.5 rounded-full border text-sm hover:bg-gray-100"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Location */}
-        <div>
-          <p className="text-sm font-medium mb-2">พื้นที่</p>
-          <select className="w-full border rounded-lg px-3 py-2 text-sm">
-            <option>เลือกพื้นที่</option>
-            <option>กรุงเทพ</option>
-            <option>เชียงใหม่</option>
-            <option>ออนไลน์</option>
-          </select>
-        </div>
-
-        {/* Certification */}
-        <div>
-          <p className="text-sm font-medium mb-2">คุณสมบัติ</p>
-          <div className="flex gap-2">
-            {["CFP®", "AFPT™"].map((item) => (
-              <button
-                key={item}
-                className="px-3 py-1.5 rounded-full border text-sm hover:bg-gray-100"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Fake Results Preview */}
-      <div className="space-y-3 pt-4">
-        {[1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className="border rounded-xl p-4 flex justify-between items-center hover:shadow-sm"
-          >
-            <div>
-              <p className="font-medium">ชื่อ นักวางแผน {i}</p>
-              <p className="text-sm text-gray-500">
-                CFP® • เกษียณ • กรุงเทพ • ค่าที่ปรึกษา
-              </p>
-            </div>
-            <button className="text-blue-600 text-sm hover:underline">
-              ดูรายละเอียด
-            </button>
-          </div>
-        ))}
-      </div>
-
+      <Filter />
     </div>
   );
 }
 
+
+function FilterRowBase({ children, title }: { children: React.ReactNode; title: string; }) {
+  return (
+    <div>
+      <p className="text-sm font-medium mb-2">{title}</p>
+      {children}
+    </div>
+  );
+}
+
+function FilterRowSelect({ title, items }: { title: string; items: string[]; }) {
+  return (
+    <FilterRowBase title={title}>
+      <div className="flex flex-wrap gap-2">
+        {items.map((item) => (
+          <button
+            key={item}
+            className={`
+              px-4 py-1.5
+              rounded-full
+              bg-gray-100 text-gray-700 text-sm
+              hover:bg-gray-200
+            `}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+    </FilterRowBase>
+  );
+}
+
+function FilterRowDropdown({ title, items }: { title: string, items: string[] }) {
+  return (  
+    <FilterRowBase title={title}>
+      <select className="w-full border rounded-lg px-3 py-2 text-sm">
+        {items.map((item) => (
+          <option>{item}</option>
+        ))}
+      </select>
+    </FilterRowBase>
+  );
+}
+
+function Filter() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <div className="text-center mb-2">
+        <button
+          onClick={() => setIsOpen(prev => !prev)}
+          className="text-sm text-blue-600 hover:underline transition-all duration-200"
+        >
+          {isOpen ? "ซ่อนตัวกรอง" : "+ แสดงตัวกรองเพิ่มเติม"}
+        </button>
+      </div>
+
+      {isOpen && (
+        <div className="border border-gray-200 shadow-sm border-2 rounded-2xl p-6 space-y-6">
+          <FilterRowSelect title="บริการ" items={["ทั่วไป", "ลงทุน", "เกษียณ", "ภาษี", "ประกันชีวิต", "ประกันวินาศภัย"]} />
+          <FilterRowSelect title="ค่าบริการ" items={["ค่าที่ปรึกษา", "รายชั่วโมง"]} />
+          <FilterRowSelect title="พื้นที่" items={["ใกล้ฉัน", "กรุงเทพ", "ภาคเหนือ", "ภาคตะวันออก", "ภาคตะวันตก", "ภาคใต้", "ออนไลน์"]} />
+          <FilterRowSelect title="คุณสมบัติ" items={["CFP®", "AFPT™"]} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+
 function PlannerCard() {
   return (
-    <div className="border rounded-2xl p-5 flex gap-4 hover:shadow-sm transition">
+    <div className="border border-gray-200 shadow-md rounded-2xl p-5 flex gap-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
 
       {/* Avatar */}
       <div className="w-14 h-14 rounded-full bg-gray-200 flex-shrink-0" />
@@ -258,7 +174,7 @@ function PlannerCard() {
 
         {/* Key info (compressed, no paragraphs) */}
         <p className="text-sm text-gray-500">
-          กรุงเทพ • ค่าที่ปรึกษา • ประสบการณ์ 8 ปี
+          กรุงเทพ • ประสบการณ์ 8 ปี
         </p>
       </div>
 
@@ -272,8 +188,30 @@ function PlannerCard() {
           ติดต่อ
         </button>
       </div>
-
     </div>
   );
 }
 
+function RepeatPlannerCard({ n }: { n: number }) {
+  return (
+    <>
+      {Array.from({ length: n }).map((_, i) => (
+        <PlannerCard key={i} />
+      ))}
+    </>
+  );
+}
+
+
+export default function FindPlanner() {
+  return (
+    <Page>
+      <PlannerSearchMock />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <RepeatPlannerCard n={10} />
+      </div>
+      <PaginationMock />
+    </Page>
+  );
+}
