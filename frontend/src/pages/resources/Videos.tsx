@@ -78,7 +78,11 @@ export function VideoRow({ title, children }: { title: string; children: React.R
     <div className="mt-8">
       <div className="flex justify-between items-center mb-3">
         <h4 className="font-semibold text-lg">{title}</h4>
-        <a href="#" className="text-sm text-blue-600 hover:underline">
+        <a
+          href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw?sub_confirmation=1"
+          target="_blank" rel="noopener noreferrer"
+          className="text-sm text-blue-600 hover:underline"
+        >
           ดูทั้งหมด →
         </a>
       </div>
@@ -125,6 +129,7 @@ export default function ResourcesVideos() {
         <VideoCard
           title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
           href="https://www.youtube.com/watch?v=FPDIajtvtMs"
+          thumbnail={featuredThumbnail}
         />
         <VideoCard
           title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
@@ -133,6 +138,7 @@ export default function ResourcesVideos() {
         <VideoCard
           title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
           href="https://www.youtube.com/watch?v=FPDIajtvtMs"
+          
         />
         <VideoCard
           title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
@@ -141,6 +147,7 @@ export default function ResourcesVideos() {
         <VideoCard
           title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
           href="https://www.youtube.com/watch?v=FPDIajtvtMs"
+
         />
         <VideoCard
           title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
