@@ -27,6 +27,7 @@ import ResourcesArticles from "../pages/resources/Articles";
 import ResourcesPublications from "../pages/resources/Publications";
 import ResourcesVideos from "../pages/resources/Videos";
 import ResourcesDocuments from "../pages/resources/Documents";
+import ResourcesAnnouncements from "../pages/resources/Announcements";
 
 
 export function ScrollToTop() {
@@ -63,6 +64,7 @@ export default function AppRouter() {
 
         <Route path="/resources" element={<Resources />} />
         <Route path="/resources/news" element={<ResourcesNews />} />
+        <Route path="/resources/annoucements" element={<ResourcesAnnouncements />} />
         <Route path="/resources/articles" element={<ResourcesArticles />} />
         <Route path="/resources/publications" element={<ResourcesPublications />} />
         <Route path="/resources/videos" element={<ResourcesVideos />} />

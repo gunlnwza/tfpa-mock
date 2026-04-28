@@ -61,7 +61,7 @@ export function NewsCard({
 
       {/* Text bottom */}
       <div className="p-4 space-y-1">
-        <p className={`text-sm font-medium text-gray-700 line-clamp-2 ${groupHighlightOnHoverClass}`}>
+        <p className={`text-sm font-medium text-gray-700 ${groupHighlightOnHoverClass}`}>
           {title}
         </p>
 
@@ -74,11 +74,11 @@ export function NewsCard({
   );
 }
 
-export function NewsSection() {
+export function NewsSection({ url }: { url: string; }) {
   const [news, setNews] = useState<NewsPDF[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/news?populate=pdf&sort=date:desc")
+    fetch(url)
       .then(res => res.json())
       .then(data => setNews(data.data));
   }, []);
@@ -108,8 +108,8 @@ export function NewsSection() {
 export default function ResourcesNews() {
   return (
     <Page>
-      <PageHeader title="ข่าว / ประกาศ" />
-      <NewsSection />
+      <PageHeader title="ข่าว" />
+      <NewsSection url="http://localhost:1337/api/news?populate=pdf&sort=date:desc" />
     </Page>
   );
 }

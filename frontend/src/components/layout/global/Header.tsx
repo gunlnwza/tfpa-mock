@@ -79,11 +79,13 @@ function NavBar() {
       </DropdownContainer>
 
       <DropdownContainer to="/resources" label="แหล่งข้อมูล">
-        <DropdownItem to="/resources/news" label="ข่าว / ประกาศ" />
+        <DropdownItem to="/resources/news" label="ข่าว" />
+        <DropdownItem to="/resources/annoucements" label="ประกาศ" />
+        <DropdownItem to="/resources/documents" label="ศูนย์เอกสาร" />
+        <DropdownDivider />
         <DropdownItem to="/resources/articles" label="บทความ / ความรู้การเงิน" />
         <DropdownItem to="/resources/publications" label="สิ่งพิมพ์ / วารสาร" />
         <DropdownItem to="/resources/videos" label="วิดีโอ" />
-        <DropdownItem to="/resources/documents" label="ศูนย์เอกสาร" />
       </DropdownContainer>
 
       <NavBarLink to="/contact" label="ติดต่อ" />
