@@ -46,9 +46,14 @@ const announcements: Announcement[] = [
 
 function Card({ a }: { a: Announcement }) {
   return (
-    <a href="#" className="group block">
-      <div className="relative w-150 rounded-xl overflow-hidden shadow-md border border-gray-300">
-        
+    <a
+      href="#"
+      className="group relative block transition duration-300 ease-in-out hover:-translate-y-2"
+    >
+      <div className={`
+        relative w-150 rounded-xl overflow-hidden shadow-md border border-gray-300
+      `}>
+
         {/* Image */}
         <img
           src={a.image}
@@ -57,17 +62,17 @@ function Card({ a }: { a: Announcement }) {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition duration-300" />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition duration-300" />
 
         {/* Text */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 
+        {/* <div className="absolute bottom-0 left-0 right-0 p-4 
                         translate-y-4 opacity-0 
                         group-hover:translate-y-0 group-hover:opacity-100 
                         transition duration-300">
           <p className="text-white text-sm font-semibold line-clamp-2">
             {a.title}
           </p>
-        </div>
+        </div> */}
 
       </div>
     </a>
@@ -77,12 +82,12 @@ function Card({ a }: { a: Announcement }) {
 export function Announcements() {
   return (
     <section className="py-12 my-4">
-      <div className="mx-4 mb-6 flex items-center justify-between">
+      <div className="mx-4 mb-2 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-center">ประกาศสำคัญ</h2>
         <a href="#" className="text-sm text-blue-600 hover:underline">ดูทั้งหมด →</a>  {/* TODO link to /announcement */}
       </div>
 
-      <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+      <div className="flex gap-6 overflow-x-auto p-4 scrollbar-hide">
         {announcements.map((a) => (
           <Card a={a} />
         ))}

@@ -4,6 +4,8 @@ import { Page } from "../components/layout/Page";
 import { PaginationMock } from "./resources/News";
 import { useState } from "react";
 
+import { Section } from "../components/layout/Section";
+
 
 export function PlannerSearchMock() {
   return (
@@ -147,9 +149,10 @@ function PlannerCard() {
 
   return (
     <>
+      {isOpen && <Modal onClose={() => setIsOpen(false)} />}
       <button
         onClick={() => setIsOpen(true)}
-        className="text-xs rounded-full group"
+        className="text-xs rounded-full group cursor-pointer"
       >
         <div className="border border-gray-200 shadow-md rounded-2xl p-5 flex gap-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg group">
           {/* Avatar */}
@@ -187,12 +190,10 @@ function PlannerCard() {
           </div>
         </div>
       </button>
-      {isOpen && <Modal onClose={() => setIsOpen(false)} />}
     </>
   );
 }
 
-import { Section } from "../components/layout/Section";
 
 function Modal({ onClose }) {
   return (
@@ -203,7 +204,7 @@ function Modal({ onClose }) {
         {/* Close */}
         <button
           onClick={onClose}
-          className="text-xl absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+          className="text-xl absolute top-4 right-4 text-gray-400 hover:text-gray-600 cursor-pointer"
         >
           ✕
         </button>
