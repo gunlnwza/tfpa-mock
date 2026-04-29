@@ -143,50 +143,162 @@ function Filter() {
 
 
 function PlannerCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="border border-gray-200 shadow-md rounded-2xl p-5 flex gap-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg group">
+    <>
+      <button
+        onClick={() => setIsOpen(true)}
+        className="text-xs rounded-full group"
+      >
+        <div className="border border-gray-200 shadow-md rounded-2xl p-5 flex gap-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg group">
+          {/* Avatar */}
+          <div className="w-14 h-14 rounded-full bg-gray-200 flex-shrink-0" />
+          {/* Main */}
+          <div className="flex-1 space-y-2">
 
-      {/* Avatar */}
-      <div className="w-14 h-14 rounded-full bg-gray-200 flex-shrink-0" />
+            {/* Name + badge */}
+            <div className="flex items-center gap-2">
+              <p className="font-semibold">สมชาย ใจดี</p>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-600">
+                CFP®
+              </span>
+            </div>
 
-      {/* Main */}
-      <div className="flex-1 space-y-2">
+            {/* Specialties (THIS is the most important line) */}
+            <div className="flex flex-wrap gap-1">
+              {["เกษียณ", "การลงทุน", "ภาษี"].map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs px-2 py-0.5 bg-gray-100 rounded-full text-gray-600"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
-        {/* Name + badge */}
-        <div className="flex items-center gap-2">
-          <p className="font-semibold">สมชาย ใจดี</p>
-          <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-600">
-            CFP®
-          </span>
+            {/* Key info (compressed, no paragraphs) */}
+            <p className="text-sm text-gray-500 text-left">
+              กรุงเทพ • ประสบการณ์ 8 ปี
+            </p>
+          </div>
+          <div className="flex flex-col group-hover:text-blue-600 transition">
+              ดูรายละเอียด
+          </div>
         </div>
+      </button>
+      {isOpen && <Modal onClose={() => setIsOpen(false)} />}
+    </>
+  );
+}
 
-        {/* Specialties (THIS is the most important line) */}
-        <div className="flex flex-wrap gap-1">
-          {["เกษียณ", "การลงทุน", "ภาษี"].map((tag) => (
-            <span
-              key={tag}
-              className="text-xs px-2 py-0.5 bg-gray-100 rounded-full text-gray-600"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+import { Section } from "../components/layout/Section";
 
-        {/* Key info (compressed, no paragraphs) */}
-        <p className="text-sm text-gray-500">
-          กรุงเทพ • ประสบการณ์ 8 ปี
-        </p>
-      </div>
+function Modal({ onClose }) {
+  return (
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
 
-      {/* Action */}
-      <div className="flex flex-col">
-        <button className="text-xs rounded-full group-hover:text-blue-600 transition">
-          ดูรายละเอียด
+      <div className="relative bg-white rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden shadow-xl">
+
+        {/* Close */}
+        <button
+          onClick={onClose}
+          className="text-xl absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+        >
+          ✕
         </button>
+
+        {/* CONTENT */}
+        <div className="grid grid-cols-1 md:grid-cols-3 h-full">
+
+          {/* LEFT: PROFILE */}
+          <div className="p-6 border-b md:border-b-0 md:border-r border-gray-200 flex flex-col items-center text-center">
+
+            {/* Avatar */}
+            <div className="w-32 h-32 rounded-full bg-gray-200 mb-4" />
+
+            {/* Name */}
+            <p className="text-lg font-semibold">
+              สมชาย ใจดี
+            </p>
+            <p className="text-sm text-gray-500 mb-2">
+              [ชื่อเล่น]
+            </p>
+
+            {/* Contact */}
+            <div className="text-sm text-gray-600 space-y-1 mt-4">
+              <p>📞 087-XXX-XXXX</p>
+              <p>✉️ example@email.com</p>
+              <p className="text-blue-600 break-all">
+                fb.com/profile
+              </p>
+            </div>
+
+            {/* Role */}
+            <div className="mt-6 text-sm">
+              <p className="font-medium text-gray-700">
+                อาชีพหลัก
+              </p>
+              <p className="text-gray-500">
+                นักวางแผนการเงิน CFP®
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT: DETAILS */}
+          <div className="md:col-span-2 overflow-y-auto p-6 space-y-6 text-sm">
+
+            {/* Section */}
+            <Section title="ประวัติการศึกษา">
+              <ul className="list-disc ml-5 space-y-1">
+                <li>ปริญญาตรี ...</li>
+                <li>ปริญญาโท ...</li>
+              </ul>
+            </Section>
+
+            <Section title="ประสบการณ์">
+              <ul className="list-disc ml-5 space-y-1">
+                <li>ประสบการณ์ 8 ปี</li>
+                <li>Money & Life Talk</li>
+              </ul>
+            </Section>
+
+            <Section title="พื้นที่ให้บริการ">
+              <div className="grid grid-cols-2 gap-2">
+                <span>กรุงเทพ</span>
+                <span>ภาคกลาง</span>
+                <span>ภาคเหนือ</span>
+                <span>ภาคใต้</span>
+              </div>
+            </Section>
+
+            <Section title="ความเชี่ยวชาญ">
+              <div className="flex flex-wrap gap-2">
+                {["เกษียณ", "ภาษี", "การลงทุน"].map(tag => (
+                  <span
+                    key={tag}
+                    className="px-2 py-1 bg-gray-100 rounded-full text-xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </Section>
+
+            <Section title="การคิดค่าบริการ">
+              <ul className="list-disc ml-5 space-y-1">
+                <li>คิดค่าจัดทำแผน</li>
+                <li>ค่าคอมมิชชั่น</li>
+              </ul>
+            </Section>
+
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
 
 function RepeatPlannerCard({ n }: { n: number }) {
   return (
