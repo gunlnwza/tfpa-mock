@@ -22,7 +22,7 @@ export function PlannerSearchMock() {
       <div className="relative">
         <input
           type="text"
-          placeholder={`ลองพิมพ์ "ปรึกษาการลงทุน กรุงเทพ" หรือ ชื่อ/รหัสของนักวางแผนการเงิน`}
+          placeholder={`ลองพิมพ์ "ปรึกษาการเงินทั่วไป กรุงเทพฯ" หรือ ชื่อ/รหัสของนักวางแผนการเงิน`}
           className="
             w-full
             rounded-full
@@ -42,6 +42,7 @@ export function PlannerSearchMock() {
             bg-blue-600 text-white
             px-4 py-2 rounded-full text-sm
             hover:bg-blue-700
+            hover:cursor-pointer
           "
         >
           ค้นหา
@@ -49,8 +50,9 @@ export function PlannerSearchMock() {
       </div>
 
       {/* Chips */}
-      <div className="flex flex-wrap gap-2 justify-center">
+      <div className="flex flex-wrap gap-2 justify-center ">
         {[
+          "x การเงินองค์รวม",
           "x ลงทุน",
           "x ใกล้ฉัน",
         ].map((chip) => (
@@ -60,7 +62,7 @@ export function PlannerSearchMock() {
               px-4 py-1.5
               rounded-full
               bg-gray-100 text-gray-700 text-sm
-              hover:bg-gray-200
+              hover:bg-gray-200 hover:cursor-pointer
             "
           >
             {chip}
@@ -94,7 +96,7 @@ function FilterRowSelect({ title, items }: { title: string; items: string[]; }) 
               px-4 py-1.5
               rounded-full
               bg-gray-100 text-gray-700 text-sm
-              hover:bg-gray-200
+              hover:bg-gray-200 hover:cursor-pointer
             `}
           >
             {item}
@@ -117,6 +119,21 @@ function FilterRowDropdown({ title, items }: { title: string, items: string[] })
   );
 }
 
+const services = [
+  "การเงินองค์รวม", "รายรับ-รายจ่าย", "ลงทุน", "จัดการหนี้สิน", "ประกันชีวิต-สุขภาพ", "ประกันวินาศภัย",
+  "เกษียณ", "การศึกษาบุตร", "ภาษีบุคคล", "ภาษีนิติบุคคล", "มรดก-พินัยกรรม", "บริษัทโฮลดิ้ง-ธรรมนูญของครอบครัว"
+]
+
+const serviceFees = [
+  "ค่าจัดทำแผนการเงิน", "ค่าคอมมิชชั่น", "ค่าปรึกษารายชั่วโมง"
+]
+
+const areas = [
+  "ออนไลน์", "ใกล้ฉัน", "กรุงเทพฯ และปริมณฑล", "ภาคกลาง",
+  "ภาคเหนือ", "ภาคตะวันออก", "ภาคตะวันออกเฉียงเหนือ", "ภาคตะวันตก", "ภาคใต้", 
+]
+
+
 function Filter() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -125,7 +142,7 @@ function Filter() {
       <div className="text-center mb-2">
         <button
           onClick={() => setIsOpen(prev => !prev)}
-          className="text-sm text-blue-600 hover:underline transition-all duration-200"
+          className="text-sm text-blue-600 hover:underline transition-all duration-200 hover:cursor-pointer"
         >
           {isOpen ? "ซ่อนตัวกรอง" : "+ แสดงตัวกรองเพิ่มเติม"}
         </button>
@@ -133,10 +150,10 @@ function Filter() {
 
       {isOpen && (
         <div className="border border-gray-200 shadow-sm border-2 rounded-2xl p-6 space-y-6">
-          <FilterRowSelect title="บริการ" items={["ทั่วไป", "ลงทุน", "เกษียณ", "ภาษี", "ประกันชีวิต", "ประกันวินาศภัย"]} />
-          <FilterRowSelect title="ค่าบริการ" items={["ค่าที่ปรึกษา", "รายชั่วโมง"]} />
-          <FilterRowSelect title="พื้นที่" items={["ใกล้ฉัน", "กรุงเทพ", "ภาคเหนือ", "ภาคตะวันออก", "ภาคตะวันตก", "ภาคใต้", "ออนไลน์"]} />
-          <FilterRowSelect title="คุณสมบัติ" items={["CFP®", "AFPT™"]} />
+          <FilterRowSelect title="ประเภทบริการ" items={services} />
+          <FilterRowSelect title="การคิดค่าบริการ" items={serviceFees} />
+          <FilterRowSelect title="พื้นที่" items={areas} />
+          {/* <FilterRowSelect title="คุณสมบัติ" items={["CFP®", "AFPT™"]} /> */}
         </div>
       )}
     </div>
