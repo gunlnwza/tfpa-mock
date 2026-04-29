@@ -169,20 +169,10 @@ const reportBlocks: Block[] = [
   },
 ];
 
-const googleMapBlocks: Block[] = [
-  {
-    type: "media",
-    item: {
-      type: "embed",
-      src: "https://www.google.com/maps?q=The+Stock+Exchange+of+Thailand&output=embed",
-    }
-  }
-];
-
 const infographicMapBlocks: Block[] = [
   {
     type: "paragraph",
-    content: [{ type: "bold", content: "รถไฟฟ้าใต้ดิน (MRT): " }, { type: "text", content: "สถานีศูนย์วัฒนธรรม ทางออก 3" }]
+    content: [{ type: "bold", content: "รถไฟฟ้าใต้ดิน (MRT): " }, { type: "text", content: "ลงสถานีศูนย์วัฒนธรรมแห่งประเทศไทย แล้วใช้ทางออกที่ 3" }]
   },
   {
     type: "media",
@@ -201,26 +191,31 @@ export default function Contact() {
     <Page>
       <PageHeader title="ติดต่อ" />
 
-      <Section title="Location">
-        <CenterPile>
+      <Section title="ที่อยู่">
+        <div className="flex gap-4 flex-col md:flex-row">
           <TextCard blocks={tfpaContactBlocks} />
-        </CenterPile>
-      </Section>
-
-      <Section title="Google Map">
-        <RenderBlocks blocks={googleMapBlocks}/>
-      </Section>
+          <div className="flex-1 w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-md">
+            <iframe
+              src="https://www.google.com/maps?q=The+Stock+Exchange+of+Thailand&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              className="w-full aspect-[4/3] max-h-100 border-0"
+            />
+          </div>
+        </div>
+      </Section>  
 
       <Section title="วิธีเดินทาง">
         <RenderBlocks blocks={infographicMapBlocks}/>
       </Section>
 
       <Section title="ติดต่อเจ้าหน้าที่">
-        <CenterPile>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <TextCard blocks={trainingStaffContactBlocks}/>
           <TextCard blocks={licenseStaffContactBlocks}/>
           <TextCard blocks={financialStaffContactBlocks}/>
-        </CenterPile>
+        </div>
       </Section>
       
       <Section title="ร้องเรียน">
