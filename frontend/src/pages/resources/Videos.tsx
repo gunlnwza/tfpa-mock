@@ -65,8 +65,6 @@ export function FeaturedVideo({ title, href, videoId }: VideoCardProps) {
 
 export function VideoCard({ title, href, videoId }: VideoCardProps) {
   const thumbnails = [
-    `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-    `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
     `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
   ];
 
@@ -75,14 +73,14 @@ export function VideoCard({ title, href, videoId }: VideoCardProps) {
       <div className="rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition">
         <img
           src={thumbnails[0]}
-          onError={(e) => {
-              const target = e.currentTarget;
-              if (target.src.includes("maxres")) {
-                target.src = thumbnails[1];
-              } else if (target.src.includes("sddefault")) {
-                target.src = thumbnails[2];
-              }
-            }}
+          // onError={(e) => {
+          //     const target = e.currentTarget;
+          //     if (target.src.includes("maxres")) {
+          //       target.src = thumbnails[1];
+          //     } else if (target.src.includes("sddefault")) {
+          //       target.src = thumbnails[2];
+          //     }
+          //   }}
           className="w-full h-[130px] object-cover"
         />
       </div>
@@ -159,26 +157,26 @@ export default function ResourcesVideos() {
       />
 
       <VideoRow title="วางแผนการเงิน">
-        <Repeat n={3}>
+        <Repeat n={1}>
           <VideoCard
             title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
             href="https://www.youtube.com/watch?v=FPDIajtvtMs"
             videoId="FPDIajtvtMs"
           />
           <VideoCard
-            title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
-            href="https://www.youtube.com/watch?v=vaXpPe7EmDM&t=4s"
-            videoId="vaXpPe7EmDM"
+            title="Life Long Investing ลงทุนวิทยาฉบับ 50+ SS1 | EP.1 ความรู้ด้านการลงทุนจำเป็นแค่ไหนในวัยใกล้เกษียณ"
+            href="https://www.youtube.com/watch?v=hpyWP2NvDnA"
+            videoId="hpyWP2NvDnA"
           />
-        </Repeat>
-      </VideoRow>
-  
-      <VideoRow title="CFP Professional Talk">
-        <Repeat n={3}>
           <VideoCard
-            title="อนาคตของนักวางแผนการเงิน CFP®"
-            href="https://www.youtube.com/watch?v=vuv1vpjRGSs"
-            videoId="vuv1vpjRGSs"
+            title="Sandwich Generation ในไทย 80% การเงินพัง ทำอย่างไร ให้หลุดจากวังวน ? | Talk ลงทุนแมน EP.49"
+            href="https://www.youtube.com/watch?v=T_o62QbInQU"
+            videoId="T_o62QbInQU"
+          />
+          <VideoCard
+            title={`รายจ่ายเพียบ-หนี้ท่วม แต่อยากออม !! แจกทริค "รวยก่อนแก่" พลิกชีวิตการเงิน | Wealth Me Please EP.171`}
+            href="https://www.youtube.com/watch?v=svZxjelQ4h0"
+            videoId="svZxjelQ4h0"
           />
           <VideoCard
             title="เรื่องต้องรู้.. ประกันทุพพลภาพ"
@@ -186,9 +184,29 @@ export default function ResourcesVideos() {
             videoId="hjaVtJRTSfk"
           />
           <VideoCard
+            title="ใช้เงินอย่างมีเป้าหมาย จุดเริ่มต้นของแผนการเงินที่ทำได้จริง"
+            href="https://www.youtube.com/watch?v=VfdY1p-wzp4"
+            videoId="VfdY1p-wzp4"
+          />
+        </Repeat>
+      </VideoRow>
+  
+      <VideoRow title="CFP® Professional Talk | เสียงจากนักวางแผนการเงินมืออาชีพ">
+        <Repeat n={2}>
+          <VideoCard
+            title="อนาคตของนักวางแผนการเงิน CFP®"
+            href="https://www.youtube.com/watch?v=vuv1vpjRGSs"
+            videoId="vuv1vpjRGSs"
+          />
+          <VideoCard
             title="CFP Professional Talk EP.12 นักวางแผนการเงิน CFP จัดพอร์ตหุ้นไทย ไปต่อ หรือชะลอไว้"
             href="https://www.youtube.com/watch?v=L9pnoYYe_JQ&t=6s"
             videoId="L9pnoYYe_JQ"
+          />
+          <VideoCard
+            title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
+            href="https://www.youtube.com/watch?v=vaXpPe7EmDM&t=4s"
+            videoId="vaXpPe7EmDM"
           />
         </Repeat>
       </VideoRow>
