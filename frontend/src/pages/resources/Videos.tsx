@@ -98,7 +98,7 @@ export function VideoRow({ title, children }: { title: string; children: React.R
       <div className="flex justify-between items-center mb-3">
         <h4 className="font-semibold text-lg">{title}</h4>
         <a
-          href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw?sub_confirmation=1"
+          href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw"
           target="_blank" rel="noopener noreferrer"
           className="text-sm text-blue-600 hover:underline"
         >
@@ -122,7 +122,7 @@ export function YouTubeCTA() {
       </p>
 
       <a
-        href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw?sub_confirmation=1"
+        href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw?"
         target="_blank" rel="noopener noreferrer"
         className="inline-block mt-3 px-6 py-2 rounded-full bg-red-600 text-white font-semibold hover:bg-red-700 transition"
       >

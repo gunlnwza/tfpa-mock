@@ -56,7 +56,15 @@ const tfpaContactBlocks: Block[] = [
 ];
 
 function Icon({ href, src }: { href: string, src: string }) {
-  return <a href={href} className="hover:opacity-80"><img src={src} className="w-10 h-10" /></a>
+  return (
+    <a
+      href={href}
+      target="_blank" rel="noopener noreferrer"
+      className="hover:opacity-80"
+    >
+      <img src={src} className="w-10 h-10" />
+    </a>
+  );
 }
 
 
@@ -85,7 +93,7 @@ function Right() {
           <div className="flex gap-4 justify-end mb-16">
             
             <Icon src={facebookIcon} href="https://www.facebook.com/ThaiFinancialPlanners" />
-            <Icon src={youtubeIcon} href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw?sub_confirmation=1" />
+            <Icon src={youtubeIcon} href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw" />
             <Icon src={lineIcon} href="http://line.me/ti/p/~@cfpthailand" />
           </div>
         </div>
