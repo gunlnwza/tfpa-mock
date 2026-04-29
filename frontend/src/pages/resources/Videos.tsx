@@ -1,19 +1,35 @@
 import { PageHeader } from "../../components/layout/global/PageHeader";
 import { Page } from "../../components/layout/Page";
-
-import featuredThumbnail from "../../assets/video_thumbnails/retirement.jpg"
+import React from "react";
 
 type VideoCardProps = {
   title: string;
   href: string;
-  thumbnail?: string;
+  videoId: string;
 };
 
-export function FeaturedVideo({ title, thumbnail, href }: VideoCardProps) {
+export function FeaturedVideo({ title, href, videoId }: VideoCardProps) {
+  const thumbnails = [
+    `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+    `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
+    `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+  ];
+
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className="block group">
       <div className="relative rounded-2xl overflow-hidden">
-        <img src={thumbnail} className="w-full h-[500px] object-cover rounded-2xl" />
+        <img
+          src={thumbnails[0]}
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.src.includes("maxres")) {
+              target.src = thumbnails[1];
+            } else if (target.src.includes("sddefault")) {
+              target.src = thumbnails[2];
+            }
+          }}
+          className="w-full h-[500px] object-cover rounded-2xl"
+        />
 
         {/* overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -31,39 +47,44 @@ export function FeaturedVideo({ title, thumbnail, href }: VideoCardProps) {
     </a>
   );
 }
-import { useState } from "react";
 
 
-export function VideoCard({ title, thumbnail, href }: VideoCardProps) {
-  const [imgError, setImgError] = useState(false);
+// [ Fallback ]
+// <div className="w-full h-[130px] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative">
+  
+//   {/* subtle play icon */}
+//   <div className="w-10 h-10 rounded-full bg-white/80 flex items-center justify-center shadow">
+//     ▶
+//   </div>
 
-  const showFallback = !thumbnail || imgError;
+//   {/* optional watermark */}
+//   <span className="absolute bottom-2 text-[10px] text-gray-500">
+//     TFPA Channel
+//   </span>
+// </div>
+
+export function VideoCard({ title, href, videoId }: VideoCardProps) {
+  const thumbnails = [
+    `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+    `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
+    `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+  ];
 
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className="min-w-[220px] max-w-[220px] group">
       <div className="rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition">
-        
-        {!showFallback ? (
-          <img
-            src={thumbnail}
-            onError={() => setImgError(true)}
-            className="w-full h-[130px] object-cover"
-          />
-        ) : (
-          <div className="w-full h-[130px] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative">
-            
-            {/* subtle play icon */}
-            <div className="w-10 h-10 rounded-full bg-white/80 flex items-center justify-center shadow">
-              ▶
-            </div>
-
-            {/* optional watermark */}
-            <span className="absolute bottom-2 text-[10px] text-gray-500">
-              TFPA Channel
-            </span>
-          </div>
-        )}
-
+        <img
+          src={thumbnails[0]}
+          onError={(e) => {
+              const target = e.currentTarget;
+              if (target.src.includes("maxres")) {
+                target.src = thumbnails[1];
+              } else if (target.src.includes("sddefault")) {
+                target.src = thumbnails[2];
+              }
+            }}
+          className="w-full h-[130px] object-cover"
+        />
       </div>
 
       <p className="mt-2 text-sm font-medium line-clamp-2 group-hover:underline">
@@ -113,6 +134,18 @@ export function YouTubeCTA() {
   );
 }
 
+function Repeat({ children, n }: { children: React.ReactNode; n: number }) {
+  return (
+    <>
+      {Array.from({ length: n }).map((_, i) => (
+        <React.Fragment key={i}>
+          {children}
+        </React.Fragment>
+      ))}
+    </>
+  );
+}
+
 export default function ResourcesVideos() {
   return (
     <Page>
@@ -122,91 +155,52 @@ export default function ResourcesVideos() {
       <FeaturedVideo
         title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
         href="https://www.youtube.com/watch?v=FPDIajtvtMs"
-        thumbnail={featuredThumbnail}
+        videoId="FPDIajtvtMs"
       />
 
       <VideoRow title="วางแผนการเงิน">
-        <VideoCard
-          title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
-          href="https://www.youtube.com/watch?v=FPDIajtvtMs"
-          thumbnail={featuredThumbnail}
-        />
-        <VideoCard
-          title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
-          href="https://www.youtube.com/watch?v=vaXpPe7EmDM&t=4s"
-        />
-        <VideoCard
-          title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
-          href="https://www.youtube.com/watch?v=FPDIajtvtMs"
-          
-        />
-        <VideoCard
-          title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
-          href="https://www.youtube.com/watch?v=vaXpPe7EmDM&t=4s"
-        />
-        <VideoCard
-          title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
-          href="https://www.youtube.com/watch?v=FPDIajtvtMs"
-
-        />
-        <VideoCard
-          title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
-          href="https://www.youtube.com/watch?v=vaXpPe7EmDM&t=4s"
-        />
+        <Repeat n={3}>
+          <VideoCard
+            title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
+            href="https://www.youtube.com/watch?v=FPDIajtvtMs"
+            videoId="FPDIajtvtMs"
+          />
+          <VideoCard
+            title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
+            href="https://www.youtube.com/watch?v=vaXpPe7EmDM&t=4s"
+            videoId="vaXpPe7EmDM"
+          />
+        </Repeat>
       </VideoRow>
   
       <VideoRow title="CFP Professional Talk">
-        <VideoCard
-          title="อนาคตของนักวางแผนการเงิน CFP®"
-          href="https://www.youtube.com/watch?v=vuv1vpjRGSs"
-        />
-        <VideoCard
-          title="เรื่องต้องรู้.. ประกันทุพพลภาพ"
-          href="https://www.youtube.com/watch?v=hjaVtJRTSfk&t=1s"
-        />
-        <VideoCard
-          title="CFP Professional Talk EP.12 นักวางแผนการเงิน CFP จัดพอร์ตหุ้นไทย ไปต่อ หรือชะลอไว้"
-          href="https://www.youtube.com/watch?v=L9pnoYYe_JQ&t=6s"
-        />
-        <VideoCard
-          title="อนาคตของนักวางแผนการเงิน CFP®"
-          href="https://www.youtube.com/watch?v=vuv1vpjRGSs"
-        />
-        <VideoCard
-          title="เรื่องต้องรู้.. ประกันทุพพลภาพ"
-          href="https://www.youtube.com/watch?v=hjaVtJRTSfk&t=1s"
-        />
-        <VideoCard
-          title="CFP Professional Talk EP.12 นักวางแผนการเงิน CFP จัดพอร์ตหุ้นไทย ไปต่อ หรือชะลอไว้"
-          href="https://www.youtube.com/watch?v=L9pnoYYe_JQ&t=6s"
-        />
+        <Repeat n={3}>
+          <VideoCard
+            title="อนาคตของนักวางแผนการเงิน CFP®"
+            href="https://www.youtube.com/watch?v=vuv1vpjRGSs"
+            videoId="vuv1vpjRGSs"
+          />
+          <VideoCard
+            title="เรื่องต้องรู้.. ประกันทุพพลภาพ"
+            href="https://www.youtube.com/watch?v=hjaVtJRTSfk&t=1s"
+            videoId="hjaVtJRTSfk"
+          />
+          <VideoCard
+            title="CFP Professional Talk EP.12 นักวางแผนการเงิน CFP จัดพอร์ตหุ้นไทย ไปต่อ หรือชะลอไว้"
+            href="https://www.youtube.com/watch?v=L9pnoYYe_JQ&t=6s"
+            videoId="L9pnoYYe_JQ"
+          />
+        </Repeat>
       </VideoRow>
 
       <VideoRow title="Case Day">
-        <VideoCard
-          title="Case Day: การวางแผนแบบองค์รวม โดยคุณศิริรัตน์ ตานะเศรษฐ CFP®"
-          href="https://www.youtube.com/watch?v=TtBGHApar9U"
-        />
-        <VideoCard
-          title="Case Day: การวางแผนแบบองค์รวม โดยคุณศิริรัตน์ ตานะเศรษฐ CFP®"
-          href="https://www.youtube.com/watch?v=TtBGHApar9U"
-        />
-        <VideoCard
-          title="Case Day: การวางแผนแบบองค์รวม โดยคุณศิริรัตน์ ตานะเศรษฐ CFP®"
-          href="https://www.youtube.com/watch?v=TtBGHApar9U"
-        />
-        <VideoCard
-          title="Case Day: การวางแผนแบบองค์รวม โดยคุณศิริรัตน์ ตานะเศรษฐ CFP®"
-          href="https://www.youtube.com/watch?v=TtBGHApar9U"
-        />
-        <VideoCard
-          title="Case Day: การวางแผนแบบองค์รวม โดยคุณศิริรัตน์ ตานะเศรษฐ CFP®"
-          href="https://www.youtube.com/watch?v=TtBGHApar9U"
-        />
-        <VideoCard
-          title="Case Day: การวางแผนแบบองค์รวม โดยคุณศิริรัตน์ ตานะเศรษฐ CFP®"
-          href="https://www.youtube.com/watch?v=TtBGHApar9U"
-        />
+        <Repeat n={10}>
+          <VideoCard
+            title="Case Day: การวางแผนแบบองค์รวม โดยคุณศิริรัตน์ ตานะเศรษฐ CFP®"
+            href="https://www.youtube.com/watch?v=TtBGHApar9U"
+            videoId="TtBGHApar9U"
+          />
+        </Repeat>
       </VideoRow>
 
       <YouTubeCTA />
