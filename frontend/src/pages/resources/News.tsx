@@ -89,9 +89,10 @@ export function NewsCard({
 }
 
 export function PaginationMock() {
-  const disabled = "px-3 py-1 text-sm border rounded text-gray-400 cursor-not-allowed";
-  const active = "px-3 py-1 text-sm border rounded bg-blue-600 text-white";
-  const neutral = "px-3 py-1 text-sm border rounded text-gray-700 hover:bg-gray-100";
+  const base = "px-3 py-1 text-sm border border-gray-300 rounded-md shadow-sm";
+  const disabled = `${base} text-gray-400 cursor-not-allowed`;
+  const active = `${base} bg-blue-600 text-white hover:cursor-pointer`;
+  const neutral = `${base} text-gray-700 hover:bg-gray-200 hover:cursor-pointer`;
 
   return (
     <div className="flex justify-center items-center gap-2 mt-10">
@@ -113,7 +114,7 @@ export function PaginationMock() {
         3
       </button>
 
-      <span className="px-2 text-gray-400">...</span>
+      <span className="px-1 text-gray-400">...</span>
 
       <button className={neutral}>
         10
