@@ -12,6 +12,7 @@ import type { Block, Inline } from "../components/primitive/renderer/types";
 import how_to_go_to_tfpa from "../assets/map/how_to_go_to_tfpa.png"
 
 
+// TODO: use Strapi for address
 function withBreaks(items: string[]): Inline[] {
   return items.flatMap((item, i) =>
     i === items.length - 1

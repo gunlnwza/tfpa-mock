@@ -20,7 +20,7 @@ export function Hero() {
         <div className="md:text-5xl font-bold leading-tight space-y-2 bg-white/90 rounded-xl p-4">
           <h1 className="mb-6">
             <span className="block text-black text-3xl mb-4">
-              CFP® Professionals
+              CFP® Professionals Deliver
             </span>
             <span className="block text-blue-800 text-5xl mb-6">
               "The Standard of Excellence"

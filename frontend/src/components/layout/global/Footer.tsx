@@ -4,15 +4,56 @@ import facebookIcon from "../../../assets/icons/facebook.svg"
 import lineIcon from "../../../assets/icons/line.svg"
 import youtubeIcon from "../../../assets/icons/youtube.svg"
 
-import {
-  tfpaContactBlocks,
-} from "../../../data/Contact"
-
 import { WhitePDFLink } from "../../primitive/PDFLink";
 
 import { RenderBlocks } from "../../primitive/renderer/Blocks";
+import type { Inline, Block } from "../../primitive/renderer/types";
 import tfpaLogo from "../../../assets/logos/tfpa.png"
 
+// TODO: use Strapi for address
+function withBreaks(items: string[]): Inline[] {
+  return items.flatMap((item, i) =>
+    i === items.length - 1
+      ? [{ type: "text", content: item }]
+      : [
+          { type: "text", content: item },
+          { type: "break" }
+        ]
+  );
+}
+
+type TFPAContact = {
+  title: string;
+  address: string[];
+  telephone: string;
+  telegraph: string;
+  website: string;
+}
+
+const tfpaContact: TFPAContact = {
+  title: "สมาคมนักวางแผนการเงินไทย",
+  address: [
+    "ชั้น 6 อาคารตลาดหลักทรัพย์แห่งประเทศไทย",
+    "93 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง",
+    "กรุงเทพมหานคร 10400"
+  ],
+  telephone: "0 2009 9393",
+  telegraph: "0 2247 7479",
+  website: "www.tfpa.or.th"
+}
+
+const tfpaContactBlocks: Block[] = [
+  { type: "heading", level: "h4", content: tfpaContact.title },
+  {
+    type: "paragraph", content: [
+      ...withBreaks(tfpaContact.address), { type: "break" },
+      { type: "break" },
+      { type: "text", content: `โทรศัพท์: ${tfpaContact.telephone}` }, { type: "break" },
+      { type: "text", content: `โทรสาร: ${tfpaContact.telegraph}` }, { type: "break" },
+      { type: "text", content: "Website: " }, { type: "link", href: "/", content: tfpaContact.website }
+    ]
+  }
+];
 
 function Icon({ href, src }: { href: string, src: string }) {
   return <a href={href} className="hover:opacity-80"><img src={src} className="w-10 h-10" /></a>

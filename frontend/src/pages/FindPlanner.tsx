@@ -144,7 +144,7 @@ function Filter() {
 
 function PlannerCard() {
   return (
-    <div className="border border-gray-200 shadow-md rounded-2xl p-5 flex gap-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
+    <div className="border border-gray-200 shadow-md rounded-2xl p-5 flex gap-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg group">
 
       {/* Avatar */}
       <div className="w-14 h-14 rounded-full bg-gray-200 flex-shrink-0" />
@@ -179,13 +179,9 @@ function PlannerCard() {
       </div>
 
       {/* Action */}
-      <div className="flex flex-col justify-between items-end">
-        <button className="text-sm text-blue-600 hover:underline">
+      <div className="flex flex-col">
+        <button className="text-xs rounded-full group-hover:text-blue-600 transition">
           ดูรายละเอียด
-        </button>
-
-        <button className="text-xs px-3 py-1.5 bg-red-600 text-white rounded-full hover:bg-red-700">
-          ติดต่อ
         </button>
       </div>
     </div>
