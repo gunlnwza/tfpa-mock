@@ -50,9 +50,12 @@ const tfpaContactBlocks: Block[] = [
     type: "paragraph", content: [
       ...withBreaks(tfpaContact.address), { type: "break" },
       { type: "break" },
-      { type: "text", content: `โทรศัพท์: ${tfpaContact.telephone}` }, { type: "break" },
-      { type: "text", content: `โทรสาร: ${tfpaContact.telegraph}` }, { type: "break" },
-      { type: "text", content: "Website: " }, { type: "link", href: "/", content: tfpaContact.website }
+      { type: "bold", content: "โทรศัพท์: "},
+      { type: "text", content: `${tfpaContact.telephone}` }, { type: "break" },
+      { type: "bold", content: "โทรสาร: "},
+      { type: "text", content: `${tfpaContact.telegraph}` }, { type: "break" },
+      { type: "bold", content: "Website: " },
+      { type: "link", href: "/", content: tfpaContact.website }
     ]
   }
 ];
@@ -186,6 +189,30 @@ const infographicMapBlocks: Block[] = [
 ]
 
 
+const workWithUsBlocksMain: Block[] = [
+  { type: "heading", level: "h3", content: "ตำแหน่งงานที่เปิดรับสมัคร" },
+
+  { type: "heading", level: "h4", content: "วิธีการสมัคร" },
+  {
+    type: "list", ordered: true, items: [
+      { content: [{ type: "text", content: "ดาวน์โหลดใบสมัคร" }] },
+      { content: [{ type: "text", content: "กรอกข้อมูลในใบสมัคร และแนบหลักฐานที่สมาคมกำหนด" }] },
+      { content: [{ type: "text", content: "ส่งเอกสารการสมัครมาที่" }],
+        children: { type: "list", items: [
+          { content: [{ type: "text", content: "อีเมล์: info@tfpa.or.th" }] },
+          { content: [{ type: "text", content: "หรือทางไปรษณีย์:" }] }
+        ]}
+      },
+    ]
+  }
+
+  
+
+
+
+]
+
+
 export default function Contact() {
   return (
     <Page>
@@ -220,6 +247,18 @@ export default function Contact() {
       
       <Section title="ร้องเรียน">
         <RenderBlocks blocks={reportBlocks}/>
+      </Section>
+
+      <Section title="ร่วมงานกับเรา">
+        <RenderBlocks blocks={workWithUsBlocksMain} />
+        <TextCard blocks={tfpaContactBlocks} />
+        <RenderBlocks blocks={[
+          { type: "heading", level: "h4", content: "สอบถามข้อมูลเพิ่มเติม" },
+          { type: "paragraph", content: [
+            { type: "bold", content: "โทรศัพท์: "},
+            { type: "text", content: "0 2009 9393" }
+          ]},
+        ]} />
       </Section>
     </Page>
   );

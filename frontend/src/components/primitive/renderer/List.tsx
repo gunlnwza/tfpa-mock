@@ -8,7 +8,7 @@ export function RenderList({ list }: { list: List }) {
   const listStyle = ordered ? "list-decimal" : "list-disc";
 
   return (
-    <Tag className={`${listStyle} pl-6 space-y-2 text-gray-700 my-2`}>
+    <Tag className={`${listStyle} pl-6 space-y-2 my-2`}>
       {items.map((item, i) => (
         <li key={i} className="leading-relaxed">
           {item.content.map((inline, j) => (

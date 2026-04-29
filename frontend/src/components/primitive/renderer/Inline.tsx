@@ -7,7 +7,7 @@ export function RenderInline( { inline }: { inline: Inline } ) {
     case "text":
       return <span className="">{inline.content}</span>;
     case "bold":
-      return <b className="">{inline.content}</b>;
+      return <b className="font-medium">{inline.content}</b>;
 
     case "link":
       return (
