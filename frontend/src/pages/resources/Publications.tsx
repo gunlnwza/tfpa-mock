@@ -20,24 +20,31 @@ const BASE_URL = "http://localhost:1337/api/pdfs";
 
 function PDFCard({ pdf }: { pdf: PDF }) {
   return (
-    <div className="group border border-gray-300 shadow-sm rounded-xl p-4">
-      <a
-        href={pdf.pdfUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+    <a
+      href={pdf.pdfUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        group p-4
+        border border-gray-300 shadow-sm rounded-xl 
+        hover:cursor-pointer
+      "
+    >
+      <div
         className="
           mt-1 mb-4
-          block overflow-hidden rounded-xl transition-transform duration-300 
-          group-hover:scale-105 hover:cursor-pointer
+          block overflow-hidden rounded-lg
+          border border-gray-200
+          transition-transform duration-300 group-hover:scale-105
           flex justify-center
           "
       >
         <img
           src={pdf.thumbnailUrl || "/placeholder.png"}
           alt={pdf.title}
-          className="w-7/8 h-60 object-cover border border-gray-200 rounded-md"
+          className="w-full h-60 object-cover"
         />
-      </a>
+      </div>
 
       <div className="mt-3 px-1 space-y-1">
         {pdf.title && (
@@ -63,7 +70,7 @@ function PDFCard({ pdf }: { pdf: PDF }) {
       >
         อ่านเวอร์ชันบทความ →
       </a>)}
-    </div>
+    </a>
   )
 }
 
@@ -126,13 +133,35 @@ export function ResourcesBlogs() {
   );
 }
 
+
+function BrochuresRow({ title, url }: { title: string; url: string; }) {
+  return (
+    <div className="mb-8">
+      <h2 className="mb-2 font-medium text-lg">{title}</h2>
+      <PDFSection url={url} />
+    </div>
+  );
+}
+
 export function ResourcesBooks() {
-  const url = `${BASE_URL}?filters[docType][$eq]=${encodeURIComponent("E-Book")}`;
+  const ebookUrl = `${BASE_URL}?filters[docType][$eq]=${encodeURIComponent("E-Book")}`;
+  
+  const brochuresUrl = `${BASE_URL}?filters[docType][$eq]=${encodeURIComponent("Brochures")}`;
+  const brochureForGeneralAudience = `${brochuresUrl}&filters[audienceType][$eq]=${encodeURIComponent("General Audience")}`
+  const brochureForProfessional = `${brochuresUrl}&filters[audienceType][$eq]=${encodeURIComponent("Professionals")}`
+  const brochureForCompany = `${brochuresUrl}&filters[audienceType][$eq]=${encodeURIComponent("Company")}`
+
   return (
     <Page>
-      <PageHeader title="E-Book / โบรชัวร์" />
-      <PDFSection url={url} />
-      <PaginationMock />
+      <div className="mb-12">
+        <PageHeader title="E-Book" />      
+        <PDFSection url={ebookUrl} />
+      </div>
+
+      <PageHeader title="โบรชัวร์" />
+      <BrochuresRow title="บุคคลทั่วไป" url={brochureForGeneralAudience} />
+      <BrochuresRow title="ผู้ประกอบวิชาชีพ CFP/AFPT" url={brochureForProfessional} />
+      <BrochuresRow title="องค์กร" url={brochureForCompany} />
     </Page>
   );
 }

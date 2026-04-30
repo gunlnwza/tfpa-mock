@@ -1,6 +1,13 @@
-export function PageHeader({ title, margin = 8 }: { title: string; margin?: number }) {
+export function PageHeader({ title, margin = 8, border = false }: { title: string; margin?: number; border?: boolean }) {
+  const addBorder = border ? "border-b pb-1 border-gray-500" : "";
   return (
-    <h1 className={`text-2xl mb-${margin} font-semibold`}>{title}</h1>
+    <h1 className={`
+      text-2xl font-semibold
+      mb-${margin}
+      ${addBorder}
+    `}>
+      {title}
+    </h1>
   );
 }
 

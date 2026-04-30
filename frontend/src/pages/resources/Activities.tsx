@@ -8,7 +8,7 @@ export default function ResourcesActivities() {
   return (
     <Page>
       <PageHeader title="กิจกรรม" margin={0} />
-      <PageSubheader title="ประกาศกิจกรรม" />
+      <PageSubheader title="ประกาศสัมมนา" />
   
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <NewsCardMock title="การประชุมใหญ่สามัญประจำปี 2569" date="4/1/2025"/>

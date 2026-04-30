@@ -100,9 +100,9 @@ export function NewsCardMock({ title, date }: { title: string; date: string }) {
       <div className={`border-b border-gray-200 w-full h-36 overflow-hidden flex justify-center items-center`}>
         <div className={`w-full h-full flex flex-col justify-center items-center bg-gray-100`}>
           {/* <span className="text-xs text-gray-400">CFP®</span> */}
-          {/* <span className="text-sm font-semibold text-gray-600">
-            {issue}
-          </span> */}
+          <span className="text-sm font-semibold text-gray-600">
+            {formatThaiDate(date)}
+          </span>
         </div>
       </div>
 
