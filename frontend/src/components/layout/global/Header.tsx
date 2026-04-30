@@ -89,7 +89,10 @@ export function NavBar({ scrolled = true }: { scrolled?: boolean }) {
         <DropdownItem to="/resources/announcements" label="ประกาศ" />
         <DropdownItem to="/resources/activities" label="กิจกรรม" />
         <DropdownDivider />
-        <DropdownItem to="/resources/articles" label="บทความ" />
+        <DropdownItem to="/resources/tfpa_magazines" label="วารสาร TFPA Magazine" />
+        <DropdownItem to="/resources/tfpa_news" label="วารสาร TFPA News" />
+        <DropdownItem to="/resources/blogs" label="บทความ" />
+        <DropdownItem to="/resources/ebook" label="E-Book / โบรชัวร์" />
         <DropdownItem to="/resources/documents" label="ศูนย์เอกสาร" />
         <DropdownDivider />
         <DropdownItem to="/resources/videos" label="วิดีโอ" />

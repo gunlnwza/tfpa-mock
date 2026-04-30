@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pdfs",
+  "info": {
+    "singularName": "pdf",
+    "pluralName": "pdfs",
+    "displayName": "PDF"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "pdfUrl": {
+      "type": "string"
+    },
+    "thumbnailUrl": {
+      "type": "string"
+    },
+    "issue": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "docType": {
+      "type": "enumeration",
+      "enum": [
+        "For Professionals",
+        "TFPA Magazine",
+        "TFPA News",
+        "Brochures",
+        "E-Book"
+      ]
+    },
+    "audienceType": {
+      "type": "enumeration",
+      "enum": [
+        "General Audience",
+        "Professionals",
+        "Company",
+        "Training School",
+        "Media"
+      ]
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { PageHeader } from "../../components/layout/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 import React from "react";
+import { Repeat } from "../../utils";
 
 type VideoCardProps = {
   title: string;
@@ -136,17 +137,6 @@ export function YouTubeCTA() {
   );
 }
 
-function Repeat({ children, n }: { children: React.ReactNode; n: number }) {
-  return (
-    <>
-      {Array.from({ length: n }).map((_, i) => (
-        <React.Fragment key={i}>
-          {children}
-        </React.Fragment>
-      ))}
-    </>
-  );
-}
 
 export default function ResourcesVideos() {
   return (
