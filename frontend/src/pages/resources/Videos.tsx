@@ -16,9 +16,16 @@ export function FeaturedVideo({ title, href, videoId }: VideoCardProps) {
   ];
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="block group">
+    <div className="flex justify-center">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block group max-w-4xl"
+    >
       <div className="relative rounded-2xl overflow-hidden">
         <img
+          className="w-full object-cover rounded-2xl border border-gray-200 shadow-md"
           src={thumbnails[0]}
           onError={(e) => {
             const target = e.currentTarget;
@@ -28,8 +35,7 @@ export function FeaturedVideo({ title, href, videoId }: VideoCardProps) {
               target.src = thumbnails[2];
             }
           }}
-          className="w-full object-cover rounded-2xl"
-        />
+          />
 
         {/* overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -45,6 +51,7 @@ export function FeaturedVideo({ title, href, videoId }: VideoCardProps) {
         </div>
       </div>
     </a>
+  </div>
   );
 }
 
@@ -69,19 +76,16 @@ export function VideoCard({ title, href, videoId }: VideoCardProps) {
   ];
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="min-w-[220px] max-w-[220px] group">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="min-w-[250px] max-w-[250px] group"
+    >
       <div className="rounded-xl overflow-hidden shadow-sm group-hover:shadow-md transition">
         <img
           src={thumbnails[0]}
-          // onError={(e) => {
-          //     const target = e.currentTarget;
-          //     if (target.src.includes("maxres")) {
-          //       target.src = thumbnails[1];
-          //     } else if (target.src.includes("sddefault")) {
-          //       target.src = thumbnails[2];
-          //     }
-          //   }}
-          className="w-full h-[130px] object-cover"
+          className="w-full h-[140px] object-cover"
         />
       </div>
 
@@ -155,7 +159,7 @@ export default function ResourcesVideos() {
         href="https://www.youtube.com/watch?v=FPDIajtvtMs"
         videoId="FPDIajtvtMs"
       />
-
+      
       <VideoRow title="วางแผนการเงิน">
         <Repeat n={1}>
           <VideoCard

@@ -1,8 +1,9 @@
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { PageHeader, PageSubheader } from "../../components/layout/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 
 import { cardAddBorderClass, cardAddRaiseUpClass, groupHighlightOnHoverClass } from "../../components/ui/styles";
 import { useEffect, useState } from "react";
+
 
 type Media = {
   url: string;
@@ -167,7 +168,8 @@ export function NewsSection({ url }: { url: string; }) {
 export default function ResourcesNews() {
   return (
     <Page>
-      <PageHeader title="ข่าว" />
+      <PageHeader title="ข่าว" margin={0} />
+      <PageSubheader title="ประกาศผลสอบ / ประกาศปรับปรุงเนื้อหา / แจ้งประชุม / ข่าวสาร" />
       <NewsSection url="http://localhost:1337/api/news?populate=pdf&sort=date:desc" />
       <PaginationMock />
     </Page>
