@@ -18,7 +18,7 @@ function DropdownContainer({ children, to, label }: {
 }) {
   return (
     <div className="relative group">
-      { (to) ? <NavBarLink to={to} label={label} /> : <p>{label}</p> }
+      { (to) ? <NavBarLink to={to} label={label} /> : <p className="hover:cursor-default">{label}</p> }
   
       <div className="absolute left-0 top-full h-3 w-full" />
   
@@ -75,7 +75,8 @@ export function NavBar({ scrolled = true }: { scrolled?: boolean }) {
       <NavBarLink to="/about" label="เกี่ยวกับ" />
       <NavBarLink to="/find_planner" label="รับบริการ" />
 
-      <DropdownContainer to="/for_you" label="สำหรับคุณ">
+      {/* <DropdownContainer to="/for_you" label="สำหรับคุณ"> */}
+      <DropdownContainer label="สำหรับคุณ">
         <DropdownItem to="/for_you/general_audience" label="บุคคลทั่วไป (อยากวางแผนการเงิน)" />
         <DropdownItem to="/for_you/student" label="นักเรียน CFP/AFPT" />
         <DropdownItem to="/for_you/professional" label="ผู้ประกอบวิชาชีพ CFP/AFPT" />
@@ -84,7 +85,8 @@ export function NavBar({ scrolled = true }: { scrolled?: boolean }) {
         <DropdownItem to="/for_you/media" label="สื่อมวลชน" />
       </DropdownContainer>
 
-      <DropdownContainer to="/resources" label="แหล่งข้อมูล">
+      {/* <DropdownContainer to="/resources" label="แหล่งข้อมูล"> */}
+      <DropdownContainer label="แหล่งข้อมูล">
         <DropdownItem to="/resources/news" label="ข่าว" />
         <DropdownItem to="/resources/announcements" label="ประกาศ" />
         <DropdownItem to="/resources/activities" label="กิจกรรม" />
