@@ -4,7 +4,6 @@ import { Page } from "../../components/layout/Page";
 import { useState, useEffect } from "react";
 import { Repeat } from "../../utils";
 import { PaginationMock } from "./News";
-import { cardAddRaiseUpClass } from "../../components/ui/styles";
 
 // MOCK PDF
 type PDF = {
@@ -110,7 +109,7 @@ export function ResourcesTFPAMagazine() {
   return (
     <Page>
       <PageHeader title="วารสาร TFPA Magazine" />
-      <PDFSection url={url} n={2} />
+      <PDFSection url={url} n={10} />
       <PaginationMock />
     </Page>
   );
@@ -121,7 +120,7 @@ export function ResourcesTFPANews() {
   return (
     <Page>
       <PageHeader title="วารสาร TFPA News" />
-      <PDFSection url={url} n={2} />
+      <PDFSection url={url} n={10} />
       <PaginationMock />
     </Page>
   );
@@ -129,11 +128,11 @@ export function ResourcesTFPANews() {
 
 
 
-function BrochuresRow({ title, url }: { title: string; url: string; }) {
+function BrochuresRow({ title, url, n = 1 }: { title: string; url: string; n?: number; }) {
   return (
     <div className="mb-8">
       <h2 className="mb-2 font-medium text-lg">{title}</h2>
-      <PDFSection url={url} />
+      <PDFSection url={url} n={n} />
     </div>
   );
 }
@@ -150,11 +149,11 @@ export function ResourcesBooks() {
     <Page>
       <div className="mb-12">
         <PageHeader title="E-Book" />      
-        <PDFSection url={ebookUrl} />
+        <PDFSection url={ebookUrl} n={4} />
       </div>
 
       <PageHeader title="โบรชัวร์" />
-      <BrochuresRow title="บุคคลทั่วไป" url={brochureForGeneralAudience} />
+      <BrochuresRow title="บุคคลทั่วไป" url={brochureForGeneralAudience} n={5} />
       <BrochuresRow title="ผู้ประกอบวิชาชีพ CFP/AFPT" url={brochureForProfessional} />
       <BrochuresRow title="องค์กร" url={brochureForCompany} />
     </Page>
