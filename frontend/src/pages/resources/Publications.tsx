@@ -3,6 +3,7 @@ import { Page } from "../../components/layout/Page";
 
 import { useState, useEffect } from "react";
 import { Repeat } from "../../utils";
+import { PaginationMock } from "./News";
 
 // MOCK PDF
 type PDF = {
@@ -15,6 +16,7 @@ type PDF = {
   blogUrl: string;
 }
 
+const BASE_URL = "http://localhost:1337/api/pdfs";
 
 function PDFCard({ pdf }: { pdf: PDF }) {
   return (
@@ -76,23 +78,28 @@ export function PDFSection({ url }: { url: string }) {
       grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8
       "
     >
-      <Repeat n={50}>
+      <Repeat n={5}>
         {pdfs.map((item) => {
           return (
             <PDFCard pdf={item} />
           );
         })}
-
       </Repeat>
     </div>
   );
 }
 
+
+
 export function ResourcesTFPAMagazine() {
+  const url = `${BASE_URL}?filters[docType][$eq]=${encodeURIComponent("TFPA Magazine")}`;
+  console.log(url)
+
   return (
     <Page>
       <PageHeader title="วารสาร TFPA Magazine" />
-      <PDFSection url="http://localhost:1337/api/pdfs" />
+      <PDFSection url={url} />
+      <PaginationMock />
     </Page>
   );
 }
