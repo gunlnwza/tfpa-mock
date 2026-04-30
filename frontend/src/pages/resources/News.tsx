@@ -89,6 +89,37 @@ export function NewsCard({
   );
 }
 
+export function NewsCardMock({ title, date }: { title: string; date: string }) {
+  return (
+    <a
+      href="#"
+      target="_blank"
+      className={`${cardAddBorderClass} ${cardAddRaiseUpClass}`}
+    >
+      {/* Image top */}
+      <div className={`border-b border-gray-200 w-full h-36 overflow-hidden flex justify-center items-center`}>
+        <div className={`w-full h-full flex flex-col justify-center items-center bg-gray-100`}>
+          {/* <span className="text-xs text-gray-400">CFP®</span> */}
+          {/* <span className="text-sm font-semibold text-gray-600">
+            {issue}
+          </span> */}
+        </div>
+      </div>
+
+      {/* Text bottom */}
+      <div className="p-4 space-y-1">
+        <p className={`text-sm font-medium text-gray-700 ${groupHighlightOnHoverClass}`}>
+          {title}
+        </p>
+
+        <div className="text-xs text-gray-500 flex justify-between">
+          <span>{formatThaiDate(date)}</span>
+        </div>
+      </div>
+    </a>
+  );
+}
+
 export function PaginationMock() {
   const base = "px-3 py-1 text-sm border border-gray-300 rounded-md shadow-sm";
   const disabled = `${base} text-gray-400 cursor-not-allowed`;

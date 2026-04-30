@@ -225,7 +225,7 @@ export default function Contact() {
       <Section title="ที่อยู่">
         <div className="flex gap-4 flex-col md:flex-row">
           <TextCard blocks={tfpaContactBlocks} />
-          <div className="flex-1 w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-md">
+          <div className="flex-1 w-full rounded-xl overflow-hidden shadow-md">
             <iframe
               src="https://www.google.com/maps?q=The+Stock+Exchange+of+Thailand&output=embed"
               loading="lazy"
