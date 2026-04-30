@@ -4,6 +4,7 @@ import { Page } from "../../components/layout/Page";
 import { useState, useEffect } from "react";
 import { Repeat } from "../../utils";
 import { PaginationMock } from "./News";
+import { cardAddRaiseUpClass } from "../../components/ui/styles";
 
 // MOCK PDF
 type PDF = {
@@ -24,18 +25,19 @@ function PDFCard({ pdf }: { pdf: PDF }) {
       href={pdf.pdfUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="
+      className={`
         group p-4
         border border-gray-300 shadow-sm rounded-xl 
         hover:cursor-pointer
-      "
+        group hover:shadow-md hover:-translate-y-1 transition-all duration-300
+      `}
     >
       <div
         className="
           mt-1 mb-4
           block overflow-hidden rounded-lg
           border border-gray-200
-          transition-transform duration-300 group-hover:scale-105
+          transition-transform group-hover:scale-104 duration-300
           flex justify-center
           "
       >
