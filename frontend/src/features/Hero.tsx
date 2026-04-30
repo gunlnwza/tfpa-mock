@@ -6,7 +6,7 @@ function Card() {
   return (
     <div className={`
       md:text-5xl font-bold leading-tight
-      space-y-2 p-8 mb-30
+      space-y-2 p-8
       bg-white/95 rounded-xl text-center shadow-lg
     `}>
       <h1 className="mb-6">

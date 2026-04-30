@@ -4,7 +4,7 @@ import { Page } from "../../components/layout/Page";
 export default function ResourcesPublications() {
   return (
     <Page>
-      <PageHeader title="สิ่งพิมพ์ / วารสาร" />
+      <PageHeader title="สิ่งพิมพ์" />
     </Page>
   );
 }

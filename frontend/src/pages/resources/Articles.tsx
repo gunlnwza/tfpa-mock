@@ -4,7 +4,7 @@ import { Page } from "../../components/layout/Page";
 export default function ResourcesArticles() {
   return (
     <Page>
-      <PageHeader title="บทความ / ความรู้การเงิน" />
+      <PageHeader title="บทความ" />
     </Page>
   );
 }

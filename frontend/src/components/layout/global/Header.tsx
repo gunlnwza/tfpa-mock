@@ -81,10 +81,10 @@ function NavBar() {
       <DropdownContainer to="/resources" label="แหล่งข้อมูล">
         <DropdownItem to="/resources/news" label="ข่าว" />
         <DropdownItem to="/resources/announcements" label="ประกาศ" />
+        <DropdownItem to="/resources/publications" label="สิ่งพิมพ์" />
         <DropdownItem to="/resources/documents" label="ศูนย์เอกสาร" />
         <DropdownDivider />
-        <DropdownItem to="/resources/articles" label="บทความ / ความรู้การเงิน" />
-        <DropdownItem to="/resources/publications" label="สิ่งพิมพ์ / วารสาร" />
+        <DropdownItem to="/resources/articles" label="บทความ" />
         <DropdownItem to="/resources/videos" label="วิดีโอ" />
       </DropdownContainer>
 
@@ -108,7 +108,7 @@ export function Header() {
         <img
           src={tfpaLogo}
           alt="TFPA Logo"
-          className="h-auto w-24 sm:w-32 md:w-80"
+          className="h-auto w-24 sm:w-32 md:w-64"
         />
       </Link>
       <NavBar />

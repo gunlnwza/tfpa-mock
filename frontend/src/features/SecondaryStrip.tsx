@@ -5,8 +5,8 @@ const cardClassName = "w-full p-4 border border-gray-200 bg-white rounded-xl sha
 
 function SecondaryCTACard({ title, to, href, msg }: { title: string, to?: string, href?: string, msg: string } ) {
   return (
-    <div className="w-full border border-gray-200 shadow-sm rounded-xl p-4 flex flex-col gap-4 items-center justify-center">
-      <p>{title}</p>
+    <div className="w-full border border-gray-200 shadow-sm rounded-xl p-4 flex flex-col gap-2 items-center justify-center">
+      <p className="text-sm">{title}</p>
       <SecondaryCTAButton to={to} href={href}>{msg}</SecondaryCTAButton>
     </div>
   );
@@ -15,7 +15,7 @@ function SecondaryCTACard({ title, to, href, msg }: { title: string, to?: string
 
 function KPICard({ title, msg }: { title: string, msg: string } ) {
   return (
-    <div className={cardClassName}>
+    <div className={`${cardClassName} gap-2`}>
       <p className="text-sm">{title}</p>
       <p className="text-xl">{msg}</p>
     </div>
@@ -26,8 +26,8 @@ function KPICard({ title, msg }: { title: string, msg: string } ) {
 export function SecondaryStrip() {
   return (
     <div className="mx-8 my-4 flex gap-4 justify-center">
-      <SecondaryCTACard title="สนใจเป็นนักวางแผนการเงิน?" to="/career_path" msg="สมัครอบรม" />
-      <SecondaryCTACard title="สนใจสอบ CFP?" href="https://member.tfpa.or.th/UserLoginNew.aspx" msg="สมัครสอบ" />
+      {/* <SecondaryCTACard title="สนใจเป็นนักวางแผนการเงิน?" to="/career_path" msg="สมัครอบรม" /> */}
+      {/* <SecondaryCTACard title="สนใจสอบ CFP?" href="https://member.tfpa.or.th/UserLoginNew.aspx" msg="สมัครสอบ" /> */}
       <KPICard title="นักวางแผนการเงิน CFP" msg="833 คน" />
       <KPICard title="ที่ปรึกษาการเงิน AFPT" msg="1798 คน" />
       <KPICard title="สมาชิกนิติบุคคล" msg="26 บริษัท" />
