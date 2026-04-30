@@ -108,20 +108,25 @@ export default function BlogSection() {
       <div className="space-y-4">
         {mockBlogs
           .filter((b) => b.category === activeCategory)
-          .map((blog) => (
-            <a
-              key={blog.id}
-              href="#"
-              className="block p-5 rounded-xl border border-gray-300 shadow-sm hover:-translate-y-0.5 transition bg-white"
-            >
-              <p className="text-sm text-gray-400 mb-1">{blog.date}</p>
-              <h3 className="font-medium text-gray-800 leading-snug">
-                {blog.title}
-              </h3>
-            </a>
-          ))}
+          .map((blog) => (<TopicCard blog={blog} />))}
       </div>
     </section>
+  );
+}
+
+
+export function TopicCard({ blog }: { blog: Blog }) {
+  return (
+    <a
+      key={blog.id}
+      href="#"
+      className="block p-5 rounded-xl border border-gray-300 shadow-sm hover:-translate-y-0.5 transition bg-white"
+    >
+      <p className="text-sm text-gray-400 mb-1">{blog.date}</p>
+      <h3 className="font-medium text-gray-800 leading-snug">
+        {blog.title}
+      </h3>
+    </a>
   );
 }
 
