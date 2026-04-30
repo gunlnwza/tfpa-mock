@@ -8,7 +8,7 @@ import { WhitePDFLink } from "../../primitive/PDFLink";
 
 import { RenderBlocks } from "../../primitive/renderer/Blocks";
 import type { Inline, Block } from "../../primitive/renderer/types";
-import tfpaLogo from "../../../assets/logos/tfpa.png"
+import tfpaAllWhite from "../../../assets/logos/tfpa_all_white.png"
 
 // TODO: use Strapi for address
 function withBreaks(items: string[]): Inline[] {
@@ -71,11 +71,11 @@ function Icon({ href, src }: { href: string, src: string }) {
 function Left() {
   return (
     <div className="text-white">
-      <Link to="/">
+      <Link to="/" className="hover:cursor-pointer">
         <img
-          src={tfpaLogo}
+          src={tfpaAllWhite}
           alt="TFPA Logo"
-          className="h-auto w-24 sm:w-32 md:w-80 bg-white p-4 rounded-xl"
+          className="h-auto w-24 sm:w-32 md:w-64"
         />
       </Link>
 
@@ -86,26 +86,23 @@ function Left() {
 
 function Right() {
   return (
-    <div className="flex flex-col h-80 justify-between">
-      <div className="">
-        <div>
-          <p className="text-right mb-2">ติดตามเราได้ที่</p>
-          <div className="flex gap-4 justify-end mb-16">
-            
-            <Icon src={facebookIcon} href="https://www.facebook.com/ThaiFinancialPlanners" />
-            <Icon src={youtubeIcon} href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw" />
-            <Icon src={lineIcon} href="http://line.me/ti/p/~@cfpthailand" />
-          </div>
+    <div className="grid grid-cols">
+      <div>
+        <p className="text-right mb-2">ติดตามเราได้ที่</p>
+        <div className="flex gap-4 justify-end">
+          <Icon src={facebookIcon} href="https://www.facebook.com/ThaiFinancialPlanners" />
+          <Icon src={youtubeIcon} href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw" />
+          <Icon src={lineIcon} href="http://line.me/ti/p/~@cfpthailand" />
         </div>
+      </div>
 
-        <div className="flex gap-4 justify-end mb-4">
-          <WhitePDFLink title="นโยบายความเป็นส่วนตัว" href="https://www.tfpa.or.th/upload/tfpa-2205311451021516.pdf" />
-          <WhitePDFLink title="ข้อบังคับสมาคม" href="https://www.tfpa.or.th/upload/tfpa-2109221601078698.pdf" />
-        </div>
+      <div className="flex gap-4 justify-end">
+        <WhitePDFLink title="นโยบายความเป็นส่วนตัว" href="https://www.tfpa.or.th/upload/tfpa-2205311451021516.pdf" />
+        <WhitePDFLink title="ข้อบังคับสมาคม" href="https://www.tfpa.or.th/upload/tfpa-2109221601078698.pdf" />
+      </div>
 
-        <div className="flex gap-4 justify-end mb-8">
-          <Link to="/sitemap" className="hover:underline text-blue-100 underline block text-center">Sitemap</Link>
-        </div>
+      <div className="flex gap-4 justify-end">
+        <Link to="/sitemap" className="hover:underline text-blue-100 underline block text-center">Sitemap</Link>
       </div>
 
       <div className="">
@@ -119,7 +116,7 @@ function Right() {
 
 export function Footer() {
   return (
-    <footer className="bg-blue-900 text-white px-8 py-10 flex justify-between">
+    <footer className="bg-blue-900 text-white flex justify-between px-4 py-6">
       <Left />
       <Right />
     </footer>

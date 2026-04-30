@@ -32,7 +32,7 @@ function DropdownContainer({ children, to, label }: {
 }
 
 function DropdownDivider() {
-  return (<div className="my-2 border-t" />);
+  return (<hr className="my-2 border-t border-gray-400" />);
 }
 
 type DropDownItemProps =
