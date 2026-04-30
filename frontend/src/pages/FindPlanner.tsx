@@ -335,15 +335,19 @@ function RepeatPlannerCard({ n }: { n: number }) {
 
 export default function FindPlanner() {
   return (
-    <Page>
-      <PageHeader title="รับบริการวางแผนการเงิน" />
-
-      <PlannerSearchMock />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <RepeatPlannerCard n={10} />
+    <Page padding={false}>
+      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 pt-12 md:pt-16">
+        <PageHeader title="รับบริการวางแผนการเงิน" />
+        <PlannerSearchMock />
       </div>
-      <PaginationMock />
+
+      <div className="p-4 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <RepeatPlannerCard n={12} />
+        </div>
+        <PaginationMock />
+      </div>
+
     </Page>
   );
 }

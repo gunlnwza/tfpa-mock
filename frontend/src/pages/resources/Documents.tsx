@@ -299,17 +299,21 @@ function TextCard({ res }: { res: Resource }) {
 }
 
 export default function ResourcesDocuments() {
-  const [activeCategory, setActiveCategory] = useState("เกษียณ");
-
   return (
-    <Page>
-      <PageHeader title="ศูนย์เอกสาร" />
-      <DocumentSearchMock />
-      <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {mockResources
-          .map((res) => (<TextCard res={res} />))}
+    <Page padding={false}>
+      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 pt-12 md:pt-16">
+        <PageHeader title="ศูนย์เอกสาร" />
+        <DocumentSearchMock />
       </div>
-      <PaginationMock />
+
+      <div className="p-4 pb-10">
+        <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {mockResources
+            .map((res) => (<TextCard res={res} />))}
+        </div>
+        <PaginationMock />
+      </div>
+
     </Page>
   );
 }

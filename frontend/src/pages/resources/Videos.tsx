@@ -140,9 +140,11 @@ export function YouTubeCTA() {
 
 export default function ResourcesVideos() {
   return (
-    <Page>
-      <PageHeader title="วิดีโอ" margin={0} />
-      <p className="text-lg text-gray-600 mb-8">เรียนรู้การวางแผนการเงินจากผู้เชี่ยวชาญ CFP® ผ่านบทสัมภาษณ์ เคสจริง และมุมมองจากมืออาชีพ</p>
+    <Page padding={false}>
+      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 pt-12 md:pt-16">
+        <PageHeader title="วิดีโอ" margin={0} />
+        <p className="text-lg text-gray-600 mb-8">เรียนรู้การวางแผนการเงินจากผู้เชี่ยวชาญ CFP® ผ่านบทสัมภาษณ์ เคสจริง และมุมมองจากมืออาชีพ</p>
+      </div>
       
       <FeaturedVideo
         title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
@@ -150,72 +152,74 @@ export default function ResourcesVideos() {
         videoId="FPDIajtvtMs"
       />
       
-      <VideoRow title="วางแผนการเงิน">
-        <Repeat n={1}>
-          <VideoCard
-            title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
-            href="https://www.youtube.com/watch?v=FPDIajtvtMs"
-            videoId="FPDIajtvtMs"
-          />
-          <VideoCard
-            title="Life Long Investing ลงทุนวิทยาฉบับ 50+ SS1 | EP.1 ความรู้ด้านการลงทุนจำเป็นแค่ไหนในวัยใกล้เกษียณ"
-            href="https://www.youtube.com/watch?v=hpyWP2NvDnA"
-            videoId="hpyWP2NvDnA"
-          />
-          <VideoCard
-            title="Sandwich Generation ในไทย 80% การเงินพัง ทำอย่างไร ให้หลุดจากวังวน ? | Talk ลงทุนแมน EP.49"
-            href="https://www.youtube.com/watch?v=T_o62QbInQU"
-            videoId="T_o62QbInQU"
-          />
-          <VideoCard
-            title={`รายจ่ายเพียบ-หนี้ท่วม แต่อยากออม !! แจกทริค "รวยก่อนแก่" พลิกชีวิตการเงิน | Wealth Me Please EP.171`}
-            href="https://www.youtube.com/watch?v=svZxjelQ4h0"
-            videoId="svZxjelQ4h0"
-          />
-          <VideoCard
-            title="เรื่องต้องรู้.. ประกันทุพพลภาพ"
-            href="https://www.youtube.com/watch?v=hjaVtJRTSfk&t=1s"
-            videoId="hjaVtJRTSfk"
-          />
-          <VideoCard
-            title="ใช้เงินอย่างมีเป้าหมาย จุดเริ่มต้นของแผนการเงินที่ทำได้จริง"
-            href="https://www.youtube.com/watch?v=VfdY1p-wzp4"
-            videoId="VfdY1p-wzp4"
-          />
-        </Repeat>
-      </VideoRow>
-  
-      <VideoRow title="CFP® Professional Talk | เสียงจากนักวางแผนการเงินมืออาชีพ">
-        <Repeat n={2}>
-          <VideoCard
-            title="อนาคตของนักวางแผนการเงิน CFP®"
-            href="https://www.youtube.com/watch?v=vuv1vpjRGSs"
-            videoId="vuv1vpjRGSs"
-          />
-          <VideoCard
-            title="CFP Professional Talk EP.12 นักวางแผนการเงิน CFP จัดพอร์ตหุ้นไทย ไปต่อ หรือชะลอไว้"
-            href="https://www.youtube.com/watch?v=L9pnoYYe_JQ&t=6s"
-            videoId="L9pnoYYe_JQ"
-          />
-          <VideoCard
-            title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
-            href="https://www.youtube.com/watch?v=vaXpPe7EmDM&t=4s"
-            videoId="vaXpPe7EmDM"
-          />
-        </Repeat>
-      </VideoRow>
+      <div className="px-8 pb-12">
+        <VideoRow title="วางแผนการเงิน">
+          <Repeat n={1}>
+            <VideoCard
+              title="แผนเกษียณพัง เพราะมองไม่เห็นภาพรวมทางการเงิน | ลงทุนวิทยาฉบับ50+ SS2 EP.1"
+              href="https://www.youtube.com/watch?v=FPDIajtvtMs"
+              videoId="FPDIajtvtMs"
+            />
+            <VideoCard
+              title="Life Long Investing ลงทุนวิทยาฉบับ 50+ SS1 | EP.1 ความรู้ด้านการลงทุนจำเป็นแค่ไหนในวัยใกล้เกษียณ"
+              href="https://www.youtube.com/watch?v=hpyWP2NvDnA"
+              videoId="hpyWP2NvDnA"
+            />
+            <VideoCard
+              title="Sandwich Generation ในไทย 80% การเงินพัง ทำอย่างไร ให้หลุดจากวังวน ? | Talk ลงทุนแมน EP.49"
+              href="https://www.youtube.com/watch?v=T_o62QbInQU"
+              videoId="T_o62QbInQU"
+            />
+            <VideoCard
+              title={`รายจ่ายเพียบ-หนี้ท่วม แต่อยากออม !! แจกทริค "รวยก่อนแก่" พลิกชีวิตการเงิน | Wealth Me Please EP.171`}
+              href="https://www.youtube.com/watch?v=svZxjelQ4h0"
+              videoId="svZxjelQ4h0"
+            />
+            <VideoCard
+              title="เรื่องต้องรู้.. ประกันทุพพลภาพ"
+              href="https://www.youtube.com/watch?v=hjaVtJRTSfk&t=1s"
+              videoId="hjaVtJRTSfk"
+            />
+            <VideoCard
+              title="ใช้เงินอย่างมีเป้าหมาย จุดเริ่มต้นของแผนการเงินที่ทำได้จริง"
+              href="https://www.youtube.com/watch?v=VfdY1p-wzp4"
+              videoId="VfdY1p-wzp4"
+            />
+          </Repeat>
+        </VideoRow>
+    
+        <VideoRow title="CFP® Professional Talk | เสียงจากนักวางแผนการเงินมืออาชีพ">
+          <Repeat n={2}>
+            <VideoCard
+              title="อนาคตของนักวางแผนการเงิน CFP®"
+              href="https://www.youtube.com/watch?v=vuv1vpjRGSs"
+              videoId="vuv1vpjRGSs"
+            />
+            <VideoCard
+              title="CFP Professional Talk EP.12 นักวางแผนการเงิน CFP จัดพอร์ตหุ้นไทย ไปต่อ หรือชะลอไว้"
+              href="https://www.youtube.com/watch?v=L9pnoYYe_JQ&t=6s"
+              videoId="L9pnoYYe_JQ"
+            />
+            <VideoCard
+              title="Money Life & Talk by CFP Professional EP.61 เรือนเกษียณสุข"
+              href="https://www.youtube.com/watch?v=vaXpPe7EmDM&t=4s"
+              videoId="vaXpPe7EmDM"
+            />
+          </Repeat>
+        </VideoRow>
 
-      <VideoRow title="Case Day">
-        <Repeat n={10}>
-          <VideoCard
-            title="Case Day: การวางแผนแบบองค์รวม โดยคุณศิริรัตน์ ตานะเศรษฐ CFP®"
-            href="https://www.youtube.com/watch?v=TtBGHApar9U"
-            videoId="TtBGHApar9U"
-          />
-        </Repeat>
-      </VideoRow>
+        <VideoRow title="Case Day">
+          <Repeat n={10}>
+            <VideoCard
+              title="Case Day: การวางแผนแบบองค์รวม โดยคุณศิริรัตน์ ตานะเศรษฐ CFP®"
+              href="https://www.youtube.com/watch?v=TtBGHApar9U"
+              videoId="TtBGHApar9U"
+            />
+          </Repeat>
+        </VideoRow>
 
-      <YouTubeCTA />
+        <YouTubeCTA />
+      </div>
     </Page>
   );
 }
