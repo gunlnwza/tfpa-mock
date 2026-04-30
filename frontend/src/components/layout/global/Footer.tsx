@@ -116,7 +116,7 @@ function Right() {
 
 export function Footer() {
   return (
-    <footer className="bg-blue-900 text-white flex justify-between px-4 py-6">
+    <footer className="bg-blue-900 text-white flex justify-between px-8 pt-8 pb-2">
       <Left />
       <Right />
     </footer>
