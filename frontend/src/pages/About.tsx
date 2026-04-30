@@ -60,6 +60,17 @@ const founders: string[] = [
   "ตลาดหลักทรัพย์แห่งประเทศไทย",
 ];
 
+const honorary: string[] = [
+  "นายกรณ์ จาติกวณิช",
+  "นายกิตติรัตน์ ณ ระนอง",
+  "ศ. (พิเศษ) กิติพงศ์ อุรพีพัฒนพงศ์",
+  "นายทรงเดช ประดิษฐสมานนท์",
+  "รศ. ธิติพันธุ์ เชื้อบุญชัย",
+  "นายพันธ์ศักดิ์ เวชอนุรักษ์",
+  "นางภัทรียา เบญจพลชัย",
+  "นายรพี สุจริตกุล",
+]
+
 
 function Mission() {
   return (
@@ -121,6 +132,13 @@ export default function Overview() {
       <Founders />
       <OrganizationStructure />
       <Alliance />
+      <Section title="สมาชิกกิตติมศักดิ์">
+        <ul className="grid grid-cols-1 lg:grid-cols-2 disc list-disc pl-6 space-y-2 my-2">
+          {honorary.map((f, i) => (
+            <li key={i}>{f}</li>
+          ))}
+        </ul>
+      </Section>
     </Page>
   );
 }

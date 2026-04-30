@@ -30,6 +30,7 @@ type TFPAContact = {
   telephone: string;
   telegraph: string;
   website: string;
+  tax_id: string;
 }
 
 const tfpaContact: TFPAContact = {
@@ -41,7 +42,8 @@ const tfpaContact: TFPAContact = {
   ],
   telephone: "0 2009 9393",
   telegraph: "0 2247 7479",
-  website: "www.tfpa.or.th"
+  website: "www.tfpa.or.th",
+  tax_id: "0993000068751"
 }
 
 const tfpaContactBlocks: Block[] = [
@@ -55,7 +57,9 @@ const tfpaContactBlocks: Block[] = [
       { type: "bold", content: "โทรสาร: "},
       { type: "text", content: `${tfpaContact.telegraph}` }, { type: "break" },
       { type: "bold", content: "Website: " },
-      { type: "link", href: "/", content: tfpaContact.website }
+      { type: "link", href: "/", content: tfpaContact.website }, { type: "break" },
+      { type: "bold", content: "เลขประจำตัวผู้เสียภาษีอากร: " },
+      { type: "text", content: `${tfpaContact.tax_id}` }, { type: "break" },
     ]
   }
 ];

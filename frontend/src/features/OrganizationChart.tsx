@@ -292,7 +292,7 @@ const org: Committee = {
 function OrgNode({ node, onClick }: OrgNodeProps) {
   return (
     <TreeNode label={
-      <button onClick={() => onClick(node)} className="px-4 py-2 rounded-xl bg-blue-200 hover:bg-blue-300">
+      <button onClick={() => onClick(node)} className="px-4 py-2 rounded-xl bg-blue-200 hover:bg-blue-300 hover:cursor-pointer">
         {node.title}
       </button>
     }>
@@ -309,7 +309,7 @@ export default function OrganizationChart() {
   return (
     <>
       <Tree label={
-        <button onClick={() => setSelected(org)} className="px-4 py-2 rounded-xl bg-blue-200 hover:bg-blue-300">
+        <button onClick={() => setSelected(org)} className="px-4 py-2 rounded-xl bg-blue-200 hover:bg-blue-300 hover:cursor-pointer">
           {org.title}
         </button>
       }>
@@ -329,9 +329,11 @@ function MemberCard({ m, large = false }: { m: Member; large?: boolean }) {
       <img
         src={p.image}
         alt={p.name}
-        className={`mx-auto object-cover rounded-lg flex-1 ${
-          large ? "w-32 h-32" : "w-24 h-24"
-        }`}
+        className={`
+          mx-auto object-cover rounded-lg flex-1
+          border border-gray-200 shadow-sm
+          ${large ? "w-32 h-32" : "w-24 h-24"}
+        `}
       />
       <p className="mt-2 font-medium">{p.name}</p>
       <p className="text-sm text-gray-500">{m.role}</p>

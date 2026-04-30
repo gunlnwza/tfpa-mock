@@ -85,7 +85,7 @@ function Row({ direction = "right", offset = false }) {
 export function CompanyMarquee() {
   return (
     <div className="my-4">
-      <h2 className="text-center text-lg">สมาชิกนิติบุคคล</h2>
+      <h2 className="text-center text-md">ได้รับความไว้วางใจจากองค์กรชั้นนำ</h2>
       <Row />
     </div>
   );

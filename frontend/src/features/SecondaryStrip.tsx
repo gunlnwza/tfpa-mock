@@ -16,8 +16,8 @@ function SecondaryCTACard({ title, to, href, msg }: { title: string, to?: string
 function KPICard({ title, msg }: { title: string, msg: string } ) {
   return (
     <div className={`${cardClassName} gap-2`}>
+      <p className="text-3xl">{msg}</p>
       <p className="text-sm">{title}</p>
-      <p className="text-xl">{msg}</p>
     </div>
   )
 }
@@ -28,9 +28,9 @@ export function SecondaryStrip() {
     <div className="mx-8 my-4 flex gap-4 justify-center">
       {/* <SecondaryCTACard title="สนใจเป็นนักวางแผนการเงิน?" to="/career_path" msg="สมัครอบรม" /> */}
       {/* <SecondaryCTACard title="สนใจสอบ CFP?" href="https://member.tfpa.or.th/UserLoginNew.aspx" msg="สมัครสอบ" /> */}
-      <KPICard title="นักวางแผนการเงิน CFP" msg="833 คน" />
-      <KPICard title="ที่ปรึกษาการเงิน AFPT" msg="1798 คน" />
-      <KPICard title="สมาชิกนิติบุคคล" msg="26 บริษัท" />
+      <KPICard title="นักวางแผนการเงิน CFP" msg="833+" />
+      <KPICard title="ที่ปรึกษาการเงิน AFPT" msg="1798+" />
+      <KPICard title="สมาชิกนิติบุคคล" msg="26+" />
     </div>
   );
 }

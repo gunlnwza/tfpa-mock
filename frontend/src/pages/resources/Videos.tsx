@@ -28,7 +28,7 @@ export function FeaturedVideo({ title, href, videoId }: VideoCardProps) {
               target.src = thumbnails[2];
             }
           }}
-          className="w-full h-[500px] object-cover rounded-2xl"
+          className="w-full object-cover rounded-2xl"
         />
 
         {/* overlay */}
