@@ -203,7 +203,7 @@ function PlannerCard() {
               กรุงเทพ • ประสบการณ์ 8 ปี
             </p>
           </div>
-          <div className="flex flex-col group-hover:text-blue-600 transition">
+          <div className="flex flex-col group-hover:text-blue-500 transition">
               ดูรายละเอียด
           </div>
         </div>
