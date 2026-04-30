@@ -29,9 +29,10 @@ export function PlannerSearchMock() {
             border border-gray-200
             px-6 py-4
             text-sm
+            text-black
+            placeholder:text-gray-400
             shadow-sm
-            text-gray-400
-            focus:outline-none focus:ring-2 focus:ring-blue-500
+            focus:outline-none focus:ring-1 focus:ring-blue-500
           "
         />
 
@@ -149,7 +150,7 @@ function Filter() {
       </div>
 
       {isOpen && (
-        <div className="border border-gray-200 shadow-sm border-2 rounded-2xl p-6 space-y-6">
+        <div className="border border-gray-200 shadow-sm border-1 rounded-2xl p-6 space-y-6">
           <FilterRowSelect title="ประเภทบริการ" items={services} />
           <FilterRowSelect title="การคิดค่าบริการ" items={serviceFees} />
           <FilterRowSelect title="พื้นที่" items={areas} />

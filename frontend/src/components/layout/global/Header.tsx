@@ -62,9 +62,15 @@ function DropdownItem({ to, href, label }: DropDownItemProps ) {
 }
 
 
-function NavBar() {
+export function NavBar({ scrolled = true }: { scrolled?: boolean }) {
   return (
-    <nav className="flex gap-6 text-sm font-medium items-center relative">
+    <nav
+      className={`
+        flex gap-6 transition-colors duration-300
+        text-sm font-medium items-center relative
+        ${scrolled ? "text-black" : "text-white"}
+      `}
+    >
       <NavBarLink to="/" label="หน้าหลัก" />
       <NavBarLink to="/about" label="เกี่ยวกับ" />
       <NavBarLink to="/find_planner" label="รับบริการ" />

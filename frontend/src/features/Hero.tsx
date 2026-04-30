@@ -4,7 +4,7 @@ import { PrimaryCTAButton } from "../components/ui/Button";
 
 function Card() {
   return (
-    <div className={`px-8`}>
+    <div className={`px-16`}>
       <h1 className="space-y-2">
         <span className="block text-4xl font-bold text-yellow-500">
           วางแผนชีวิตให้สำเร็จ
@@ -19,9 +19,10 @@ function Card() {
       <p className="mt-6 mb-8 text-md text-gray-200">
         มาตรฐานระดับสากล ที่ช่วยให้คุณวางแผนการเงินอย่างเป็นระบบ<br />เพื่ออนาคตที่มั่นคงและเป้าหมายชีวิตที่เป็นจริงได้
       </p>
+
       <div className="text-xl">
         <PrimaryCTAButton to="find_planner">รับบริการวางแผนการเงิน →</PrimaryCTAButton>
-        <p className="mt-4 text-sm text-gray-300">กับนักวางแผนการเงิน CFP® มากกว่า 800+ คนทั่วประเทศ</p>
+        <p className="mt-3 text-sm text-gray-300">กับนักวางแผนการเงิน CFP® มากกว่า 800+ คนทั่วประเทศ</p>
       </div>
     </div>
   );
@@ -39,7 +40,7 @@ export function Hero({ className }: { className: string }) {
 
       {/* optional dark overlay for readability */}
       <div className={`
-        absolute inset-0 bg-gradient-to-r from-black/100 via-black/60 to-transparent 
+        absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent 
         `}
       />
 
