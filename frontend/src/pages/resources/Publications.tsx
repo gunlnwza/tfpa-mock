@@ -11,21 +11,51 @@ type PDF = {
   date: string;
   issue: string;
   pdfUrl: string;
-  thumbnailUrl?: string;
+  thumbnailUrl: string;
+  blogUrl: string;
 }
+
 
 function PDFCard({ pdf }: { pdf: PDF }) {
   return (
-    <div className="w-40">
-      <a href={pdf.pdfUrl}>
-        <img src={pdf.thumbnailUrl}></img>
-
+    <div className="group border border-gray-300 shadow-sm rounded-xl p-4">
+      <a
+        href={pdf.pdfUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          mt-1 mb-4
+          block overflow-hidden rounded-xl transition-transform duration-300 
+          group-hover:scale-105 hover:cursor-pointer
+          flex justify-center
+          "
+      >
+        <img
+          src={pdf.thumbnailUrl || "/placeholder.png"}
+          alt={pdf.title}
+          className="w-7/8 object-cover border border-gray-200 rounded-md"
+        />
       </a>
-      <div className="flex justify-between">
-        <p>ฉบับที่ {pdf.issue}</p>
-        <p>{pdf.date}</p>
+
+      <div className="mt-3 px-1 space-y-1">
+        <p className="text-sm font-medium text-gray-800 truncate">
+          ฉบับที่ {pdf.issue}
+        </p>
+        <p className="text-xs text-gray-500">
+          {pdf.date}
+        </p>
       </div>
-      <a href="#" className="hover:text-blue-700 hover:cursor-pointer text-right">อ่านเวอร์ชั่นบทความ →</a>
+      <a
+        href={pdf.blogUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          mt-2 block px-1 text-xs text-gray-300
+          group-hover:text-blue-600 hover:cursor-pointer transition duration-200
+        "
+      >
+        อ่านเวอร์ชั่นบทความ →
+      </a>
     </div>
   )
 }
@@ -40,7 +70,12 @@ export function PDFSection({ url }: { url: string }) {
   }, []);
   
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+    <div
+      className="
+      grid gap-4
+      grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8
+      "
+    >
       <Repeat n={50}>
         {pdfs.map((item) => {
           return (

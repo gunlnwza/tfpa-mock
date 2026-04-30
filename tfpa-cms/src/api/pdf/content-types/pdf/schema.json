@@ -14,17 +14,20 @@
     "title": {
       "type": "string"
     },
+    "issue": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
     "pdfUrl": {
       "type": "string"
     },
     "thumbnailUrl": {
       "type": "string"
     },
-    "issue": {
+    "blogUrl": {
       "type": "string"
-    },
-    "date": {
-      "type": "date"
     },
     "docType": {
       "type": "enumeration",
