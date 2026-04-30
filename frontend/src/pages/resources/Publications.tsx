@@ -127,13 +127,6 @@ export function ResourcesTFPANews() {
   );
 }
 
-export function ResourcesBlogs() {
-  return (
-    <Page>
-      <PageHeader title="บทความ" />
-    </Page>
-  );
-}
 
 
 function BrochuresRow({ title, url }: { title: string; url: string; }) {

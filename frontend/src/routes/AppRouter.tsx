@@ -20,7 +20,8 @@ import ResourcesNews from "../pages/resources/News";
 import ResourcesAnnouncements from "../pages/resources/Announcements";
 import ResourcesActivities from "../pages/resources/Activities"
 
-import { ResourcesBooks, ResourcesTFPAMagazine, ResourcesTFPANews, ResourcesBlogs } from "../pages/resources/Publications";
+import { ResourcesBooks, ResourcesTFPAMagazine, ResourcesTFPANews } from "../pages/resources/Publications";
+import { ResourcesBlogs } from "../pages/resources/Blogs";
 import ResourcesDocuments from "../pages/resources/Documents";
 
 import ResourcesVideos from "../pages/resources/Videos";
