@@ -1,5 +1,5 @@
 import { Page } from "../../components/layout/Page";
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { PageHeader } from "../../components/global/PageHeader";
 
 
 import { useState } from "react";
@@ -75,7 +75,7 @@ export default function BlogSection() {
               px-4 py-2 rounded-full text-sm transition
               ${
                 activeCategory === cat
-                  ? "bg-blue-600 text-white"
+                  ? "bg-brand-blue text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }
             `}
@@ -99,7 +99,7 @@ export default function BlogSection() {
           <option>กุมภาพันธ์</option>
         </select>
 
-        <button className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600">
+        <button className="bg-brand-teal text-white px-4 py-2 rounded-lg text-sm hover:bg-brand-teal/80">
           ค้นหา
         </button>
       </div> */}

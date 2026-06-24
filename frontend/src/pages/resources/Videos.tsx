@@ -1,4 +1,4 @@
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { PageHeader } from "../../components/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 import React from "react";
 import { Repeat } from "../../utils";
@@ -105,7 +105,7 @@ export function VideoRow({ title, children }: { title: string; children: React.R
         <a
           href="https://www.youtube.com/channel/UC6rMod3YUUYv-yGnkIg5GEw"
           target="_blank" rel="noopener noreferrer"
-          className="text-sm text-blue-600 hover:underline"
+          className="text-sm text-brand-blue hover:underline"
         >
           ดูทั้งหมด →
         </a>

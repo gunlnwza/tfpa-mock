@@ -84,7 +84,7 @@ export function Announcements() {
     <section className="py-12 my-4">
       <div className="mx-4 mb-2 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-center">ประกาศสำคัญ</h2>
-        <a href="#" className="text-sm text-blue-600 hover:underline">ดูทั้งหมด →</a>  {/* TODO link to /announcement */}
+        <a href="#" className="text-sm text-brand-blue hover:underline">ดูทั้งหมด →</a>  {/* TODO link to /announcement */}
       </div>
 
       <div className="flex gap-6 overflow-x-auto p-4 scrollbar-hide">

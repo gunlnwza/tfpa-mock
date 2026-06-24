@@ -1,6 +1,6 @@
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { PageHeader } from "../../components/global/PageHeader";
 import { Page } from "../../components/layout/Page";
-import { PDFLink } from "../../components/primitive/PDFLink";
+import { PDFLink } from "../../components/ui/PDFLink";
 
 export default function ForTrainingSchool() {
   return (

@@ -1,16 +1,16 @@
-import OrganizationChart from "../features/OrganizationChart";
+import OrganizationChart from "../../features/OrganizationChart";
 
-import nsf_logo from "../assets/logos/nsf.png"
+import nsf_logo from "../../assets/logos/nsf.png"
 
-import { Page } from "../components/layout/Page";
-import { PageHeader } from "../components/layout/global/PageHeader";
-import { Section } from "../components/layout/Section";
+import { Page } from "../../components/layout/Page";
+import { PageHeader } from "../../components/global/PageHeader";
+import { Section } from "../../components/layout/Section";
 
-import { RenderBlocks } from "../components/primitive/renderer/Blocks";
+import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
 
-import { ImageCard } from "../components/ui/ImageCard";
+import { ImageCard } from "../../components/ui/ImageCard";
 
-import type { Block } from "../components/primitive/renderer/types";
+import type { Block } from "../../components/primitive/renderer/types";
 
 const missionBlocks: Block[] = [
   {

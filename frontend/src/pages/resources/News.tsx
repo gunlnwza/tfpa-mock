@@ -1,4 +1,4 @@
-import { PageHeader, PageSubheader } from "../../components/layout/global/PageHeader";
+import { PageHeader, PageSubheader } from "../../components/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 
 import { cardAddBorderClass, cardAddRaiseUpClass, groupHighlightOnHoverClass } from "../../components/ui/styles";
@@ -49,7 +49,7 @@ export function NewsCard({
 }: NewsCardProps) {
 
   const isExam = title.includes("ผลสอบ");
-  const bg = (isExam) ? "bg-blue-100" : "bg-gray-100";
+  const bg = (isExam) ? "bg-brand-blue/15" : "bg-gray-100";
   
   return (
     <a
@@ -123,7 +123,7 @@ export function NewsCardMock({ title, date }: { title: string; date: string }) {
 export function PaginationMock() {
   const base = "px-3 py-1 text-sm border border-gray-300 rounded-md shadow-sm";
   const disabled = `${base} text-gray-400 cursor-not-allowed`;
-  const active = `${base} bg-blue-600 text-white hover:cursor-pointer`;
+  const active = `${base} bg-brand-blue text-white hover:cursor-pointer`;
   const neutral = `${base} text-gray-700 hover:bg-gray-200 hover:cursor-pointer`;
 
   return (

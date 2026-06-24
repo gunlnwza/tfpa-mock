@@ -1,3 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@300;400;600;700&family=Prompt:wght@300;400;500;600&family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap');
 @import "tailwindcss";
 @config "../tailwind.config.js";
+
+@theme {
+  /* Brand colors — TFPA CI 2025 */
+  --color-brand-blue: #1C75BD;        /* primary blue */
+  --color-brand-blue-dark: #426F96;   /* steel blue, hover states */
+  --color-brand-navy: #1e3a52;        /* darkened steel blue, footer bg */
+  --color-brand-yellow: #FFDC3E;      /* accent yellow */
+  --color-brand-teal: #44AE90;        /* accent teal/green */
+  --color-brand-gray: #E8E8E9;        /* neutral light gray */
+
+  /* Brand fonts — TFPA CI 2025 */
+  --font-sans: 'Prompt', 'Roboto', system-ui, sans-serif;
+  --font-display: 'Athiti', 'Roboto Condensed', system-ui, sans-serif;
+}

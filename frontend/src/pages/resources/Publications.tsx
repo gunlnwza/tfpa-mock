@@ -1,4 +1,4 @@
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { PageHeader } from "../../components/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 
 import { useState, useEffect } from "react";
@@ -66,7 +66,7 @@ function PDFCard({ pdf }: { pdf: PDF }) {
         rel="noopener noreferrer"
         className="
           mt-2 block px-1 text-xs text-gray-300
-          group-hover:text-black hover:text-blue-500 hover:cursor-pointer transition duration-200
+          group-hover:text-black hover:text-brand-blue hover:cursor-pointer transition duration-200
         "
       >
         อ่านเวอร์ชันบทความ →
@@ -88,7 +88,7 @@ export function PDFSection({ url, n = 1 }: { url: string; n?: number }) {
     <div
       className="
       grid gap-4
-      grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8
+      grid-cols-3 lg:grid-cols-4 xl:grid-cols-5
       "
     >
       <Repeat n={n}>

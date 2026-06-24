@@ -77,7 +77,7 @@ type Heading = {
 ```
 
 ### Behavior
-- Renders as `<h1>`–`<h6>`
+- Renders as `<h1>`-`<h6>`
 - Does **not** support Inline (text only)
 
 ### Example

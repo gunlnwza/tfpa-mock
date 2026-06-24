@@ -292,7 +292,7 @@ const org: Committee = {
 function OrgNode({ node, onClick }: OrgNodeProps) {
   return (
     <TreeNode label={
-      <button onClick={() => onClick(node)} className="px-4 py-2 rounded-xl bg-blue-200 hover:bg-blue-300 hover:cursor-pointer">
+      <button onClick={() => onClick(node)} className="px-4 py-2 rounded-xl bg-brand-blue/20 hover:bg-brand-blue/30 hover:cursor-pointer">
         {node.title}
       </button>
     }>
@@ -309,7 +309,7 @@ export default function OrganizationChart() {
   return (
     <>
       <Tree label={
-        <button onClick={() => setSelected(org)} className="px-4 py-2 rounded-xl bg-blue-200 hover:bg-blue-300 hover:cursor-pointer">
+        <button onClick={() => setSelected(org)} className="px-4 py-2 rounded-xl bg-brand-blue/20 hover:bg-brand-blue/30 hover:cursor-pointer">
           {org.title}
         </button>
       }>
@@ -376,7 +376,7 @@ function Modal({ node, onClose }: ModalProps) {
         {/* Footer */}
         <button
           onClick={onClose}
-          className="p-4 text-sm text-blue-600"
+          className="p-4 text-sm text-brand-blue"
         >
           Close
         </button>

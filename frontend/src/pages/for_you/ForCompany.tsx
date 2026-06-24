@@ -1,7 +1,7 @@
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { PageHeader } from "../../components/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 import { Section } from "../../components/layout/Section";
-import { PDFLink } from "../../components/primitive/PDFLink";
+import { PDFLink } from "../../components/ui/PDFLink";
 
 
 

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "riches",
+  "info": {
+    "singularName": "rich",
+    "pluralName": "riches",
+    "displayName": "Rich"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

@@ -11,7 +11,7 @@ export function RenderInline( { inline }: { inline: Inline } ) {
 
     case "link":
       return (
-        <Link to={inline.href} className="underline text-blue-500">
+        <Link to={inline.href} className="underline text-brand-blue">
           {inline.content}
         </Link>
       );

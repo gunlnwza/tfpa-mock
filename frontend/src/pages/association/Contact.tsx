@@ -1,15 +1,14 @@
-import { Page } from "../components/layout/Page";
-import { PageHeader } from "../components/layout/global/PageHeader";
-import { Section } from "../components/layout/Section";
+import { Page } from "../../components/layout/Page";
+import { PageHeader } from "../../components/global/PageHeader";
+import { Section } from "../../components/layout/Section";
 
-import { RenderBlocks } from "../components/primitive/renderer/Blocks";
+import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
 
-import { TextCard } from "../components/ui/TextCard";
-import { CenterPile } from "../components/primitive/CenterPile";
+import { TextCard } from "../../components/ui/TextCard";
 
-import type { Block, Inline } from "../components/primitive/renderer/types";
+import type { Block, Inline } from "../../components/primitive/renderer/types";
 
-import how_to_go_to_tfpa from "../assets/map/how_to_go_to_tfpa.png"
+import how_to_go_to_tfpa from "../../assets/map/how_to_go_to_tfpa.png"
 
 
 // TODO: use Strapi for address

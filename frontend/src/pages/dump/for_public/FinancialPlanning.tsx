@@ -1,14 +1,14 @@
 import { Page } from "../../components/layout/Page";
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { PageHeader } from "../../components/global/PageHeader";
 import { Section } from "../../components/layout/Section";
 
-import { Center } from "../../components/primitive/Center";
+import { Center } from "../../components/ui/Center";
 import type { Block } from "../../components/primitive/renderer/types";
 import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
 
 import { PrimaryCTAButton } from "../../components/ui/Button";
 import { ImageCard } from "../../components/ui/ImageCard";
-import { CenterPile } from "../../components/primitive/CenterPile";
+import { CenterPile } from "../../components/ui/CenterPile";
 
 const whatIsFinancialPlanning: Block[] = [
   { type: "heading", level: "h3", content: "การวางแผนการเงินคืออะไร"},

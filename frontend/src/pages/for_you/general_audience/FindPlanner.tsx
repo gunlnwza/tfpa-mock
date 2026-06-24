@@ -1,10 +1,10 @@
-import { PageHeader } from "../components/layout/global/PageHeader";
-import { Page } from "../components/layout/Page";
+import { PageHeader } from "../../../components/global/PageHeader";
+import { Page } from "../../../components/layout/Page";
 
-import { PaginationMock } from "./resources/News";
+import { PaginationMock } from "../../resources/News";
 import { useState } from "react";
 
-import { Section } from "../components/layout/Section";
+import { Section } from "../../../components/layout/Section";
 
 
 export function PlannerSearchMock() {
@@ -32,7 +32,7 @@ export function PlannerSearchMock() {
             text-black
             placeholder:text-gray-400
             shadow-sm
-            focus:outline-none focus:ring-1 focus:ring-blue-500
+            focus:outline-none focus:ring-1 focus:ring-brand-blue
           "
         />
 
@@ -40,9 +40,9 @@ export function PlannerSearchMock() {
         <button
           className="
             absolute right-2 top-1/2 -translate-y-1/2
-            bg-blue-600 text-white
+            bg-brand-blue text-white
             px-4 py-2 rounded-full text-sm
-            hover:bg-blue-700
+            hover:bg-brand-blue-dark
             hover:cursor-pointer
           "
         >
@@ -143,7 +143,7 @@ function Filter() {
       <div className="text-center mb-2">
         <button
           onClick={() => setIsOpen(prev => !prev)}
-          className="text-sm text-blue-600 hover:underline transition-all duration-200 hover:cursor-pointer"
+          className="text-sm text-brand-blue hover:underline transition-all duration-200 hover:cursor-pointer"
         >
           {isOpen ? "ซ่อนตัวกรอง" : "+ แสดงตัวกรองเพิ่มเติม"}
         </button>
@@ -184,7 +184,7 @@ function PlannerCard() {
             {/* Name + badge */}
             <div className="flex items-center gap-2">
               <p className="font-semibold">สมชาย ใจดี</p>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-600">
+              <span className="text-xs px-2 py-0.5 rounded-full bg-brand-blue/15 text-brand-blue">
                 CFP®
               </span>
             </div>
@@ -206,7 +206,7 @@ function PlannerCard() {
               กรุงเทพ • ประสบการณ์ 8 ปี
             </p>
           </div>
-          <div className="flex flex-col group-hover:text-blue-500 transition">
+          <div className="flex flex-col group-hover:text-brand-blue transition">
               ดูรายละเอียด
           </div>
         </div>
@@ -251,7 +251,7 @@ function Modal({ onClose }) {
             <div className="text-sm text-gray-600 space-y-1 mt-4">
               <p>📞 087-XXX-XXXX</p>
               <p>✉️ example@email.com</p>
-              <p className="text-blue-600 break-all">
+              <p className="text-brand-blue break-all">
                 fb.com/profile
               </p>
             </div>

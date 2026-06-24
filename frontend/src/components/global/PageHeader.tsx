@@ -1,3 +1,5 @@
+// the h1 text at the top
+
 export function PageHeader({ title, margin = 8, border = false }: { title: string; margin?: number; border?: boolean }) {
   const addBorder = border ? "border-b pb-1 border-gray-500" : "";
   return (

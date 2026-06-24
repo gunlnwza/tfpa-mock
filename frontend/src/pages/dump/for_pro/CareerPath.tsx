@@ -1,6 +1,6 @@
 import { Page } from "../../components/layout/Page";
 import { Section } from "../../components/layout/Section";
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { PageHeader } from "../../components/global/PageHeader";
 
 import { RenderBlocks } from "../../components/primitive/renderer/Blocks";
 
@@ -21,10 +21,10 @@ import examPage1 from "../../assets/exam/exam_page1.jpg";
 import examPage2 from "../../assets/exam/exam_page2.jpg";
 
 import { ImageCard } from "../../components/ui/ImageCard";
-import { PDFLink } from "../../components/primitive/PDFLink";
-import { NextPage } from "../../components/primitive/NextPage";
+import { PDFLink } from "../../components/ui/PDFLink";
+import { NextPage } from "../../components/ui/NextPage";
 
-import { CenterPile } from "../../components/primitive/CenterPile";
+import { CenterPile } from "../../components/ui/CenterPile";
 
 export default function CareerPath() {
   return (

@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import Home from "../pages/Home";
-import FindPlanner from "../pages/FindPlanner";
-import About from "../pages/About";
+import FindPlanner from "../pages/for_you/general_audience/FindPlanner";
+import About from "../pages/association/About";
 
 import ForYou from "../pages/for_you/ForYou";
-import ForGeneralAudience from "../pages/for_you/ForGeneralAudience";
+import ForGeneralAudience from "../pages/for_you/general_audience/ForGeneralAudience";
 import ForStudent from "../pages/for_you/ForStudent";
 import ForProfessional from "../pages/for_you/ForProfessional";
 import ForCompany from "../pages/for_you/ForCompany";
@@ -26,7 +26,7 @@ import ResourcesDocuments from "../pages/resources/Documents";
 
 import ResourcesVideos from "../pages/resources/Videos";
 
-import Contact from "../pages/Contact";
+import Contact from "../pages/association/Contact";
 
 
 export function ScrollToTop() {

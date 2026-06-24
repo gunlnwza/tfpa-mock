@@ -14,7 +14,7 @@ function IconLink({ href, title, src }: {
   return (
     <a
     href={href}
-    className="inline-flex items-center gap-1 hover:text-blue-600 hover:underline"
+    className="inline-flex items-center gap-1 hover:text-brand-blue hover:underline"
   >
     <img src={src} className="w-6 h-6" />
     <span className="text-lg">{title}</span>

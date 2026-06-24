@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Noto Sans Thai"', 'system-ui', 'sans-serif'],
+        sans: ['Prompt', 'Roboto', 'system-ui', 'sans-serif'],
+        display: ['Athiti', '"Roboto Condensed"', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         marqueeRight: {

@@ -1,4 +1,4 @@
-import { PageHeader, PageSubheader } from "../../components/layout/global/PageHeader";
+import { PageHeader, PageSubheader } from "../../components/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 
 import { NewsSection } from "./News";

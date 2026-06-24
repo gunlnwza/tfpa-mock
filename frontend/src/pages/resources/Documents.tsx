@@ -1,4 +1,4 @@
-import { PageHeader } from "../../components/layout/global/PageHeader";
+import { PageHeader } from "../../components/global/PageHeader";
 import { Page } from "../../components/layout/Page";
 import { useState } from "react";
 import { TopicCard } from "./Blogs";
@@ -30,7 +30,7 @@ function DocumentSearchMock() {
             text-black
             placeholder:text-gray-400
             shadow-sm
-            focus:outline-none focus:ring-1 focus:ring-blue-500
+            focus:outline-none focus:ring-1 focus:ring-brand-blue
           "
         />
 
@@ -38,9 +38,9 @@ function DocumentSearchMock() {
         <button
           className="
             absolute right-2 top-1/2 -translate-y-1/2
-            bg-blue-600 text-white
+            bg-brand-blue text-white
             px-4 py-2 rounded-full text-sm
-            hover:bg-blue-700
+            hover:bg-brand-blue-dark
             hover:cursor-pointer
           "
         >
@@ -92,7 +92,7 @@ function Filter() {
       <div className="text-center mb-2">
         <button
           onClick={() => setIsOpen(prev => !prev)}
-          className="text-sm text-blue-600 hover:underline transition-all duration-200 hover:cursor-pointer"
+          className="text-sm text-brand-blue hover:underline transition-all duration-200 hover:cursor-pointer"
         >
           {isOpen ? "ซ่อนตัวกรอง" : "+ แสดงตัวกรองเพิ่มเติม"}
         </button>
@@ -252,15 +252,15 @@ function TextCard({ res }: { res: Resource }) {
 
   switch (res.type) {
     case "schedule":
-      typeColor = "bg-green-100 text-gray-700";
+      typeColor = "bg-brand-teal/20 text-gray-700";
       thaiType = "ตารางเวลา";
       break;
     case "study":
-      typeColor = "bg-blue-200 text-gray-700";
+      typeColor = "bg-brand-blue/20 text-gray-700";
       thaiType = "อบรม";
       break;
     case "exam":
-      typeColor = "bg-yellow-200 text-gray-700";
+      typeColor = "bg-brand-yellow/30 text-gray-700";
       thaiType = "สอบ";
       break;
     case "problem":
